@@ -3,18 +3,10 @@ class SequencePose {
   final int time;
   final String goal;
 
-  SequencePose({
-    required this.id,
-    required this.time,
-    required this.goal,
-  });
+  SequencePose({required this.id, required this.time, required this.goal});
 
   factory SequencePose.fromJson(Map<String, dynamic> json) {
-    return SequencePose(
-      id: json['id'],
-      time: json['time'],
-      goal: json['goal'],
-    );
+    return SequencePose(id: json['id'], time: json['time'], goal: json['goal']);
   }
 }
 
@@ -35,7 +27,9 @@ class Sequence {
 
   factory Sequence.fromJson(Map<String, dynamic> json) {
     var posesList = json['poses'] as List;
-    List<SequencePose> poses = posesList.map((i) => SequencePose.fromJson(i)).toList();
+    List<SequencePose> poses = posesList
+        .map((i) => SequencePose.fromJson(i))
+        .toList();
 
     return Sequence(
       id: json['id'],

@@ -23,7 +23,7 @@ class BreathName {
 
 class BreathRhythm {
   final String instruction;
-  final int duration;
+  int duration;
   final int size;
   final String color;
   final String glow;
@@ -57,7 +57,7 @@ class BreathMethod {
   final List<String> benefits;
   final List<String> steps;
   final String? steptip; // Made nullable
-  final List<BreathRhythm> rhythm;
+  List<BreathRhythm> rhythm;
   final List<String> recommendations;
   final List<String> cautions;
   final String? tips; // Made nullable
@@ -93,7 +93,8 @@ class BreathMethod {
       benefits: List<String>.from(json['benefits'] ?? []),
       steps: List<String>.from(json['steps'] ?? []),
       steptip: json['steptip'] as String?, // Handle as nullable
-      rhythm: (json['rhythm'] as List?)
+      rhythm:
+          (json['rhythm'] as List?)
               ?.map((i) => BreathRhythm.fromJson(i))
               .toList() ??
           [], // Handle as nullable list
@@ -101,7 +102,7 @@ class BreathMethod {
       cautions: List<String>.from(json['cautions'] ?? []),
       tips: json['tips'] as String?, // Handle as nullable
       keywords: List<String>.from(json['keywords'] ?? []),
-      imageUrl: 'https://fullheartyoga.oss-cn-beijing.aliyuncs.com/breath-img/' + json['image'],
+      imageUrl: 'https://fullheartyoga.oss-cn-beijing.aliyuncs.com/breath-img/${json['image']}',
     );
   }
 }

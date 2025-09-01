@@ -37,7 +37,8 @@ class PoseCard extends StatelessWidget {
               height: 70.0, // Constrain height to align with image
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween, // Distribute space
+                mainAxisAlignment:
+                    MainAxisAlignment.spaceBetween, // Distribute space
                 children: [
                   Text(
                     getDifficultyText(pose.difficulty),
@@ -82,7 +83,9 @@ class PoseCard extends StatelessWidget {
             height: 70.0,
             decoration: BoxDecoration(
               color: const Color(0xFFF9C28D), // background-color from reference
-              borderRadius: BorderRadius.circular(12.0), // Equivalent to 0.75rem
+              borderRadius: BorderRadius.circular(
+                12.0,
+              ), // Equivalent to 0.75rem
               image: DecorationImage(
                 image: NetworkImage(pose.url),
                 fit: BoxFit.cover,
@@ -90,7 +93,9 @@ class PoseCard extends StatelessWidget {
               ),
             ),
             child: (pose.url.isEmpty)
-                ? const Center(child: Icon(Icons.broken_image, color: Colors.grey)) // Placeholder for broken image
+                ? const Center(
+                    child: Icon(Icons.broken_image, color: Colors.grey),
+                  ) // Placeholder for broken image
                 : null,
           ),
         ],

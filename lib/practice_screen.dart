@@ -21,7 +21,9 @@ class _PracticeScreenState extends State<PracticeScreen> {
   }
 
   Future<void> _loadSequences() async {
-    final String response = await rootBundle.loadString('assets/data/sequences.json');
+    final String response = await rootBundle.loadString(
+      'assets/data/sequences.json',
+    );
     final data = await json.decode(response) as List;
     setState(() {
       _sequences = data.map((json) => Sequence.fromJson(json)).toList();
@@ -31,9 +33,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Practice'),
-      ),
+      appBar: AppBar(title: const Text('Practice')),
       body: ListView.builder(
         itemCount: _sequences.length,
         itemBuilder: (context, index) {

@@ -40,14 +40,21 @@ class PoseDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> benefitsArray = pose.benefits.split('\n').where((s) => s.isNotEmpty).toList();
-    final List<String> stepsArray = pose.description.split('\n').where((s) => s.isNotEmpty).toList();
-    final List<String> typeArray = pose.type.split(', ').where((s) => s.isNotEmpty).toList();
+    final List<String> benefitsArray = pose.benefits
+        .split('\n')
+        .where((s) => s.isNotEmpty)
+        .toList();
+    final List<String> stepsArray = pose.description
+        .split('\n')
+        .where((s) => s.isNotEmpty)
+        .toList();
+    final List<String> typeArray = pose.type
+        .split(', ')
+        .where((s) => s.isNotEmpty)
+        .toList();
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(pose.nameEn),
-      ),
+      appBar: AppBar(title: Text(pose.nameEn)),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,17 +66,15 @@ class PoseDetailScreen extends StatelessWidget {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [
-                    Color(0xFFC9DAD1),
-                    Color(0xFFF7FAFA),
-                  ],
+                  colors: [Color(0xFFC9DAD1), Color(0xFFF7FAFA)],
                 ),
               ),
               child: Center(
                 child: Image.network(
                   pose.url,
                   fit: BoxFit.contain,
-                  errorBuilder: (context, error, stackTrace) => const Center(child: Icon(Icons.error)),
+                  errorBuilder: (context, error, stackTrace) =>
+                      const Center(child: Icon(Icons.error)),
                 ),
               ),
             ),
@@ -95,38 +100,61 @@ class PoseDetailScreen extends StatelessWidget {
                     runSpacing: 8.0,
                     children: [
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 14,
+                          vertical: 6,
+                        ),
                         decoration: BoxDecoration(
                           color: const Color(0xFFFEEBDD),
                           borderRadius: BorderRadius.circular(16),
                         ),
                         child: Text(
                           _getDifficultyText(pose.difficulty),
-                          style: const TextStyle(color: Color(0xFFA75522), fontSize: 14, fontWeight: FontWeight.w500),
+                          style: const TextStyle(
+                            color: Color(0xFFA75522),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 14,
+                          vertical: 6,
+                        ),
                         decoration: BoxDecoration(
                           color: const Color(0xFFFDE7CB),
                           borderRadius: BorderRadius.circular(16),
                         ),
                         child: Text(
                           _getPositionText(pose.position),
-                          style: const TextStyle(color: Color(0xFFA75522), fontSize: 14, fontWeight: FontWeight.w500),
+                          style: const TextStyle(
+                            color: Color(0xFFA75522),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
-                      ...typeArray.map((type) => Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFFAF1D9),
-                          borderRadius: BorderRadius.circular(16),
+                      ...typeArray.map(
+                        (type) => Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 14,
+                            vertical: 6,
+                          ),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFFAF1D9),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Text(
+                            type,
+                            style: const TextStyle(
+                              color: Color(0xFFA75522),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
                         ),
-                        child: Text(
-                          type,
-                          style: const TextStyle(color: Color(0xFFA75522), fontSize: 14, fontWeight: FontWeight.w500),
-                        ),
-                      )),
+                      ),
                     ],
                   ),
                   const SizedBox(height: 24),
@@ -144,7 +172,10 @@ class PoseDetailScreen extends StatelessWidget {
                     const SizedBox(height: 8),
                     Text(
                       pose.nameSa,
-                      style: const TextStyle(fontSize: 15, color: Color(0xFF555555)),
+                      style: const TextStyle(
+                        fontSize: 15,
+                        color: Color(0xFF555555),
+                      ),
                     ),
                     const SizedBox(height: 24),
                   ],
@@ -161,13 +192,20 @@ class PoseDetailScreen extends StatelessWidget {
                   const SizedBox(height: 8),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: benefitsArray.map((benefit) => Padding(
-                      padding: const EdgeInsets.only(bottom: 4.0),
-                      child: Text(
-                        benefit,
-                        style: const TextStyle(fontSize: 15, color: Color(0xFF555555)),
-                      ),
-                    )).toList(),
+                    children: benefitsArray
+                        .map(
+                          (benefit) => Padding(
+                            padding: const EdgeInsets.only(bottom: 4.0),
+                            child: Text(
+                              benefit,
+                              style: const TextStyle(
+                                fontSize: 15,
+                                color: Color(0xFF555555),
+                              ),
+                            ),
+                          ),
+                        )
+                        .toList(),
                   ),
                   const SizedBox(height: 24),
 
@@ -190,7 +228,10 @@ class PoseDetailScreen extends StatelessWidget {
                         padding: const EdgeInsets.only(bottom: 4.0),
                         child: Text(
                           '${idx + 1}. $step',
-                          style: const TextStyle(fontSize: 15, color: Color(0xFF555555)),
+                          style: const TextStyle(
+                            fontSize: 15,
+                            color: Color(0xFF555555),
+                          ),
                         ),
                       );
                     }).toList(),

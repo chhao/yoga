@@ -23,20 +23,20 @@ class _BreathScreenState extends State<BreathScreen> {
   }
 
   Future<void> _loadBreathMethods() async {
-    final String response = await rootBundle.loadString('assets/data/breath.json');
+    final String response = await rootBundle.loadString(
+      'assets/data/breath.json',
+    );
     final data = await json.decode(response) as List;
     setState(() {
       _breathMethods = data.map((json) => BreathMethod.fromJson(json)).toList();
     });
-    print('Loaded ${_breathMethods.length} breath methods.');
+    
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Breath Methods'),
-      ),
+      appBar: AppBar(title: const Text('Breath Methods')),
       body: ListView.builder(
         itemCount: _breathMethods.length,
         itemBuilder: (context, index) {

@@ -15,7 +15,7 @@ class BreathCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16.0),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: const Color.fromARGB(12, 0, 0, 0),
             spreadRadius: 0,
             blurRadius: 12,
             offset: const Offset(0, 4),
@@ -35,9 +35,13 @@ class BreathCard extends StatelessWidget {
                 ? Image.network(
                     method.imageUrl!,
                     fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) => const Center(child: Icon(Icons.broken_image, color: Colors.grey)),
+                    errorBuilder: (context, error, stackTrace) => const Center(
+                      child: Icon(Icons.broken_image, color: Colors.grey),
+                    ),
                   )
-                : const Center(child: Icon(Icons.broken_image, color: Colors.grey)),
+                : const Center(
+                    child: Icon(Icons.broken_image, color: Colors.grey),
+                  ),
           ),
           // Card Content
           Padding(
@@ -59,20 +63,31 @@ class BreathCard extends StatelessWidget {
                 Wrap(
                   spacing: 8.0,
                   runSpacing: 8.0,
-                  children: method.keywords.map((keyword) => Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFE8F3EF), // @td-tag-light-background-color
-                      borderRadius: BorderRadius.circular(8.0), // border-radius
-                    ),
-                    child: Text(
-                      keyword,
-                      style: const TextStyle(
-                        color: Color(0xFF5B8C7A), // @brand-green
-                        fontSize: 12.0, // small size
-                      ),
-                    ),
-                  )).toList(),
+                  children: method.keywords
+                      .map(
+                        (keyword) => Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 6,
+                          ),
+                          decoration: BoxDecoration(
+                            color: const Color(
+                              0xFFE8F3EF,
+                            ), // @td-tag-light-background-color
+                            borderRadius: BorderRadius.circular(
+                              8.0,
+                            ), // border-radius
+                          ),
+                          child: Text(
+                            keyword,
+                            style: const TextStyle(
+                              color: Color(0xFF5B8C7A), // @brand-green
+                              fontSize: 12.0, // small size
+                            ),
+                          ),
+                        ),
+                      )
+                      .toList(),
                 ),
               ],
             ),

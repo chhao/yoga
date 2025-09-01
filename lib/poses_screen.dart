@@ -27,7 +27,9 @@ class _PosesScreenState extends State<PosesScreen> {
   }
 
   Future<void> _loadPoses() async {
-    final String response = await rootBundle.loadString('assets/data/poses.json');
+    final String response = await rootBundle.loadString(
+      'assets/data/poses.json',
+    );
     final data = await json.decode(response) as List;
     setState(() {
       _allPoses = data.map((json) => Pose.fromJson(json)).toList();
@@ -40,9 +42,13 @@ class _PosesScreenState extends State<PosesScreen> {
 
     if (_searchQuery.isNotEmpty) {
       filtered = filtered
-          .where((pose) =>
-              pose.nameEn.toLowerCase().contains(_searchQuery.toLowerCase()) ||
-              pose.nameSa.toLowerCase().contains(_searchQuery.toLowerCase()))
+          .where(
+            (pose) =>
+                pose.nameEn.toLowerCase().contains(
+                  _searchQuery.toLowerCase(),
+                ) ||
+                pose.nameSa.toLowerCase().contains(_searchQuery.toLowerCase()),
+          )
           .toList();
     }
 
@@ -92,7 +98,9 @@ class _PosesScreenState extends State<PosesScreen> {
                     hintText: 'Search Poses...',
                     prefixIcon: Icon(Icons.search),
                     filled: true,
-                    fillColor: Color(0xFFF7FAFA), // Set TextField background color
+                    fillColor: Color(
+                      0xFFF7FAFA,
+                    ), // Set TextField background color
                   ),
                 ),
               ),
@@ -101,9 +109,14 @@ class _PosesScreenState extends State<PosesScreen> {
                 children: [
                   DropdownButton<int>(
                     value: _difficultyLevel,
-                    dropdownColor: const Color(0xFFF7FAFA), // Set Dropdown background color
+                    dropdownColor: const Color(
+                      0xFFF7FAFA,
+                    ), // Set Dropdown background color
                     items: const [
-                      DropdownMenuItem(value: -1, child: Text('All Difficulties')),
+                      DropdownMenuItem(
+                        value: -1,
+                        child: Text('All Difficulties'),
+                      ),
                       DropdownMenuItem(value: 0, child: Text('Beginner')),
                       DropdownMenuItem(value: 1, child: Text('Intermediate')),
                       DropdownMenuItem(value: 2, child: Text('Advanced')),
@@ -117,7 +130,9 @@ class _PosesScreenState extends State<PosesScreen> {
                   ),
                   DropdownButton<int>(
                     value: _poseType,
-                    dropdownColor: const Color(0xFFF7FAFA), // Set Dropdown background color
+                    dropdownColor: const Color(
+                      0xFFF7FAFA,
+                    ), // Set Dropdown background color
                     items: const [
                       DropdownMenuItem(value: -1, child: Text('All Types')),
                       DropdownMenuItem(value: 1, child: Text('Standing')),
