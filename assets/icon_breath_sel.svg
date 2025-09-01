@@ -1,1 +1,11 @@
-<svg width="256px" height="256px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.528"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" stroke="#52946B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 2C12 7.52285 16.4772 12 22 12" stroke="#52946B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 22C12 16.4772 7.52285 12 2 12" stroke="#52946B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon_breath_sel</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_breath_sel" transform="translate(1, 1)" stroke="#52946B" stroke-width="1.8">
+            <path d="M12,0 C5.37258001,0 0,5.37258001 0,12 C0,18.62736 5.37258001,24 12,24 C18.62736,24 24,18.62736 24,12 C24,5.37258001 18.62736,0 12,0 Z" id="Path"></path>
+            <path d="M19.9681128,3.9576106 C18.4737783,2.46327597 15.8177406,1.54026356 12.0000001,0.396191118 C12.0000001,7.02361113 16.8940005,12 23.5213604,12 C22.3277703,8.13274163 21.4624475,5.45194522 19.9681128,3.9576106 Z" id="Path" fill="#52946B" fill-rule="nonzero"></path>
+            <path d="M12.0000001,23.3490772 C12.0000001,19.969723 10.5954945,17.5791421 8.35492267,15.4610071 C6.35248292,13.5679914 3.55628397,12 0.624033832,12 L4.03801174,20.560389 L12.0000001,23.3490772 Z" id="Path" fill="#52946B" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>
