@@ -70,8 +70,13 @@ class _PosesScreenState extends State<PosesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFF7FAFA), // Set Scaffold background color
       appBar: AppBar(
         title: const Text('Poses'),
+        backgroundColor: const Color(0xFFF7FAFA), // Set AppBar background color
+        elevation: 0, // Remove shadow
+        scrolledUnderElevation: 0, // Remove shadow when scrolled
+        surfaceTintColor: Colors.transparent, // Remove tinting effect
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(100.0),
           child: Column(
@@ -86,6 +91,8 @@ class _PosesScreenState extends State<PosesScreen> {
                   decoration: const InputDecoration(
                     hintText: 'Search Poses...',
                     prefixIcon: Icon(Icons.search),
+                    filled: true,
+                    fillColor: Color(0xFFF7FAFA), // Set TextField background color
                   ),
                 ),
               ),
@@ -94,6 +101,7 @@ class _PosesScreenState extends State<PosesScreen> {
                 children: [
                   DropdownButton<int>(
                     value: _difficultyLevel,
+                    dropdownColor: const Color(0xFFF7FAFA), // Set Dropdown background color
                     items: const [
                       DropdownMenuItem(value: -1, child: Text('All Difficulties')),
                       DropdownMenuItem(value: 0, child: Text('Beginner')),
@@ -109,6 +117,7 @@ class _PosesScreenState extends State<PosesScreen> {
                   ),
                   DropdownButton<int>(
                     value: _poseType,
+                    dropdownColor: const Color(0xFFF7FAFA), // Set Dropdown background color
                     items: const [
                       DropdownMenuItem(value: -1, child: Text('All Types')),
                       DropdownMenuItem(value: 1, child: Text('Standing')),

@@ -22,6 +22,7 @@ class PoseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 105.0, // Fixed height to prevent overflow
       margin: const EdgeInsets.only(bottom: 12.0), // Equivalent to 24rpx
       padding: const EdgeInsets.all(16.0), // Equivalent to 1rem
       decoration: BoxDecoration(
@@ -32,39 +33,47 @@ class PoseCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  getDifficultyText(pose.difficulty),
-                  style: const TextStyle(
-                    color: Color(0xFF52946B),
-                    fontSize: 14.0, // Equivalent to 0.875rem
-                    fontWeight: FontWeight.w400,
-                    height: 1.5,
+            child: SizedBox(
+              height: 70.0, // Constrain height to align with image
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween, // Distribute space
+                children: [
+                  Text(
+                    getDifficultyText(pose.difficulty),
+                    style: const TextStyle(
+                      color: Color(0xFF52946B),
+                      fontSize: 14.0, // Equivalent to 0.875rem
+                      fontWeight: FontWeight.w400,
+                      height: 1.5,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                ),
-                const SizedBox(height: 4.0), // Equivalent to 0.25rem
-                Text(
-                  pose.name,
-                  style: const TextStyle(
-                    color: Color(0xFF0E1B16),
-                    fontSize: 16.0, // Equivalent to 1rem
-                    fontWeight: FontWeight.w700,
-                    height: 1.25,
+                  Text(
+                    pose.name,
+                    style: const TextStyle(
+                      color: Color(0xFF0E1B16),
+                      fontSize: 16.0, // Equivalent to 1rem
+                      fontWeight: FontWeight.w700,
+                      height: 1.25,
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                ),
-                const SizedBox(height: 4.0), // Equivalent to 0.25rem
-                Text(
-                  pose.type, // This maps to name_sa in the reference
-                  style: const TextStyle(
-                    color: Color(0xFF52946B),
-                    fontSize: 14.0, // Equivalent to 0.875rem
-                    fontWeight: FontWeight.w400,
-                    height: 1.5,
+                  Text(
+                    pose.type, // This maps to name_sa in the reference
+                    style: const TextStyle(
+                      color: Color(0xFF52946B),
+                      fontSize: 14.0, // Equivalent to 0.875rem
+                      fontWeight: FontWeight.w400,
+                      height: 1.5,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           const SizedBox(width: 16.0), // Equivalent to 1rem gap
