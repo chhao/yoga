@@ -1,0 +1,331 @@
+[
+    {
+        "id": "seq_sunsalutation",
+        "name": "拜日式",
+        "englishName": "Sun Salutation",
+        "scenario": "经典热身序列，快速激活全身，建立呼吸与动作的连接。",
+        "poses":
+        [
+            {
+                "id": "MountainArmSide",
+                "time": 10,
+                "goal": "站立，准备呼吸"
+            },
+            {
+                "id": "PalmTree",
+                "time": 5,
+                "goal": "吸气，手臂上举"
+            },
+            {
+                "id": "ForwardBend",
+                "time": 5,
+                "goal": "呼气，站立前屈"
+            },
+            {
+                "id": "Lunge",
+                "time": 5,
+                "goal": "吸气，弓步"
+            },
+            {
+                "id": "DownwardDog",
+                "time": 5,
+                "goal": "呼气，下犬式"
+            },
+            {
+                "id": "EightPoint",
+                "time": 5,
+                "goal": "呼气，八肢式"
+            },
+            {
+                "id": "CobraFull",
+                "time": 5,
+                "goal": "吸气，眼镜蛇式"
+            },
+            {
+                "id": "DownwardDog",
+                "time": 30,
+                "goal": "呼气，下犬式 (保持5次呼吸)"
+            },
+            {
+                "id": "Lunge",
+                "time": 5,
+                "goal": "吸气，弓步"
+            },
+            {
+                "id": "ForwardBend",
+                "time": 5,
+                "goal": "呼气，向前走或跳至半前屈"
+            },
+            {
+                "id": "PalmTree",
+                "time": 5,
+                "goal": "吸气，手臂上举"
+            },
+            {
+                "id": "MountainArmSide",
+                "time": 5,
+                "goal": "呼气，回到山式"
+            }
+        ]
+    },
+    {
+        "id": "seq_morning_awakening",
+        "name": "晨间唤醒流",
+        "englishName": "Morning Awakening Flow",
+        "scenario": "温和唤醒脊柱，打开髋部和肩膀，为一天注入平静的能量。",
+        "poses":
+        [
+            {
+                "id": "Cat",
+                "time": 30,
+                "goal": "灵活脊柱"
+            },
+            {
+                "id": "Cow",
+                "time": 30,
+                "goal": "灵活脊柱"
+            },
+            {
+                "id": "DownwardDog",
+                "time": 60,
+                "goal": "温和地踩踏脚跟，拉伸全身"
+            },
+            {
+                "id": "Lunge",
+                "time": 90,
+                "goal": "打开髋屈肌 (每侧45秒)"
+            },
+            {
+                "id": "Sphinx",
+                "time": 60,
+                "goal": "温和的后弯，打开胸腔"
+            },
+            {
+                "id": "Child",
+                "time": 60,
+                "goal": "放松背部"
+            },
+            {
+                "id": "MarichiIII",
+                "time": 90,
+                "goal": "扭转脊柱 (每侧45秒)"
+            },
+            {
+                "id": "WindRelieving",
+                "time": 60,
+                "goal": "仰卧抱膝，放松下背部"
+            },
+            {
+                "id": "Corpse",
+                "time": 300,
+                "goal": "完全放松"
+            }
+        ]
+    },
+    {
+        "id": "seq_desk_relief",
+        "name": "办公室肩颈急救",
+        "englishName": "Desk Worker's Relief",
+        "scenario": "释放肩、颈、上背部的紧张和压力。",
+        "poses":
+        [
+            {
+                "id": "Easy",
+                "time": 60,
+                "goal": "简易坐，可加入颈部环绕"
+            },
+            {
+                "id": "CowFace",
+                "time": 90,
+                "goal": "牛面式手臂，深度拉伸肩膀 (每侧45秒)"
+            },
+            {
+                "id": "BoxHandToAnkle",
+                "time": 90,
+                "goal": "穿针引线式 (每侧45秒)"
+            },
+            {
+                "id": "Cat",
+                "time": 30,
+                "goal": "灵活脊柱"
+            },
+            {
+                "id": "Cow",
+                "time": 30,
+                "goal": "灵活脊柱"
+            },
+            {
+                "id": "Child",
+                "time": 60,
+                "goal": "放松背部"
+            },
+            {
+                "id": "Sphinx",
+                "time": 60,
+                "goal": "温和打开胸腔"
+            },
+            {
+                "id": "ForwardBend",
+                "time": 60,
+                "goal": "站立前屈，释放颈部压力"
+            },
+            {
+                "id": "Corpse",
+                "time": 180,
+                "goal": "完全放松"
+            }
+        ]
+    },
+    {
+        "id": "seq_core_intro",
+        "name": "核心力量入门",
+        "englishName": "Core Strength Intro",
+        "scenario": "激活并加强腹部和背部核心肌群。",
+        "poses":
+        [
+            {
+                "id": "Cat",
+                "time": 60,
+                "goal": "热身"
+            },
+            {
+                "id": "Cow",
+                "time": 60,
+                "goal": "热身"
+            },
+            {
+                "id": "Plank",
+                "time": 30,
+                "goal": "平板支撑"
+            },
+            {
+                "id": "BoatFull",
+                "time": 30,
+                "goal": "船式"
+            },
+            {
+                "id": "Bridge",
+                "time": 45,
+                "goal": "桥式，激活臀部和下背部"
+            },
+            {
+                "id": "Locust",
+                "time": 30,
+                "goal": "蝗虫式，加强背部"
+            },
+            {
+                "id": "WindRelieving",
+                "time": 60,
+                "goal": "仰卧抱膝，放松下背部"
+            },
+            {
+                "id": "Corpse",
+                "time": 180,
+                "goal": "完全放松"
+            }
+        ]
+    },
+    {
+        "id": "seq_sleep_aid",
+        "name": "助眠放松流",
+        "englishName": "Sleep-Aid Relaxation Flow",
+        "scenario": "镇静神经系统，释放日间积累的紧张，引导身体和心灵进入深度休息状态。",
+        "poses":
+        [
+            {
+                "id": "Easy",
+                "time": 120,
+                "goal": "简易坐，进行腹式呼吸"
+            },
+            {
+                "id": "SeatedForwardBend",
+                "time": 90,
+                "goal": "坐姿前屈，温和拉伸背部"
+            },
+            {
+                "id": "BoundAngle",
+                "time": 90,
+                "goal": "束角式，放松髋部"
+            },
+            {
+                "id": "MarichiIII",
+                "time": 120,
+                "goal": "脊柱扭转 (每侧1分钟)"
+            },
+            {
+                "id": "WindRelieving",
+                "time": 60,
+                "goal": "仰卧抱膝，释放下背部压力"
+            },
+            {
+                "id": "BlissfulBaby",
+                "time": 60,
+                "goal": "快乐婴儿式，打开髋部"
+            },
+            {
+                "id": "RecliningStaff",
+                "time": 180,
+                "goal": "仰卧手杖式，镇静神经"
+            },
+            {
+                "id": "Corpse",
+                "time": 180,
+                "goal": "完全臣服与放松"
+            }
+        ]
+    },
+    {
+        "id": "seq_hip_opening",
+        "name": "灵活髋部流",
+        "englishName": "Hip-Opening Flow",
+        "scenario": "深度拉伸和释放髋关节周围的肌肉，增加关节的活动范围。",
+        "poses":
+        [
+            {
+                "id": "Cat",
+                "time": 30,
+                "goal": "热身"
+            },
+            {
+                "id": "Cow",
+                "time": 30,
+                "goal": "热身"
+            },
+            {
+                "id": "LungeCrescentKneelingLookingUp",
+                "time": 120,
+                "goal": "低弓步 (每侧1分钟)"
+            },
+            {
+                "id": "Lizard",
+                "time": 90,
+                "goal": "蜥蜴式，深度打开髋屈肌 (每侧45秒)"
+            },
+            {
+                "id": "PigeonHalf",
+                "time": 180,
+                "goal": "半鸽式，深度拉伸臀部 (每侧90秒)"
+            },
+            {
+                "id": "CowFace",
+                "time": 120,
+                "goal": "牛面式，拉伸臀大肌 (每侧1分钟)"
+            },
+            {
+                "id": "WideAngleSeatedForwardBend",
+                "time": 90,
+                "goal": "坐角式，拉伸大腿内侧"
+            },
+            {
+                "id": "BoxHandToAnkle",
+                "time": 120,
+                "goal": "穿针引线式 (每侧1分钟)"
+            },
+            {
+                "id": "Corpse",
+                "time": 240,
+                "goal": "完全放松"
+            }
+        ]
+    }
+]
