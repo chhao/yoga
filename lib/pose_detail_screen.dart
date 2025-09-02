@@ -1,62 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:yoga/models/pose.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class PoseDetailScreen extends StatelessWidget {
   final Pose pose;
 
   const PoseDetailScreen({super.key, required this.pose});
 
-  String _getDifficultyText(int difficulty) {
-    switch (difficulty) {
-      case 0:
-        return 'Beginner';
-      case 1:
-        return 'Intermediate';
-      case 2:
-        return 'Advanced';
-      default:
-        return '';
-    }
-  }
-
-  String _getPositionText(int position) {
-    switch (position) {
-      case 1:
-        return 'Standing';
-      case 2:
-        return 'Seated';
-      case 3:
-        return 'Supine';
-      case 4:
-        return 'Prone';
-      case 5:
-        return 'Kneeling';
-      case 6:
-        return 'Balancing';
-      default:
-        return '';
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    final List<String> benefitsArray = pose.benefits
-        .split('\n')
-        .where((s) => s.isNotEmpty)
-        .toList();
-    final List<String> stepsArray = pose.description
-        .split('\n')
-        .where((s) => s.isNotEmpty)
-        .toList();
-    final List<String> typeArray = pose.type
-        .split(', ')
-        .where((s) => s.isNotEmpty)
-        .toList();
-
     return Scaffold(
       appBar: AppBar(
-        title: Text(pose.nameEn),
+        title: Text(pose.name),
         backgroundColor: const Color(0xFFF7FAFA),
+        elevation: 0,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -64,180 +21,77 @@ class PoseDetailScreen extends StatelessWidget {
           children: [
             // Hero Image
             Container(
-              height: 300,
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [Color(0xFFC9DAD1), Color(0xFFF7FAFA)],
-                ),
-              ),
-              child: Center(
-                child: Image.network(
-                  pose.url,
-                  fit: BoxFit.contain,
-                  errorBuilder: (context, error, stackTrace) =>
-                      const Center(child: Icon(Icons.error)),
-                ),
+              height: 250,
+              width: double.infinity,
+              color: const Color(0xFFF7FAFA), // Background color from index.less
+              child: Image.network(
+                pose.detailimgurl,
+                fit: BoxFit.contain,
+                errorBuilder: (context, error, stackTrace) {
+                  return Image.asset('assets/placeholder.png', fit: BoxFit.contain); // Placeholder image
+                },
               ),
             ),
+
+            // Content Body
             Padding(
-              padding: const EdgeInsets.all(24.0),
+              padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // Pose Title
                   Text(
-                    pose.nameEn,
+                    pose.name,
                     style: const TextStyle(
-                      fontSize: 28,
+                      fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF111111),
+                      color: Color(0xFF1F2937),
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 8),
 
                   // Category Pills
                   Wrap(
                     spacing: 8.0,
                     runSpacing: 8.0,
                     children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 14,
-                          vertical: 6,
-                        ),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFFEEBDD),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: Text(
-                          _getDifficultyText(pose.difficulty),
-                          style: const TextStyle(
-                            color: Color(0xFFA75522),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 14,
-                          vertical: 6,
-                        ),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFFDE7CB),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: Text(
-                          _getPositionText(pose.position),
-                          style: const TextStyle(
-                            color: Color(0xFFA75522),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                      ...typeArray.map(
-                        (type) => Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 14,
-                            vertical: 6,
-                          ),
-                          decoration: BoxDecoration(
-                            color: const Color(0xFFFAF1D9),
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          child: Text(
-                            type,
-                            style: const TextStyle(
-                              color: Color(0xFFA75522),
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ),
+                      _buildPill(pose.difficulty_text, const Color(0xFFFDE7CB), const Color(0xFFA75522)),
+                      _buildPill(pose.position_text, const Color(0xFFE8F2ED), const Color(0xFF52946B)),
+                      ...pose.type_array.map((type) => _buildPill(type, const Color(0xFFFAF1D9), const Color(0xFFA75522))),
                     ],
                   ),
                   const SizedBox(height: 24),
 
                   // Sanskrit Name Section
-                  if (pose.nameSa.isNotEmpty) ...[
-                    const Text(
-                      'Sanskrit Name',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xFF111111),
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      pose.nameSa,
-                      style: const TextStyle(
-                        fontSize: 15,
-                        color: Color(0xFF555555),
-                      ),
-                    ),
-                    const SizedBox(height: 24),
-                  ],
+                  _buildSection(
+                    title: '梵文名',
+                    content: Text(pose.nameSa, style: const TextStyle(fontSize: 16, color: Color(0xFF6B7280))),
+                  ),
+                  const SizedBox(height: 24),
 
                   // Benefits Section
-                  const Text(
-                    'Benefits',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xFF111111),
+                  _buildSection(
+                    title: '体式益处',
+                    content: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: pose.benefits_array.map((item) => Padding(
+                        padding: const EdgeInsets.only(bottom: 4.0),
+                        child: Text(item, style: const TextStyle(fontSize: 16, color: Color(0xFF6B7280))),
+                      )).toList(),
                     ),
-                  ),
-                  const SizedBox(height: 8),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: benefitsArray
-                        .map(
-                          (benefit) => Padding(
-                            padding: const EdgeInsets.only(bottom: 4.0),
-                            child: Text(
-                              benefit,
-                              style: const TextStyle(
-                                fontSize: 15,
-                                color: Color(0xFF555555),
-                              ),
-                            ),
-                          ),
-                        )
-                        .toList(),
                   ),
                   const SizedBox(height: 24),
 
                   // Steps Section
-                  const Text(
-                    'Steps',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xFF111111),
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: stepsArray.asMap().entries.map((entry) {
-                      int idx = entry.key;
-                      String step = entry.value;
-                      return Padding(
+                  _buildSection(
+                    title: '练习步骤',
+                    content: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: pose.steps_array.asMap().entries.map((entry) => Padding(
                         padding: const EdgeInsets.only(bottom: 4.0),
-                        child: Text(
-                          '${idx + 1}. $step',
-                          style: const TextStyle(
-                            fontSize: 15,
-                            color: Color(0xFF555555),
-                          ),
-                        ),
-                      );
-                    }).toList(),
+                        child: Text('${entry.key + 1}. ${entry.value}', style: const TextStyle(fontSize: 16, color: Color(0xFF6B7280))),
+                      )).toList(),
+                    ),
                   ),
                 ],
               ),
@@ -245,6 +99,42 @@ class PoseDetailScreen extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildPill(String text, Color backgroundColor, Color textColor) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      decoration: BoxDecoration(
+        color: backgroundColor,
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.w500,
+          color: textColor,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSection({required String title, required Widget content}) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: const TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: Color(0xFF1F2937),
+          ),
+        ),
+        const SizedBox(height: 8),
+        content,
+      ],
     );
   }
 }

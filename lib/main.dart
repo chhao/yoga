@@ -5,6 +5,7 @@ import 'package:yoga/practice_screen.dart';
 import 'package:yoga/practice_mode_screen.dart';
 import 'package:yoga/poses_screen.dart';
 import 'package:yoga/breath_screen.dart';
+import 'package:yoga/sequence_builder_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const MyHomePage(),
         PracticeModeScreen.routeName: (context) => const PracticeModeScreen(),
+        SequenceBuilderScreen.routeName: (context) => const SequenceBuilderScreen(),
       },
       initialRoute: '/',
     );

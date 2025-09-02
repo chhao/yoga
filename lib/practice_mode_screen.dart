@@ -526,7 +526,8 @@ class _PracticeModeScreenState extends State<PracticeModeScreen> {
                           children: [
                             Positioned.fill(
                               child: Image.network(
-                                getPoseImageUrl(_poses[_currentPoseIndex].pose.id),
+                                // getPoseImageUrl(_poses[_currentPoseIndex].pose.id),
+                                _poses[_currentPoseIndex].pose.url,
                                 fit: BoxFit.contain,
                                 errorBuilder: (context, error, stackTrace) {
                                   return Image.asset('assets/placeholder.png', fit: BoxFit.contain); // Placeholder image

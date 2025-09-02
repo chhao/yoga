@@ -43,4 +43,37 @@ class Pose {
       url: json['url'],
     );
   }
+
+  String get difficulty_text {
+    final difficultyMap = ['初级', '中级', '高级'];
+    return difficultyMap[difficulty] ?? '未知';
+  }
+
+  String get position_text {
+    final typeMap = {
+      1: '站立',
+      2: '坐姿',
+      3: '仰卧',
+      4: '俯卧',
+      5: '跪姿',
+      6: '平衡',
+    };
+    return typeMap[position] ?? '未知';
+  }
+
+  List<String> get benefits_array {
+    return benefits.split('\n').where((s) => s.isNotEmpty).toList();
+  }
+
+  List<String> get steps_array {
+    return description.split('\n').where((s) => s.isNotEmpty).toList();
+  }
+
+  List<String> get type_array {
+    return type.split(',').map((s) => s.trim()).where((s) => s.isNotEmpty).toList();
+  }
+
+  String get detailimgurl {
+    return 'https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-img/' + id + '.png';
+  }
 }

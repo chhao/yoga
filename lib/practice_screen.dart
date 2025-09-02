@@ -6,6 +6,7 @@ import 'package:yoga/models/sequence.dart' as yoga_sequence;
 
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:yoga/practice_mode_screen.dart';
+import 'package:yoga/sequence_builder_screen.dart';
 
 class PracticeScreen extends StatefulWidget {
   const PracticeScreen({super.key});
@@ -102,9 +103,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
   }
 
   void _goToSequenceBuilder() {
-    // Navigate to sequence builder page
-    print('Going to sequence builder');
-    // TODO: Implement actual navigation to SequenceBuilderScreen
+    Navigator.pushNamed(context, SequenceBuilderScreen.routeName);
   }
 
   void _startSavedSequence(yoga_sequence.Sequence sequence) {
@@ -116,8 +115,11 @@ class _PracticeScreenState extends State<PracticeScreen> {
   }
 
   void _editSequence(yoga_sequence.Sequence sequence) {
-    print('Editing sequence: ${sequence.name}');
-    // TODO: Implement actual navigation to SequenceBuilderScreen with sequence data for editing
+    Navigator.pushNamed(
+      context,
+      SequenceBuilderScreen.routeName,
+      arguments: sequence,
+    );
   }
 
   Future<void> _deleteSequence(String sequenceName) async {
