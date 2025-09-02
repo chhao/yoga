@@ -69,8 +69,9 @@ flutter:
     - assets/
     - assets/audio/
     - assets/data/
-    - assets/yoga-img/
-    - assets/yoga-tb/
+    - assets/pose-img/
+    - assets/pose-tb/
+    - assets/breath-img/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

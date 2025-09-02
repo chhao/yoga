@@ -402,7 +402,7 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
                                             borderRadius: BorderRadius.circular(8.0),
                                             color: Color(0xFFF9C28D),
                                             image: DecorationImage(
-                                              image: NetworkImage(pose.url),
+                                              image: AssetImage(pose.tbimageurl),
                                               fit: BoxFit.cover,
                                               onError: (exception, stackTrace) {
                                                 // Fallback to placeholder if image fails to load

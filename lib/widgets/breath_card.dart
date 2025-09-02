@@ -32,7 +32,7 @@ class BreathCard extends StatelessWidget {
             height: 160.0,
             color: const Color(0xFFF9EAE1), // @brand-peach
             child: (method.imageUrl != null && method.imageUrl!.isNotEmpty)
-                ? Image.network(
+                ? Image.asset(
                     method.imageUrl!,
                     fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) => const Center(

@@ -24,7 +24,7 @@ class PoseDetailScreen extends StatelessWidget {
               height: 250,
               width: double.infinity,
               color: const Color(0xFFF7FAFA), // Background color from index.less
-              child: Image.network(
+              child: Image.asset(
                 pose.detailimgurl,
                 fit: BoxFit.contain,
                 errorBuilder: (context, error, stackTrace) {

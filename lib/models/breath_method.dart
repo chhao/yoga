@@ -102,7 +102,7 @@ class BreathMethod {
       cautions: List<String>.from(json['cautions'] ?? []),
       tips: json['tips'] as String?, // Handle as nullable
       keywords: List<String>.from(json['keywords'] ?? []),
-      imageUrl: 'https://fullheartyoga.oss-cn-beijing.aliyuncs.com/breath-img/${json['image']}',
+      imageUrl: 'assets/breath-img/${json['image']}',
     );
   }
 }

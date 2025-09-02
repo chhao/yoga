@@ -74,6 +74,10 @@ class Pose {
   }
 
   String get detailimgurl {
-    return 'https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-img/' + id + '.png';
+    return 'assets/pose-img/' + id + '.png';
+  }
+
+  String get tbimageurl {
+    return 'assets/pose-tb/tb_' + id + '.png';
   }
 }

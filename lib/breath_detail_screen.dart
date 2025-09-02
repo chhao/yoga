@@ -28,7 +28,7 @@ class BreathDetailScreen extends StatelessWidget {
                   width: double.infinity,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage(method.imageUrl!),
+                      image: AssetImage(method.imageUrl!),
                       fit: BoxFit.cover,
                     ),
                   ),

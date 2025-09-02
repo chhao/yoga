@@ -87,7 +87,7 @@ class PoseCard extends StatelessWidget {
                 12.0,
               ), // Equivalent to 0.75rem
               image: DecorationImage(
-                image: NetworkImage(pose.url),
+                image: AssetImage(pose.tbimageurl),
                 fit: BoxFit.cover,
                 alignment: Alignment.bottomCenter,
               ),
