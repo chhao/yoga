@@ -56,10 +56,6 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
     _inhalePlayer = AudioPlayer();
     _holdPlayer = AudioPlayer();
     _exhalePlayer = AudioPlayer();
-
-    await _inhalePlayer.setSourceAsset('audio/chime.mp3');
-    await _holdPlayer.setSourceAsset('audio/tick.mp3');
-    await _exhalePlayer.setSourceAsset('audio/bowl.mp3');
   }
 
   Future<void> _loadUserSettings() async {
@@ -132,14 +128,11 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
 
     if (_isSoundOn) {
       if (step.instruction.contains('吸')) {
-        _inhalePlayer.seek(Duration.zero);
-        _inhalePlayer.resume();
+        _inhalePlayer.play(AssetSource('audio/chime.mp3'));
       } else if (step.instruction.contains('屏息')) {
-        _holdPlayer.seek(Duration.zero);
-        _holdPlayer.resume();
+        _holdPlayer.play(AssetSource('audio/tick.mp3'));
       } else if (step.instruction.contains('呼')) {
-        _exhalePlayer.seek(Duration.zero);
-        _exhalePlayer.resume();
+        _exhalePlayer.play(AssetSource('audio/bowl.mp3'));
       }
     }
 
