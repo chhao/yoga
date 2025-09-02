@@ -57,9 +57,9 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
     _holdPlayer = AudioPlayer();
     _exhalePlayer = AudioPlayer();
 
-    await _inhalePlayer.setSourceAsset('assets/audio/chime.mp3');
-    await _holdPlayer.setSourceAsset('assets/audio/tick.mp3');
-    await _exhalePlayer.setSourceAsset('assets/audio/bowl.mp3');
+    await _inhalePlayer.setSourceAsset('audio/chime.mp3');
+    await _holdPlayer.setSourceAsset('audio/tick.mp3');
+    await _exhalePlayer.setSourceAsset('audio/bowl.mp3');
   }
 
   Future<void> _loadUserSettings() async {
