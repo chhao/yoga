@@ -102,8 +102,9 @@ class _PracticeScreenState extends State<PracticeScreen> {
     );
   }
 
-  void _goToSequenceBuilder() {
-    Navigator.pushNamed(context, SequenceBuilderScreen.routeName);
+  void _goToSequenceBuilder() async {
+    await Navigator.pushNamed(context, SequenceBuilderScreen.routeName);
+    _loadSavedSequences(); // Refresh saved sequences after returning
   }
 
   void _startSavedSequence(yoga_sequence.Sequence sequence) {
@@ -114,12 +115,13 @@ class _PracticeScreenState extends State<PracticeScreen> {
     );
   }
 
-  void _editSequence(yoga_sequence.Sequence sequence) {
-    Navigator.pushNamed(
+  void _editSequence(yoga_sequence.Sequence sequence) async {
+    await Navigator.pushNamed(
       context,
       SequenceBuilderScreen.routeName,
       arguments: sequence,
     );
+    _loadSavedSequences(); // Refresh saved sequences after returning
   }
 
   Future<void> _deleteSequence(String sequenceName) async {
@@ -561,7 +563,7 @@ extension SequenceExtension on yoga_sequence.Sequence {
     final minutes = totalSeconds ~/ 60;
     final seconds = totalSeconds % 60;
     if (seconds == 0) {
-      return '\$minutes 分钟';
+      return '$minutes 分钟';
     }
     return '$minutes分${seconds}秒';
   }

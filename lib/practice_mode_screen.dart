@@ -731,23 +731,9 @@ class _PracticeModeScreenState extends State<PracticeModeScreen> {
                 if (_showModal)
                   Positioned.fill(
                     child: Container(
-                      color: Colors.black54,
+                      color: Colors.black.withOpacity(0.5),
                       child: Center(
-                        child: AlertDialog(
-                          title: Text(_modalTitle),
-                          content: Text(_modalContent),
-                          actions: [
-                            if (_modalCancel.isNotEmpty)
-                              TextButton(
-                                onPressed: _handleCancel,
-                                child: Text(_modalCancel),
-                              ),
-                            TextButton(
-                              onPressed: _handleConfirm,
-                              child: Text(_modalConfirm),
-                            ),
-                          ],
-                        ),
+                        child: _buildStyledDialog(),
                       ),
                     ),
                   ),
@@ -782,6 +768,88 @@ class _PracticeModeScreenState extends State<PracticeModeScreen> {
             height: isPrimary ? 26 : 21,
             colorFilter: ColorFilter.mode(isPrimary ? Colors.white : const Color(0xFF52946B), BlendMode.srcIn),
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildStyledDialog() {
+    return Dialog(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      elevation: 0,
+      backgroundColor: Colors.transparent,
+      child: Container(
+        padding: const EdgeInsets.all(24),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+              offset: const Offset(0, 5),
+            ),
+          ],
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Text(
+              _modalTitle,
+              style: const TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 16.0),
+            Text(
+              _modalContent,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontSize: 16.0,
+              ),
+            ),
+            const SizedBox(height: 24.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                if (_modalCancel.isNotEmpty)
+                  Expanded(
+                    child: TextButton(
+                      onPressed: _handleCancel,
+                      style: TextButton.styleFrom(
+                        foregroundColor: Colors.grey[600],
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          side: BorderSide(color: Colors.grey[300]!),
+                        ),
+                      ),
+                      child: Text(_modalCancel),
+                    ),
+                  ),
+                if (_modalCancel.isNotEmpty)
+                  const SizedBox(width: 8),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: _handleConfirm,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF52946B), // primary color
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      elevation: 0,
+                    ),
+                    child: Text(_modalConfirm),
+                  ),
+                ),
+              ],
+            )
+          ],
         ),
       ),
     );

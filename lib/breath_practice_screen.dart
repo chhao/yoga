@@ -153,7 +153,12 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
   }
 
   Color _parseColor(String colorString) {
-    if (colorString.startsWith('rgba')) {
+    if (colorString.startsWith('#')) {
+      final buffer = StringBuffer();
+      if (colorString.length == 6 || colorString.length == 7) buffer.write('ff');
+      buffer.write(colorString.replaceFirst('#', ''));
+      return Color(int.parse(buffer.toString(), radix: 16));
+    } else if (colorString.startsWith('rgba')) {
       final parts = colorString
           .substring(5, colorString.length - 1)
           .split(',')
@@ -364,21 +369,22 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
                   Stack(
                     alignment: Alignment.center,
                     children: [
-                      AnimatedContainer(
-                        duration: Duration(seconds: _transitionDuration),
+                      // Glow Circle
+                      Container(
                         width: 256,
                         height: 256,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: _glowStyleColor,
-                          boxShadow: [
-                            BoxShadow(
-                              color: _glowStyleColor.withAlpha((255 * 0.5).round()),
-                              blurRadius: 50,
-                            ),
-                          ],
+                          gradient: RadialGradient(
+                            colors: [
+                              _glowStyleColor.withOpacity(0.5), // Start with a more transparent color
+                              _glowStyleColor.withOpacity(0), // Fade to fully transparent
+                            ],
+                            stops: const [0.2, 1.0],
+                          ),
                         ),
                       ),
+                      // Breathing Circle
                       AnimatedContainer(
                         duration: Duration(seconds: _transitionDuration),
                         width: _circleSize,

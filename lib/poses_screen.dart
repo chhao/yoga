@@ -44,6 +44,9 @@ class _PosesScreenState extends State<PosesScreen> {
       filtered = filtered
           .where(
             (pose) =>
+                pose.name.toLowerCase().contains(
+                  _searchQuery.toLowerCase(),
+                ) ||
                 pose.nameEn.toLowerCase().contains(
                   _searchQuery.toLowerCase(),
                 ) ||

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yoga/models/breath_method.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'breath_practice_screen.dart';
 
 class BreathDetailScreen extends StatelessWidget {
   final BreathMethod method;
@@ -87,8 +88,13 @@ class BreathDetailScreen extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: ElevatedButton.icon(
                 onPressed: () {
-                  // TODO: Navigate to BreathPracticeScreen
-                  print('Start Breath Practice for ${method.id}');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          BreathPracticeScreen(breathMethod: method),
+                    ),
+                  );
                 },
                 icon: const Icon(Icons.play_circle_fill),
                 label: const Text('开始跟练'),
