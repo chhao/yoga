@@ -373,7 +373,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
           Row(
             children: [
               _buildActionButton(
-                iconPath: 'assets/play.svg',
+                iconData: Icons.play_arrow, // Using a Material Icon for play for now
                 backgroundColor: const Color(0xFF52946B),
                 iconColor: Colors.white,
                 onPressed: onPlay,
@@ -381,14 +381,14 @@ class _PracticeScreenState extends State<PracticeScreen> {
               if (showEditDelete) ...[
                 const SizedBox(width: 8), // 16rpx / 2
                 _buildActionButton(
-                  iconPath: 'assets/icon_detail.svg', // Assuming this is for edit
+                  iconData: Icons.edit, // Edit icon
                   backgroundColor: const Color(0xFFE8F2ED),
                   iconColor: const Color(0xFF52946B),
                   onPressed: onEdit!,
                 ),
                 const SizedBox(width: 8), // 16rpx / 2
                 _buildActionButton(
-                  iconPath: 'assets/icon_poses_sel.svg', // Assuming this is for delete
+                  iconData: Icons.delete, // Delete icon
                   backgroundColor: const Color(0xFFE8F2ED),
                   iconColor: const Color(0xFF52946B),
                   onPressed: onDelete!,
@@ -402,7 +402,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
   }
 
   Widget _buildActionButton({
-    required String iconPath,
+    required IconData iconData,
     required Color backgroundColor,
     required Color iconColor,
     required VoidCallback onPressed,
@@ -418,11 +418,10 @@ class _PracticeScreenState extends State<PracticeScreen> {
           padding: EdgeInsets.zero,
           elevation: 0,
         ),
-        child: SvgPicture.asset(
-          iconPath,
-          colorFilter: ColorFilter.mode(iconColor, BlendMode.srcIn),
-          width: 18, // Adjust size as needed
-          height: 18, // Adjust size as needed
+        child: Icon(
+          iconData,
+          color: iconColor,
+          size: 18, // Adjust size as needed
         ),
       ),
     );

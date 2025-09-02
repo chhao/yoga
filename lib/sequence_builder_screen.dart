@@ -67,25 +67,36 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
     });
   }
 
-  void _loadSequenceForEditing(yoga_sequence.Sequence sequence) {
-    final List<Map<String, dynamic>> posesWithDuration = sequence.poses.map((seqPose) {
-      final fullPose = _allPoses.firstWhere((pose) => pose.id == seqPose.id);
-      return {
-        'id': fullPose.id,
-        'name': fullPose.name,
-        'name_en': fullPose.nameEn,
-        'name_sa': fullPose.nameSa,
-        'benefits': fullPose.benefits,
-        'description': fullPose.description,
-        'difficulty': fullPose.difficulty,
-        'aka_chinese': fullPose.akaChinese,
-        'position': fullPose.position,
-        'type': fullPose.type,
-        'bg': fullPose.bg,
-        'url': fullPose.url,
-        'duration': seqPose.time, // Use time from SequencePose as duration
-      };
-    }).toList();
+  void _loadSequenceForEditing(yoga_sequence.Sequence sequence) async {
+    // Ensure all poses are loaded before processing the sequence
+    if (_allPoses.isEmpty) {
+      await _loadPoses();
+    }
+
+    final List<Map<String, dynamic>> posesWithDuration = [];
+    for (var seqPose in sequence.poses) {
+      try {
+        final fullPose = _allPoses.firstWhere((pose) => pose.id == seqPose.id, orElse: () => throw Exception('Pose with ID ${seqPose.id} not found in poses.json'));
+        posesWithDuration.add({
+          'id': fullPose.id,
+          'name': fullPose.name,
+          'name_en': fullPose.nameEn,
+          'name_sa': fullPose.nameSa,
+          'benefits': fullPose.benefits,
+          'description': fullPose.description,
+          'difficulty': fullPose.difficulty,
+          'aka_chinese': fullPose.akaChinese,
+          'position': fullPose.position,
+          'type': fullPose.type,
+          'bg': fullPose.bg,
+          'url': fullPose.url,
+          'duration': seqPose.time, // Use time from SequencePose as duration
+        });
+      } catch (e) {
+        print('Error loading pose ${seqPose.id} for editing: $e');
+        // Optionally, you can add a placeholder or skip this pose
+      }
+    }
 
     setState(() {
       _selectedPoses = posesWithDuration;
@@ -329,6 +340,7 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
                     child: Card(
                       margin: const EdgeInsets.all(8.0),
                       elevation: 0,
+                      color: const Color(0xFFF7FAFA),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
                       child: Column(
                         children: [
@@ -377,23 +389,34 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
                               itemCount: _filteredPoses.length,
                               itemBuilder: (context, index) {
                                 final pose = _filteredPoses[index];
-                                return ListTile(
-                                  leading: Container(
-                                    width: 40,
-                                    height: 40,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8.0),
-                                      color: Color(0xFFF9C28D),
-                                      image: DecorationImage(
-                                        image: AssetImage('assets/yoga-tb/tb_' + pose.id + '.png'),
-                                        fit: BoxFit.cover,
-                                      ),
+                                return GestureDetector(
+                                  onTap: () => _addPoseToSequence(pose),
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          width: 40,
+                                          height: 40,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(8.0),
+                                            color: Color(0xFFF9C28D),
+                                            image: DecorationImage(
+                                              image: NetworkImage(pose.url),
+                                              fit: BoxFit.cover,
+                                              onError: (exception, stackTrace) {
+                                                // Fallback to placeholder if image fails to load
+                                                print('Error loading asset: assets/yoga-tb/tb_${pose.id}.png - $exception');
+                                              },
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(width: 12.0), // Equivalent to 24rpx gap
+                                        Expanded(
+                                          child: Text(pose.name, style: TextStyle(fontSize: 14, color: Color(0xFF1F2937))),
+                                        ),
+                                      ],
                                     ),
-                                  ),
-                                  title: Text(pose.name),
-                                  trailing: IconButton(
-                                    icon: Icon(Icons.add_circle_outline, color: Color(0xFF52946B)),
-                                    onPressed: () => _addPoseToSequence(pose),
                                   ),
                                 );
                               },
@@ -408,6 +431,7 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
                     child: Card(
                       margin: const EdgeInsets.all(8.0),
                       elevation: 0,
+                      color: const Color(0xFFF7FAFA),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
                       child: Column(
                         children: [
@@ -455,8 +479,8 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
-                                              Text(poseMap['name'] as String, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-                                              SizedBox(height: 4.0),
+                                              Text(poseMap['name'] as String, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500), maxLines: 1, overflow: TextOverflow.ellipsis),
+                                              SizedBox(height: 4.0), // Add some vertical spacing
                                               GestureDetector(
                                                 onTap: () => _openDurationDialog(index),
                                                 child: Row(
@@ -470,9 +494,14 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
                                             ],
                                           ),
                                         ),
-                                        IconButton(
-                                          icon: Icon(Icons.delete, color: Color(0xFF666666)),
-                                          onPressed: () => _removePoseFromSequence(index),
+                                        SizedBox(
+                                          width: 30,
+                                          height: 30,
+                                          child: IconButton(
+                                            icon: Icon(Icons.delete, color: Color(0xFF666666)),
+                                            onPressed: () => _removePoseFromSequence(index),
+                                            padding: EdgeInsets.zero, // Remove default padding
+                                          ),
                                         ),
                                       ],
                                     ),
