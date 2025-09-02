@@ -54,7 +54,10 @@ class PoseDetailScreen extends StatelessWidget {
         .toList();
 
     return Scaffold(
-      appBar: AppBar(title: Text(pose.nameEn)),
+      appBar: AppBar(
+        title: Text(pose.nameEn),
+        backgroundColor: const Color(0xFFF7FAFA),
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

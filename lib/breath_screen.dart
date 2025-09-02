@@ -36,7 +36,10 @@ class _BreathScreenState extends State<BreathScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Breath Methods')),
+      appBar: AppBar(
+        title: const Text('Breath Methods'),
+        backgroundColor: const Color(0xFFF7FAFA),
+      ),
       body: ListView.builder(
         itemCount: _breathMethods.length,
         itemBuilder: (context, index) {
