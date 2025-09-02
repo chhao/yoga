@@ -8,6 +8,14 @@ class SequencePose {
   factory SequencePose.fromJson(Map<String, dynamic> json) {
     return SequencePose(id: json['id'], time: json['time'], goal: json['goal']);
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'time': time,
+      'goal': goal,
+    };
+  }
 }
 
 class Sequence {
@@ -38,5 +46,15 @@ class Sequence {
       scenario: json['scenario'],
       poses: poses,
     );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'englishName': englishName,
+      'scenario': scenario,
+      'poses': poses.map((pose) => pose.toJson()).toList(),
+    };
   }
 }

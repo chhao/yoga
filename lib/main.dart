@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:yoga/generated/app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:yoga/breath_screen.dart';
-import 'package:yoga/poses_screen.dart';
 import 'package:yoga/practice_screen.dart';
+import 'package:yoga/practice_mode_screen.dart';
+import 'package:yoga/poses_screen.dart';
+import 'package:yoga/breath_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +24,11 @@ class MyApp extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const MyHomePage(),
+      routes: {
+        '/': (context) => const MyHomePage(),
+        PracticeModeScreen.routeName: (context) => const PracticeModeScreen(),
+      },
+      initialRoute: '/',
     );
   }
 }
