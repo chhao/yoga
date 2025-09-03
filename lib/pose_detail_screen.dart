@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yoga/models/pose.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:yoga/generated/app_localizations.dart';
 
 class PoseDetailScreen extends StatelessWidget {
   final Pose pose;
@@ -14,6 +15,8 @@ class PoseDetailScreen extends StatelessWidget {
         title: Text(pose.name),
         backgroundColor: const Color(0xFFF7FAFA),
         elevation: 0,
+        scrolledUnderElevation: 0,
+        surfaceTintColor: Colors.transparent,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -64,14 +67,14 @@ class PoseDetailScreen extends StatelessWidget {
 
                   // Sanskrit Name Section
                   _buildSection(
-                    title: '梵文名',
+                    title: AppLocalizations.of(context)!.sanskritName,
                     content: Text(pose.nameSa, style: const TextStyle(fontSize: 16, color: Color(0xFF6B7280))),
                   ),
                   const SizedBox(height: 24),
 
                   // Benefits Section
                   _buildSection(
-                    title: '体式益处',
+                    title: AppLocalizations.of(context)!.benefits,
                     content: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: pose.benefits_array.map((item) => Padding(
@@ -84,7 +87,7 @@ class PoseDetailScreen extends StatelessWidget {
 
                   // Steps Section
                   _buildSection(
-                    title: '练习步骤',
+                    title: AppLocalizations.of(context)!.steps,
                     content: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: pose.steps_array.asMap().entries.map((entry) => Padding(

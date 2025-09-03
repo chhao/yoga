@@ -1,5 +1,20 @@
 {
-  "poses": "Poses",
-  "practice": "Practice",
-  "breath": "Breath"
+    "poses": "Poses",
+    "practice": "Practice",
+    "breath": "Breath",
+    "sanskritName": "Sanskrit Name",
+    "benefits": "Benefits",
+    "steps": "Steps",
+    "searchPoses": "Search Poses...",
+    "allDifficulties": "All Difficulties",
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced",
+    "allTypes": "All Types",
+    "standing": "Standing",
+    "seated": "Seated",
+    "supine": "Supine",
+    "prone": "Prone",
+    "kneeling": "Kneeling",
+    "balancing": "Balancing"
 }

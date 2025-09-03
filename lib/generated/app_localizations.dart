@@ -115,6 +115,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Breath'**
   String get breath;
+
+  /// No description provided for @sanskritName.
+  ///
+  /// In en, this message translates to:
+  /// **'Sanskrit Name'**
+  String get sanskritName;
+
+  /// No description provided for @benefits.
+  ///
+  /// In en, this message translates to:
+  /// **'Benefits'**
+  String get benefits;
+
+  /// No description provided for @steps.
+  ///
+  /// In en, this message translates to:
+  /// **'Steps'**
+  String get steps;
+
+  /// No description provided for @searchPoses.
+  ///
+  /// In en, this message translates to:
+  /// **'Search Poses...'**
+  String get searchPoses;
+
+  /// No description provided for @allDifficulties.
+  ///
+  /// In en, this message translates to:
+  /// **'All Difficulties'**
+  String get allDifficulties;
+
+  /// No description provided for @beginner.
+  ///
+  /// In en, this message translates to:
+  /// **'Beginner'**
+  String get beginner;
+
+  /// No description provided for @intermediate.
+  ///
+  /// In en, this message translates to:
+  /// **'Intermediate'**
+  String get intermediate;
+
+  /// No description provided for @advanced.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced'**
+  String get advanced;
+
+  /// No description provided for @allTypes.
+  ///
+  /// In en, this message translates to:
+  /// **'All Types'**
+  String get allTypes;
+
+  /// No description provided for @standing.
+  ///
+  /// In en, this message translates to:
+  /// **'Standing'**
+  String get standing;
+
+  /// No description provided for @seated.
+  ///
+  /// In en, this message translates to:
+  /// **'Seated'**
+  String get seated;
+
+  /// No description provided for @supine.
+  ///
+  /// In en, this message translates to:
+  /// **'Supine'**
+  String get supine;
+
+  /// No description provided for @prone.
+  ///
+  /// In en, this message translates to:
+  /// **'Prone'**
+  String get prone;
+
+  /// No description provided for @kneeling.
+  ///
+  /// In en, this message translates to:
+  /// **'Kneeling'**
+  String get kneeling;
+
+  /// No description provided for @balancing.
+  ///
+  /// In en, this message translates to:
+  /// **'Balancing'**
+  String get balancing;
 }
 
 class _AppLocalizationsDelegate

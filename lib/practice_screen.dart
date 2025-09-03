@@ -178,6 +178,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
           ),
           Expanded(
             child: SingleChildScrollView(
+              primary: true,
               padding: const EdgeInsets.only(bottom: 80), // Adjust for tab bar
               child: Column(
                 children: [

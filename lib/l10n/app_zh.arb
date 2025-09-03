@@ -1,5 +1,20 @@
 {
-  "poses": "体式",
-  "practice": "练习",
-  "breath": "呼吸"
+    "poses": "体式",
+    "practice": "练习",
+    "breath": "呼吸",
+    "sanskritName": "梵文名",
+    "benefits": "体式益处",
+    "steps": "练习步骤",
+    "searchPoses": "搜索体式...",
+    "allDifficulties": "所有难度",
+    "beginner": "初级",
+    "intermediate": "中级",
+    "advanced": "高级",
+    "allTypes": "所有类型",
+    "standing": "站立",
+    "seated": "坐姿",
+    "supine": "仰卧",
+    "prone": "俯卧",
+    "kneeling": "跪姿",
+    "balancing": "平衡"
 }

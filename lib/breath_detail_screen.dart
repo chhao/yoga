@@ -15,6 +15,8 @@ class BreathDetailScreen extends StatelessWidget {
         title: Text(method.name.zh),
         backgroundColor: const Color(0xFFF7FAFA),
         elevation: 0,
+        scrolledUnderElevation: 0,
+        surfaceTintColor: Colors.transparent,
       ),
       body: SingleChildScrollView(
         child: Column(

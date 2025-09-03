@@ -36,6 +36,7 @@ class _BreathScreenState extends State<BreathScreen> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      primary: true,
       itemCount: _breathMethods.length,
       itemBuilder: (context, index) {
         final method = _breathMethods[index];

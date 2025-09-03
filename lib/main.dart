@@ -113,6 +113,9 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(_getTitle(_selectedIndex, context)),
         backgroundColor: const Color(0xFFF7FAFA),
+        elevation: 0,
+        scrolledUnderElevation: 0,
+        surfaceTintColor: Colors.transparent,
         actions: [
           Builder(
             builder: (context) => IconButton(

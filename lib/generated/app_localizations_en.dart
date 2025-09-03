@@ -16,4 +16,49 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get breath => 'Breath';
+
+  @override
+  String get sanskritName => 'Sanskrit Name';
+
+  @override
+  String get benefits => 'Benefits';
+
+  @override
+  String get steps => 'Steps';
+
+  @override
+  String get searchPoses => 'Search Poses...';
+
+  @override
+  String get allDifficulties => 'All Difficulties';
+
+  @override
+  String get beginner => 'Beginner';
+
+  @override
+  String get intermediate => 'Intermediate';
+
+  @override
+  String get advanced => 'Advanced';
+
+  @override
+  String get allTypes => 'All Types';
+
+  @override
+  String get standing => 'Standing';
+
+  @override
+  String get seated => 'Seated';
+
+  @override
+  String get supine => 'Supine';
+
+  @override
+  String get prone => 'Prone';
+
+  @override
+  String get kneeling => 'Kneeling';
+
+  @override
+  String get balancing => 'Balancing';
 }

@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:yoga/models/pose.dart';
 import 'package:yoga/widgets/pose_card.dart';
 import 'package:yoga/pose_detail_screen.dart';
+import 'package:yoga/generated/app_localizations.dart';
 
 class PosesScreen extends StatefulWidget {
   const PosesScreen({super.key});
@@ -87,11 +88,11 @@ class _PosesScreenState extends State<PosesScreen> {
               _searchQuery = value;
               _filterPoses();
             },
-            decoration: const InputDecoration(
-              hintText: 'Search Poses...',
-              prefixIcon: Icon(Icons.search),
+            decoration: InputDecoration(
+              hintText: AppLocalizations.of(context)!.searchPoses,
+              prefixIcon: const Icon(Icons.search),
               filled: true,
-              fillColor: Color(
+              fillColor: const Color(
                 0xFFF7FAFA,
               ), // Set TextField background color
             ),
@@ -105,14 +106,14 @@ class _PosesScreenState extends State<PosesScreen> {
               dropdownColor: const Color(
                 0xFFF7FAFA,
               ), // Set Dropdown background color
-              items: const [
+              items: [
                 DropdownMenuItem(
                   value: -1,
-                  child: Text('All Difficulties'),
+                  child: Text(AppLocalizations.of(context)!.allDifficulties),
                 ),
-                DropdownMenuItem(value: 0, child: Text('Beginner')),
-                DropdownMenuItem(value: 1, child: Text('Intermediate')),
-                DropdownMenuItem(value: 2, child: Text('Advanced')),
+                DropdownMenuItem(value: 0, child: Text(AppLocalizations.of(context)!.beginner)),
+                DropdownMenuItem(value: 1, child: Text(AppLocalizations.of(context)!.intermediate)),
+                DropdownMenuItem(value: 2, child: Text(AppLocalizations.of(context)!.advanced)),
               ],
               onChanged: (value) {
                 setState(() {
@@ -126,14 +127,14 @@ class _PosesScreenState extends State<PosesScreen> {
               dropdownColor: const Color(
                 0xFFF7FAFA,
               ), // Set Dropdown background color
-              items: const [
-                DropdownMenuItem(value: -1, child: Text('All Types')),
-                DropdownMenuItem(value: 1, child: Text('Standing')),
-                DropdownMenuItem(value: 2, child: Text('Seated')),
-                DropdownMenuItem(value: 3, child: Text('Supine')),
-                DropdownMenuItem(value: 4, child: Text('Prone')),
-                DropdownMenuItem(value: 5, child: Text('Kneeling')),
-                DropdownMenuItem(value: 6, child: Text('Balancing')),
+              items: [
+                DropdownMenuItem(value: -1, child: Text(AppLocalizations.of(context)!.allTypes)),
+                DropdownMenuItem(value: 1, child: Text(AppLocalizations.of(context)!.standing)),
+                DropdownMenuItem(value: 2, child: Text(AppLocalizations.of(context)!.seated)),
+                DropdownMenuItem(value: 3, child: Text(AppLocalizations.of(context)!.supine)),
+                DropdownMenuItem(value: 4, child: Text(AppLocalizations.of(context)!.prone)),
+                DropdownMenuItem(value: 5, child: Text(AppLocalizations.of(context)!.kneeling)),
+                DropdownMenuItem(value: 6, child: Text(AppLocalizations.of(context)!.balancing)),
               ],
               onChanged: (value) {
                 setState(() {
@@ -148,6 +149,7 @@ class _PosesScreenState extends State<PosesScreen> {
           child: RefreshIndicator(
             onRefresh: _onRefresh,
             child: ListView.builder(
+              primary: true,
               itemCount: _filteredPoses.length,
               itemBuilder: (context, index) {
                 final pose = _filteredPoses[index];
