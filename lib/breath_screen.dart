@@ -35,28 +35,22 @@ class _BreathScreenState extends State<BreathScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Breath Methods'),
-        backgroundColor: const Color(0xFFF7FAFA),
-      ),
-      body: ListView.builder(
-        itemCount: _breathMethods.length,
-        itemBuilder: (context, index) {
-          final method = _breathMethods[index];
-          return GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => BreathDetailScreen(method: method),
-                ),
-              );
-            },
-            child: BreathCard(method: method),
-          );
-        },
-      ),
+    return ListView.builder(
+      itemCount: _breathMethods.length,
+      itemBuilder: (context, index) {
+        final method = _breathMethods[index];
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => BreathDetailScreen(method: method),
+              ),
+            );
+          },
+          child: BreathCard(method: method),
+        );
+      },
     );
   }
 }

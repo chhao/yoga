@@ -78,106 +78,95 @@ class _PosesScreenState extends State<PosesScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFF7FAFA), // Set Scaffold background color
-      appBar: AppBar(
-        title: const Text('Poses'),
-        backgroundColor: const Color(0xFFF7FAFA), // Set AppBar background color
-        elevation: 0, // Remove shadow
-        scrolledUnderElevation: 0, // Remove shadow when scrolled
-        surfaceTintColor: Colors.transparent, // Remove tinting effect
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(100.0),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: TextField(
-                  onChanged: (value) {
-                    _searchQuery = value;
-                    _filterPoses();
-                  },
-                  decoration: const InputDecoration(
-                    hintText: 'Search Poses...',
-                    prefixIcon: Icon(Icons.search),
-                    filled: true,
-                    fillColor: Color(
-                      0xFFF7FAFA,
-                    ), // Set TextField background color
-                  ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  DropdownButton<int>(
-                    value: _difficultyLevel,
-                    dropdownColor: const Color(
-                      0xFFF7FAFA,
-                    ), // Set Dropdown background color
-                    items: const [
-                      DropdownMenuItem(
-                        value: -1,
-                        child: Text('All Difficulties'),
-                      ),
-                      DropdownMenuItem(value: 0, child: Text('Beginner')),
-                      DropdownMenuItem(value: 1, child: Text('Intermediate')),
-                      DropdownMenuItem(value: 2, child: Text('Advanced')),
-                    ],
-                    onChanged: (value) {
-                      setState(() {
-                        _difficultyLevel = value!;
-                        _filterPoses();
-                      });
-                    },
-                  ),
-                  DropdownButton<int>(
-                    value: _poseType,
-                    dropdownColor: const Color(
-                      0xFFF7FAFA,
-                    ), // Set Dropdown background color
-                    items: const [
-                      DropdownMenuItem(value: -1, child: Text('All Types')),
-                      DropdownMenuItem(value: 1, child: Text('Standing')),
-                      DropdownMenuItem(value: 2, child: Text('Seated')),
-                      DropdownMenuItem(value: 3, child: Text('Supine')),
-                      DropdownMenuItem(value: 4, child: Text('Prone')),
-                      DropdownMenuItem(value: 5, child: Text('Kneeling')),
-                      DropdownMenuItem(value: 6, child: Text('Balancing')),
-                    ],
-                    onChanged: (value) {
-                      setState(() {
-                        _poseType = value!;
-                        _filterPoses();
-                      });
-                    },
-                  ),
-                ],
-              ),
-            ],
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: TextField(
+            onChanged: (value) {
+              _searchQuery = value;
+              _filterPoses();
+            },
+            decoration: const InputDecoration(
+              hintText: 'Search Poses...',
+              prefixIcon: Icon(Icons.search),
+              filled: true,
+              fillColor: Color(
+                0xFFF7FAFA,
+              ), // Set TextField background color
+            ),
           ),
         ),
-      ),
-      body: RefreshIndicator(
-        onRefresh: _onRefresh,
-        child: ListView.builder(
-          itemCount: _filteredPoses.length,
-          itemBuilder: (context, index) {
-            final pose = _filteredPoses[index];
-            return GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => PoseDetailScreen(pose: pose),
-                  ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            DropdownButton<int>(
+              value: _difficultyLevel,
+              dropdownColor: const Color(
+                0xFFF7FAFA,
+              ), // Set Dropdown background color
+              items: const [
+                DropdownMenuItem(
+                  value: -1,
+                  child: Text('All Difficulties'),
+                ),
+                DropdownMenuItem(value: 0, child: Text('Beginner')),
+                DropdownMenuItem(value: 1, child: Text('Intermediate')),
+                DropdownMenuItem(value: 2, child: Text('Advanced')),
+              ],
+              onChanged: (value) {
+                setState(() {
+                  _difficultyLevel = value!;
+                  _filterPoses();
+                });
+              },
+            ),
+            DropdownButton<int>(
+              value: _poseType,
+              dropdownColor: const Color(
+                0xFFF7FAFA,
+              ), // Set Dropdown background color
+              items: const [
+                DropdownMenuItem(value: -1, child: Text('All Types')),
+                DropdownMenuItem(value: 1, child: Text('Standing')),
+                DropdownMenuItem(value: 2, child: Text('Seated')),
+                DropdownMenuItem(value: 3, child: Text('Supine')),
+                DropdownMenuItem(value: 4, child: Text('Prone')),
+                DropdownMenuItem(value: 5, child: Text('Kneeling')),
+                DropdownMenuItem(value: 6, child: Text('Balancing')),
+              ],
+              onChanged: (value) {
+                setState(() {
+                  _poseType = value!;
+                  _filterPoses();
+                });
+              },
+            ),
+          ],
+        ),
+        Expanded(
+          child: RefreshIndicator(
+            onRefresh: _onRefresh,
+            child: ListView.builder(
+              itemCount: _filteredPoses.length,
+              itemBuilder: (context, index) {
+                final pose = _filteredPoses[index];
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PoseDetailScreen(pose: pose),
+                      ),
+                    );
+                  },
+                  child: PoseCard(pose: pose),
                 );
               },
-              child: PoseCard(pose: pose),
-            );
-          },
+            ),
+          ),
         ),
-      ),
+      ],
     );
   }
 }

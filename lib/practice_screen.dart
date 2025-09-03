@@ -148,127 +148,121 @@ class _PracticeScreenState extends State<PracticeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title:const Text('Practice'),
-        backgroundColor: const Color(0xFFF7FAFA),
-      ),
-      body: Container(
-        color: const Color(0xFFF7FAFA), // Background color from index.less
-        child: Column(
-          children: [
-            // Header
-            Padding(
-              padding: const EdgeInsets.fromLTRB(32, 64, 32, 24),
-              child: Column(
-                children: const [
-                  Text(
-                    '练习中心',
-                    style: TextStyle(
-                      fontSize: 24, // 48rpx / 2
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF333333),
-                    ),
+    return Container(
+      color: const Color(0xFFF7FAFA), // Background color from index.less
+      child: Column(
+        children: [
+          // Header
+          Padding(
+            padding: const EdgeInsets.fromLTRB(32, 64, 32, 24),
+            child: Column(
+              children: const [
+                Text(
+                  '练习中心',
+                  style: TextStyle(
+                    fontSize: 24, // 48rpx / 2
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF333333),
                   ),
-                  SizedBox(height: 6), // 12rpx / 2
-                  Text(
-                    '创建你的专属序列，或开始一个快速练习',
-                    style: TextStyle(
-                      fontSize: 14, // 28rpx / 2
-                      color: Color(0xFF666666),
-                    ),
+                ),
+                SizedBox(height: 6), // 12rpx / 2
+                Text(
+                  '创建你的专属序列，或开始一个快速练习',
+                  style: TextStyle(
+                    fontSize: 14, // 28rpx / 2
+                    color: Color(0xFF666666),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.only(bottom: 80), // Adjust for tab bar
+              child: Column(
+                children: [
+                  // Saved Sequences Section
+                  _buildSectionCard(
+                    title: '我保存的序列',
+                    children: [
+                      if (_savedSequences.isEmpty)
+                        const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 24), // 48rpx / 2
+                          child: Text(
+                            '你还没有保存任何序列。',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Color(0xFF888888)),
+                          ),
+                        ),
+                      ..._savedSequences.map((sequence) => _buildSequenceItem(
+                            sequence: sequence,
+                            onPlay: () => _startSavedSequence(sequence),
+                            onEdit: () => _editSequence(sequence),
+                            onDelete: () => _deleteSequence(sequence.name),
+                          )),
+                      _buildPrimaryButton(
+                        text: '创建新序列',
+                        onPressed: _goToSequenceBuilder,
+                      ),
+                    ],
+                  ),
+                  // Selected Sequences Section
+                  _buildSectionCard(
+                    title: '精选序列',
+                    children: [
+                      ..._selectedSequences.map((sequence) => _buildSequenceItem(
+                            sequence: sequence,
+                            onPlay: () => _startSelectedSequence(sequence),
+                            showEditDelete: false, // No edit/delete for selected sequences
+                          )),
+                    ],
+                  ),
+                  // Quick Practice Section
+                  _buildSectionCard(
+                    title: '快速练习',
+                    description: '根据你的偏好，智能生成一个练习序列。',
+                    children: [
+                      _buildFormItem(
+                        label: '练习难度',
+                        value: _difficultyOptions[_difficultyIndex],
+                        onTap: () => _showPicker(
+                          context,
+                          _difficultyOptions,
+                          _difficultyIndex,
+                          _onDifficultyChange,
+                        ),
+                      ),
+                      _buildFormItem(
+                        label: '练习时长',
+                        value: _durationOptions[_durationIndex],
+                        onTap: () => _showPicker(
+                          context,
+                          _durationOptions,
+                          _durationIndex,
+                          _onDurationChange,
+                        ),
+                      ),
+                      _buildFormItem(
+                        label: '场地偏好',
+                        value: _locationOptions[_locationIndex],
+                        onTap: () => _showPicker(
+                          context,
+                          _locationOptions,
+                          _locationIndex,
+                          _onLocationChange,
+                        ),
+                      ),
+                      _buildPrimaryButton(
+                        text: '开始快速练习',
+                        onPressed: _onStartPractice,
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
-            Expanded(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.only(bottom: 80), // Adjust for tab bar
-                child: Column(
-                  children: [
-                    // Saved Sequences Section
-                    _buildSectionCard(
-                      title: '我保存的序列',
-                      children: [
-                        if (_savedSequences.isEmpty)
-                          const Padding(
-                            padding: EdgeInsets.symmetric(vertical: 24), // 48rpx / 2
-                            child: Text(
-                              '你还没有保存任何序列。',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(color: Color(0xFF888888)),
-                            ),
-                          ),
-                        ..._savedSequences.map((sequence) => _buildSequenceItem(
-                              sequence: sequence,
-                              onPlay: () => _startSavedSequence(sequence),
-                              onEdit: () => _editSequence(sequence),
-                              onDelete: () => _deleteSequence(sequence.name),
-                            )),
-                        _buildPrimaryButton(
-                          text: '创建新序列',
-                          onPressed: _goToSequenceBuilder,
-                        ),
-                      ],
-                    ),
-                    // Selected Sequences Section
-                    _buildSectionCard(
-                      title: '精选序列',
-                      children: [
-                        ..._selectedSequences.map((sequence) => _buildSequenceItem(
-                              sequence: sequence,
-                              onPlay: () => _startSelectedSequence(sequence),
-                              showEditDelete: false, // No edit/delete for selected sequences
-                            )),
-                      ],
-                    ),
-                    // Quick Practice Section
-                    _buildSectionCard(
-                      title: '快速练习',
-                      description: '根据你的偏好，智能生成一个练习序列。',
-                      children: [
-                        _buildFormItem(
-                          label: '练习难度',
-                          value: _difficultyOptions[_difficultyIndex],
-                          onTap: () => _showPicker(
-                            context,
-                            _difficultyOptions,
-                            _difficultyIndex,
-                            _onDifficultyChange,
-                          ),
-                        ),
-                        _buildFormItem(
-                          label: '练习时长',
-                          value: _durationOptions[_durationIndex],
-                          onTap: () => _showPicker(
-                            context,
-                            _durationOptions,
-                            _durationIndex,
-                            _onDurationChange,
-                          ),
-                        ),
-                        _buildFormItem(
-                          label: '场地偏好',
-                          value: _locationOptions[_locationIndex],
-                          onTap: () => _showPicker(
-                            context,
-                            _locationOptions,
-                            _locationIndex,
-                          _onLocationChange,
-                          ),
-                        ),
-                        _buildPrimaryButton(
-                          text: '开始快速练习',
-                          onPressed: _onStartPractice,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
