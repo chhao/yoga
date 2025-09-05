@@ -22,14 +22,16 @@ class _PosesScreenState extends State<PosesScreen> {
   int _poseType = -1;
 
   @override
-  void initState() {
-    super.initState();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
     _loadPoses();
   }
 
   Future<void> _loadPoses() async {
+    final locale = Localizations.localeOf(context);
+    final languageCode = locale.languageCode;
     final String response = await rootBundle.loadString(
-      'assets/data/poses.json',
+      'assets/data/poses_$languageCode.json',
     );
     final data = await json.decode(response) as List;
     setState(() {

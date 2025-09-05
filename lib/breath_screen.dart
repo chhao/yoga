@@ -17,14 +17,16 @@ class _BreathScreenState extends State<BreathScreen> {
   List<BreathMethod> _breathMethods = [];
 
   @override
-  void initState() {
-    super.initState();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
     _loadBreathMethods();
   }
 
   Future<void> _loadBreathMethods() async {
+    final locale = Localizations.localeOf(context);
+    final languageCode = locale.languageCode;
     final String response = await rootBundle.loadString(
-      'assets/data/breath.json',
+      'assets/data/breath_$languageCode.json',
     );
     final data = await json.decode(response) as List;
     setState(() {

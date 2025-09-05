@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:yoga/generated/app_localizations.dart';
 import '../models/breath_method.dart';
 import 'dart:convert';
 
@@ -25,14 +26,14 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
   bool _isSettingsVisible = false;
   bool _isSoundOn = true;
 
-  String _instructionText = '准备';
+  String _instructionText = '';
   double _instructionOpacity = 1.0;
   double _circleSize = 96.0;
   int _transitionDuration = 1;
   Color _circleColor = const Color.fromRGBO(52, 211, 153, 0.9);
   Color _glowStyleColor = const Color.fromRGBO(22, 163, 74, 0.2);
 
-  String _sessionTimerDisplay = '剩余 0:00';
+  String _sessionTimerDisplay = '';
 
   Timer? _intervalTimer;
   Timer? _sessionTimer;
@@ -42,6 +43,7 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
   late AudioPlayer _exhalePlayer;
 
   SharedPreferences? _prefs;
+  AppLocalizations? _localizations;
 
   @override
   void initState() {
@@ -49,6 +51,12 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
     _currentMode = widget.breathMethod;
     _initializePlayers();
     _loadUserSettings();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _localizations = AppLocalizations.of(context)!;
     _initialize();
   }
 
@@ -62,10 +70,6 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
     _prefs = await SharedPreferences.getInstance();
     final String? userConfigsJson = _prefs!.getString('user_breath_configs');
     if (userConfigsJson != null) {
-      // This part needs careful handling as BreathMethod.fromJson expects a map,
-      // and we are storing a map of maps.
-      // For now, let's assume we only store duration and rhythm overrides.
-      // A more robust solution would involve a dedicated settings model.
       final Map<String, dynamic> userConfigs = Map<String, dynamic>.from(
         json.decode(userConfigsJson),
       );
@@ -77,11 +81,7 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
         }
         if (userConfig.containsKey('rhythm')) {
           final List<dynamic> savedRhythm = userConfig['rhythm'];
-          for (
-            int i = 0;
-            i < _currentMode.rhythm.length && i < savedRhythm.length;
-            i++
-          ) {
+          for (int i = 0; i < _currentMode.rhythm.length && i < savedRhythm.length; i++) {
             _currentMode.rhythm[i].duration = savedRhythm[i]['duration'];
           }
         }
@@ -191,8 +191,8 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
     if (remainingTime <= 0) {
       _stopSession();
       setState(() {
-        _sessionTimerDisplay = "完成";
-        _instructionText = "做得好！";
+        _sessionTimerDisplay = _localizations!.completed;
+        _instructionText = _localizations!.wellDone;
         _instructionOpacity = 1.0;
       });
       return;
@@ -205,7 +205,7 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
     final minutes = (displayTime ~/ 60).toString().padLeft(2, '0');
     final seconds = (displayTime % 60).toString().padLeft(2, '0');
     setState(() {
-      _sessionTimerDisplay = '剩余 $minutes:$seconds';
+      _sessionTimerDisplay = _localizations!.remainingTime('$minutes:$seconds');
     });
   }
 
@@ -220,9 +220,6 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
     _sessionTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
       _updateTimer();
     });
-    // Vibration is not directly supported in Flutter for web/desktop,
-    // and requires platform-specific implementation for mobile.
-    // For now, we'll omit it or add a placeholder.
   }
 
   void _stopSession() {
@@ -246,7 +243,7 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
       _circleSize = lastStep.size.toDouble();
       _circleColor = _parseColor(lastStep.color);
       _glowStyleColor = _parseColor(lastStep.glow);
-      _instructionText = '准备';
+      _instructionText = _localizations!.ready;
       _instructionOpacity = 1.0;
     });
     _updateTimerDisplay();
@@ -300,7 +297,7 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
     });
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text(_isSoundOn ? '音乐开启' : '音乐关闭'),
+        content: Text(_isSoundOn ? _localizations!.musicOn : _localizations!.musicOff),
         duration: const Duration(seconds: 1),
       ),
     );
@@ -322,6 +319,11 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    if (_localizations == null) {
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
+    }
+    final localizations = _localizations!;
+
     return Scaffold(
       backgroundColor: const Color(0xFFF7FAFA), // @bg-color
       body: SafeArea(
@@ -531,9 +533,9 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
                   Stack(
                     alignment: Alignment.center,
                     children: [
-                      const Text(
-                        '设置',
-                        style: TextStyle(
+                      Text(
+                        localizations.settings,
+                        style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w500,
                           color: Color(0xFF1F2937), // @text-color-dark
@@ -557,7 +559,7 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        '总练习时长: $_durationMinutes 分钟',
+                        localizations.totalPracticeDuration(_durationMinutes),
                         style: const TextStyle(
                           color: Color(0xFF6B7280), // @text-color-medium
                         ),
@@ -586,7 +588,7 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              '${step.instruction}: ${step.duration} 秒',
+                              localizations.stepDuration(step.instruction, step.duration),
                               style: const TextStyle(
                                 color: Color(0xFF6B7280), // @text-color-medium
                               ),

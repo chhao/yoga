@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:yoga/generated/app_localizations.dart';
 import 'package:yoga/models/pose.dart';
 import 'package:yoga/models/sequence.dart' as yoga_sequence;
 
@@ -18,21 +19,23 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
   List<Pose> _allPoses = [];
   List<Pose> _filteredPoses = [];
   List<Map<String, dynamic>> _selectedPoses = []; // Using Map to store pose + duration
-  TextEditingController _searchQueryController = TextEditingController();
-  TextEditingController _sequenceNameController = TextEditingController();
+  final TextEditingController _searchQueryController = TextEditingController();
+  final TextEditingController _sequenceNameController = TextEditingController();
 
   bool _isEditing = false;
   String _originalSequenceName = '';
 
-  List<String> _difficultyOptions = ['全部', '初级', '中级', '高级'];
+  List<String> _difficultyOptions = [];
   int _difficultyFilterIndex = 0;
-  List<String> _poseTypeOptions = ['不限', '站立', '坐姿', '仰卧', '俯卧', '跪姿', '平衡'];
+  List<String> _poseTypeOptions = [];
   int _poseTypeFilterIndex = 0;
 
   bool _isDialogVisible = false;
   int? _currentPoseIndexInSelectedList;
   int _currentPoseDuration = 60;
-  String _formattedTotalDuration = '0 分钟';
+  String _formattedTotalDuration = '';
+
+  AppLocalizations? _localizations;
 
   @override
   void initState() {
@@ -44,10 +47,35 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    _localizations = AppLocalizations.of(context)!;
+    _initializeLocalization();
+
     final args = ModalRoute.of(context)!.settings.arguments;
     if (args is yoga_sequence.Sequence && !_isEditing) { // Only load if not already editing
       _loadSequenceForEditing(args);
     }
+  }
+
+  void _initializeLocalization() {
+    final localizations = _localizations!;
+    setState(() {
+      _difficultyOptions = [
+        localizations.all,
+        localizations.beginner,
+        localizations.intermediate,
+        localizations.advanced
+      ];
+      _poseTypeOptions = [
+        localizations.unlimited,
+        localizations.standing,
+        localizations.seated,
+        localizations.supine,
+        localizations.prone,
+        localizations.kneeling,
+        localizations.balancing
+      ];
+      _formattedTotalDuration = localizations.zeroMinutes;
+    });
   }
 
   @override
@@ -59,7 +87,9 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
   }
 
   Future<void> _loadPoses() async {
-    final String response = await rootBundle.loadString('assets/data/poses.json');
+    final locale = Localizations.localeOf(context);
+    final languageCode = locale.languageCode;
+    final String response = await rootBundle.loadString('assets/data/poses_$languageCode.json');
     final data = json.decode(response) as List;
     setState(() {
       _allPoses = data.map((json) => Pose.fromJson(json)).toList();
@@ -108,9 +138,10 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
   }
 
   void _calculateAndSetTotalDuration() {
+    final localizations = _localizations!;
     if (_selectedPoses.isEmpty) {
       setState(() {
-        _formattedTotalDuration = '0 分钟';
+        _formattedTotalDuration = localizations.zeroMinutes;
       });
       return;
     }
@@ -120,9 +151,9 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
 
     String formatted = '';
     if (seconds == 0) {
-      formatted = '$minutes 分钟';
+      formatted = localizations.minutes(minutes);
     } else {
-      formatted = '$minutes分$seconds秒';
+      formatted = localizations.minutesSeconds(minutes, seconds);
     }
     setState(() {
       _formattedTotalDuration = formatted;
@@ -242,18 +273,19 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
   }
 
   Future<void> _saveSequence() async {
+    final localizations = _localizations!;
     final String sequenceName = _sequenceNameController.text.trim();
 
     if (sequenceName.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('请输入序列名称')),
+        SnackBar(content: Text(localizations.enterSequenceName)),
       );
       return;
     }
 
     if (_selectedPoses.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('请至少选择一个体式')),
+        SnackBar(content: Text(localizations.selectAtLeastOnePose)),
       );
       return;
     }
@@ -288,7 +320,7 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
       final existingIndex = savedSequences.indexWhere((seq) => seq.name == sequenceName);
       if (existingIndex != -1) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('序列名称已存在')),
+          SnackBar(content: Text(localizations.sequenceNameExists)),
         );
         return;
       }
@@ -299,7 +331,7 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
     await prefs.setStringList('savedSequences', updatedSavedSequencesJson);
 
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('序列已保存')),
+      SnackBar(content: Text(localizations.sequenceSaved)),
     );
 
     Navigator.pop(context);
@@ -307,9 +339,14 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
 
   @override
   Widget build(BuildContext context) {
+    if (_localizations == null) {
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
+    }
+    final localizations = _localizations!;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(_isEditing ? '编辑序列' : '创建新序列'),
+        title: Text(_isEditing ? localizations.editSequence : localizations.createNewSequenceTitle),
         backgroundColor: const Color(0xFFF7FAFA),
         elevation: 0,
       ),
@@ -321,10 +358,10 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
-                    '创建你的专属瑜伽序列',
-                    style: TextStyle(
+                    localizations.createYourOwnSequence,
+                    style: const TextStyle(
                       fontSize: 14,
                       color: Color(0xFF666666),
                     ),
@@ -346,21 +383,21 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(16.0),
-                            child: Text('所有体式', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                            child: Text(localizations.allPoses, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                             child: TextField(
                               controller: _searchQueryController,
                               decoration: InputDecoration(
-                                hintText: '搜索体式...', 
+                                hintText: localizations.searchPoses,
                                 filled: true,
-                                fillColor: Color(0xFFE8F2ED),
+                                fillColor: const Color(0xFFE8F2ED),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(12.0),
                                   borderSide: BorderSide.none,
                                 ),
-                                contentPadding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+                                contentPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
                               ),
                             ),
                           ),
@@ -369,14 +406,14 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
                             child: Column(
                               children: [
                                 _buildFilterDropdown(
-                                  label: '难度',
+                                  label: localizations.difficulty,
                                   options: _difficultyOptions,
                                   currentIndex: _difficultyFilterIndex,
                                   onChanged: _onDifficultyFilterChange,
                                 ),
-                                SizedBox(height: 8.0),
+                                const SizedBox(height: 8.0),
                                 _buildFilterDropdown(
-                                  label: '体式',
+                                  label: localizations.poseType,
                                   options: _poseTypeOptions,
                                   currentIndex: _poseTypeFilterIndex,
                                   onChanged: _onPoseTypeFilterChange,
@@ -400,7 +437,7 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
                                           height: 40,
                                           decoration: BoxDecoration(
                                             borderRadius: BorderRadius.circular(8.0),
-                                            color: Color(0xFFF9C28D),
+                                            color: const Color(0xFFF9C28D),
                                             image: DecorationImage(
                                               image: AssetImage(pose.tbimageurl),
                                               fit: BoxFit.cover,
@@ -413,7 +450,7 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
                                         ),
                                         const SizedBox(width: 12.0), // Equivalent to 24rpx gap
                                         Expanded(
-                                          child: Text(pose.name, style: TextStyle(fontSize: 14, color: Color(0xFF1F2937))),
+                                          child: Text(pose.name, style: const TextStyle(fontSize: 14, color: Color(0xFF1F2937))),
                                         ),
                                       ],
                                     ),
@@ -440,8 +477,8 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text('当前序列', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                                Text(_formattedTotalDuration, style: TextStyle(fontSize: 14, color: Color(0xFF666666))),
+                                Text(localizations.currentSequence, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                                Text(_formattedTotalDuration, style: const TextStyle(fontSize: 14, color: Color(0xFF666666))),
                               ],
                             ),
                           ),
@@ -450,14 +487,14 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
                             child: TextField(
                               controller: _sequenceNameController,
                               decoration: InputDecoration(
-                                hintText: '为你的序列取个名字',
+                                hintText: localizations.nameYourSequence,
                                 filled: true,
-                                fillColor: Color(0xFFE8F2ED),
+                                fillColor: const Color(0xFFE8F2ED),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(12.0),
                                   borderSide: BorderSide.none,
                                 ),
-                                contentPadding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+                                contentPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
                               ),
                             ),
                           ),
@@ -469,7 +506,7 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
                                 return Card(
                                   margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
                                   elevation: 0,
-                                  color: Color(0xFFE8F2ED),
+                                  color: const Color(0xFFE8F2ED),
                                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
                                   child: Padding(
                                     padding: const EdgeInsets.all(16.0),
@@ -479,15 +516,15 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
-                                              Text(poseMap['name'] as String, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500), maxLines: 1, overflow: TextOverflow.ellipsis),
-                                              SizedBox(height: 4.0), // Add some vertical spacing
+                                              Text(poseMap['name'] as String, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500), maxLines: 1, overflow: TextOverflow.ellipsis),
+                                              const SizedBox(height: 4.0), // Add some vertical spacing
                                               GestureDetector(
                                                 onTap: () => _openDurationDialog(index),
                                                 child: Row(
                                                   children: [
-                                                    Text('${poseMap['duration']} 秒', style: TextStyle(fontSize: 13, color: Color(0xFF666666))),
-                                                    SizedBox(width: 8.0),
-                                                    Icon(Icons.edit, size: 16, color: Color(0xFF666666)),
+                                                    Text(localizations.durationInSeconds(poseMap['duration'] as int), style: const TextStyle(fontSize: 13, color: Color(0xFF666666))),
+                                                    const SizedBox(width: 8.0),
+                                                    const Icon(Icons.edit, size: 16, color: Color(0xFF666666)),
                                                   ],
                                                 ),
                                               ),
@@ -498,7 +535,7 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
                                           width: 30,
                                           height: 30,
                                           child: IconButton(
-                                            icon: Icon(Icons.delete, color: Color(0xFF666666)),
+                                            icon: const Icon(Icons.delete, color: Color(0xFF666666)),
                                             onPressed: () => _removePoseFromSequence(index),
                                             padding: EdgeInsets.zero, // Remove default padding
                                           ),
@@ -515,12 +552,12 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
                             child: ElevatedButton(
                               onPressed: _saveSequence,
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: Color(0xFF52946B),
+                                backgroundColor: const Color(0xFF52946B),
                                 foregroundColor: Colors.white,
-                                minimumSize: Size(double.infinity, 50),
+                                minimumSize: const Size(double.infinity, 50),
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
                               ),
-                              child: Text(_isEditing ? '更新序列' : '保存序列'),
+                              child: Text(_isEditing ? localizations.updateSequence : localizations.saveSequence),
                             ),
                           ),
                         ],
@@ -536,11 +573,11 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
       // Duration Editor Dialog
       bottomSheet: _isDialogVisible
           ? AlertDialog(
-              title: Text('设置时长 (秒)'),
+              title: Text(localizations.setDurationInSeconds),
               content: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text('当前时长: $_currentPoseDuration 秒'),
+                  Text(localizations.currentDuration(_currentPoseDuration)),
                   Slider(
                     value: _currentPoseDuration.toDouble(),
                     min: 10,
@@ -553,11 +590,11 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
               actions: [
                 TextButton(
                   onPressed: _onDialogCancel,
-                  child: Text('取消'),
+                  child: Text(localizations.cancel),
                 ),
                 TextButton(
                   onPressed: _onDialogConfirm,
-                  child: Text('确认'),
+                  child: Text(localizations.confirm),
                 ),
               ],
             )
@@ -574,13 +611,13 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 4.0),
       decoration: BoxDecoration(
-        color: Color(0xFFE8F2ED),
+        color: const Color(0xFFE8F2ED),
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(label, style: TextStyle(fontSize: 14, color: Color(0xFF666666))),
+          Text(label, style: const TextStyle(fontSize: 14, color: Color(0xFF666666))),
           DropdownButton<int>(
             value: currentIndex,
             items: options.asMap().entries.map((entry) {
@@ -591,7 +628,7 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
             }).toList(),
             onChanged: onChanged,
             underline: Container(), // Remove underline
-            icon: Icon(Icons.arrow_drop_down, color: Color(0xFF666666)),
+            icon: const Icon(Icons.arrow_drop_down, color: Color(0xFF666666)),
           ),
         ],
       ),

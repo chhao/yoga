@@ -16,5 +16,162 @@
     "supine": "Supine",
     "prone": "Prone",
     "kneeling": "Kneeling",
-    "balancing": "Balancing"
+    "balancing": "Balancing",
+    "selectLanguage": "Select Language",
+    "english": "English",
+    "chinese": "中文",
+    "settings": "Settings",
+    "audioSetting": "Audio Setting",
+    "language": "Language",
+    "rateMe": "Rate Me",
+    "suggestion": "Suggestion",
+    "practiceCenter": "Practice Center",
+    "practiceCenterSubtitle": "Create your own sequence or start a quick practice",
+    "mySavedSequences": "My Sequences",
+    "noSavedSequences": "You haven't saved any sequences yet.",
+    "createNewSequence": "Create Sequence",
+    "featuredSequences": "Featured Sequences",
+    "quickPractice": "Quick Practice",
+    "quickPracticeSubtitle": "Intelligently generate a practice sequence based on your preferences.",
+    "practiceDifficulty": "Difficulty",
+    "practiceDuration": "Duration",
+    "locationPreference": "Location Preference",
+    "startQuickPractice": "Start Quick Practice",
+    "sequenceDeleted": "Sequence \"{sequenceName}\" has been deleted",
+    "@sequenceDeleted": {
+        "placeholders": {
+            "sequenceName": {
+                "type": "String"
+            }
+        }
+    },
+    "posesCount": "{count} Poses",
+    "@posesCount": {
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "totalDuration": "· {duration}",
+    "@totalDuration": {
+        "placeholders": {
+            "duration": {
+                "type": "String"
+            }
+        }
+    },
+    "minutes": "{minutes} min",
+    "@minutes": {
+        "placeholders": {
+            "minutes": {
+                "type": "int"
+            }
+        }
+    },
+    "minutesSeconds": "{minutes}m {seconds}s",
+    "@minutesSeconds": {
+        "placeholders": {
+            "minutes": {
+                "type": "int"
+            },
+            "seconds": {
+                "type": "int"
+            }
+        }
+    },
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "duration15": "15 minutes",
+    "duration30": "30 minutes",
+    "duration45": "45 minutes",
+    "duration60": "60 minutes",
+    "locationAny": "Any",
+    "locationStanding": "Standing",
+    "locationSeated": "Seated/Supine",
+    "ready": "Ready",
+    "remainingTime": "Remaining {time}",
+    "@remainingTime": {
+        "placeholders": {
+            "time": {
+                "type": "String"
+            }
+        }
+    },
+    "completed": "Completed",
+    "wellDone": "Well done!",
+    "musicOn": "Music On",
+    "musicOff": "Music Off",
+    "totalPracticeDuration": "Total Practice Duration: {duration} minutes",
+    "@totalPracticeDuration": {
+        "placeholders": {
+            "duration": {
+                "type": "int"
+            }
+        }
+    },
+    "stepDuration": "{instruction}: {duration} seconds",
+    "@stepDuration": {
+        "placeholders": {
+            "instruction": {
+                "type": "String"
+            },
+            "duration": {
+                "type": "int"
+            }
+        }
+    },
+    "seconds": "seconds",
+    "noPosesAvailable": "No Poses Available",
+    "noPosesAvailableMessage": "No suitable poses were found based on your selection. Please try adjusting the filter criteria.",
+    "goBack": "Go Back",
+    "exitPractice": "Exit Practice",
+    "exitPracticeConfirmation": "Are you sure want to exit?",
+    "practiceComplete": "Practice Complete",
+    "practiceCompleteMessage": "Congratulations, you have completed this session!",
+    "backToHome": "Back to Home",
+    "remainingTimeTitle": "Remaining Time",
+    "all": "All",
+    "unlimited": "Unlimited",
+    "zeroMinutes": "0 minutes",
+    "enterSequenceName": "Please enter a sequence name",
+    "selectAtLeastOnePose": "Please select at least one pose",
+    "sequenceNameExists": "Sequence name already exists",
+    "sequenceSaved": "Sequence saved",
+    "editSequence": "Edit Sequence",
+    "createNewSequenceTitle": "Create New Sequence",
+    "createYourOwnSequence": "Create your own yoga sequence",
+    "allPoses": "All Poses",
+    "difficulty": "Difficulty",
+    "poseType": "Type",
+    "currentSequence": "Sequence",
+    "nameYourSequence": "Name your sequence",
+    "durationInSeconds": "{duration} seconds",
+    "@durationInSeconds": {
+        "placeholders": {
+            "duration": {
+                "type": "int"
+            }
+        }
+    },
+    "updateSequence": "Update",
+    "saveSequence": "Save",
+    "setDurationInSeconds": "Set Duration (seconds)",
+    "currentDuration": "Current duration: {duration} seconds",
+    "@currentDuration": {
+        "placeholders": {
+            "duration": {
+                "type": "int"
+            }
+        }
+    },
+    "startPractice": "Start Practice",
+    "originAndBackground": "📚 Origins",
+    "none": "None",
+    "mainBenefits": "🌟 Benefits",
+    "practiceSteps": "🪷 Steps",
+    "tips": "💡 Tips",
+    "cautions": "⚠️ Cautions",
+    "suitableFor": "🎯 Suitable For",
+    "recommendedWith": "👍 Recommended"
 }

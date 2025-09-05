@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:yoga/generated/app_localizations.dart';
 import 'package:yoga/main.dart';
 
 class MainDrawer extends StatelessWidget {
@@ -31,23 +32,23 @@ class MainDrawer extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                const Text(
-                  'Select Language',
-                  style: TextStyle(
+                Text(
+                  AppLocalizations.of(context)!.selectLanguage,
+                  style: const TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 const SizedBox(height: 24.0),
                 ListTile(
-                  title: const Text('English'),
+                  title: Text(AppLocalizations.of(context)!.english),
                   onTap: () {
                     MyApp.of(context)?.changeLocale(const Locale('en'));
                     Navigator.of(context).pop();
                   },
                 ),
                 ListTile(
-                  title: const Text('中文'),
+                  title: Text(AppLocalizations.of(context)!.chinese),
                   onTap: () {
                     MyApp.of(context)?.changeLocale(const Locale('zh'));
                     Navigator.of(context).pop();
@@ -68,35 +69,35 @@ class MainDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
-          const DrawerHeader(
-            decoration: BoxDecoration(
+          DrawerHeader(
+            decoration: const BoxDecoration(
               color: Color(0xFFE8F2ED),
             ),
-            child: Text('Settings'),
+            child: Text(AppLocalizations.of(context)!.settings),
           ),
           ListTile(
-            title: const Text('Audio Setting'),
+            title: Text(AppLocalizations.of(context)!.audioSetting),
             trailing: const Icon(Icons.arrow_forward_ios),
             onTap: () {
               // Handle audio setting tap
             },
           ),
           ListTile(
-            title: const Text('Language'),
+            title: Text(AppLocalizations.of(context)!.language),
             trailing: const Icon(Icons.arrow_forward_ios),
             onTap: () {
               _showLanguageDialog(context);
             },
           ),
           ListTile(
-            title: const Text('Rate Me'),
+            title: Text(AppLocalizations.of(context)!.rateMe),
             trailing: const Icon(Icons.arrow_forward_ios),
             onTap: () {
               // Handle rate me tap
             },
           ),
           ListTile(
-            title: const Text('Suggestion'),
+            title: Text(AppLocalizations.of(context)!.suggestion),
             trailing: const Icon(Icons.arrow_forward_ios),
             onTap: () {
               // Handle suggestion tap

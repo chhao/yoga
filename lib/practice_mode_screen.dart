@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:yoga/generated/app_localizations.dart';
 import 'package:yoga/models/pose.dart';
 import 'package:yoga/models/sequence.dart';
 
@@ -111,6 +112,10 @@ class _PracticeModeScreenState extends State<PracticeModeScreen> {
   }
 
   Future<void> _loadPracticeData() async {
+    final localizations = AppLocalizations.of(context)!;
+    final locale = Localizations.localeOf(context);
+    final languageCode = locale.languageCode;
+
     setState(() {
       _isLoading = true;
     });
@@ -120,7 +125,7 @@ class _PracticeModeScreenState extends State<PracticeModeScreen> {
     List<PracticePose> selectedPracticePoses = [];
     int calculatedTotalTime = 0;
 
-    final String posesJson = await rootBundle.loadString('assets/data/poses.json');
+    final String posesJson = await rootBundle.loadString('assets/data/poses_$languageCode.json');
     final List<dynamic> posesData = json.decode(posesJson);
     final List<Pose> allPoses = posesData.map<Pose>((dynamic item) => Pose.fromJson(item as Map<String, dynamic>)).toList();
 
@@ -159,7 +164,7 @@ class _PracticeModeScreenState extends State<PracticeModeScreen> {
       selectedPracticePoses = _selectPoses(filteredPoses, calculatedTotalTime);
     } else {
       // Handle error or default case if no valid arguments
-      print('Invalid arguments for PracticeModeScreen: \$args');
+      print('Invalid arguments for PracticeModeScreen: $args');
       setState(() {
         _isLoading = false;
       });
@@ -182,9 +187,9 @@ class _PracticeModeScreenState extends State<PracticeModeScreen> {
     } else {
       // Handle case where no poses are selected/found
       _showModalDialog(
-        title: '无可用体式',
-        content: '根据您的选择，没有找到合适的体式。请尝试调整筛选条件。',
-        confirmText: '返回',
+        title: localizations.noPosesAvailable,
+        content: localizations.noPosesAvailableMessage,
+        confirmText: localizations.goBack,
         onConfirm: () {
           Navigator.pop(context);
         },
@@ -385,11 +390,12 @@ class _PracticeModeScreenState extends State<PracticeModeScreen> {
   }
 
   void _showExitModal() {
+    final localizations = AppLocalizations.of(context)!;
     _showModalDialog(
-      title: '退出练习',
-      content: '确定要退出练习吗？',
-      confirmText: '确定',
-      cancelText: '取消',
+      title: localizations.exitPractice,
+      content: localizations.exitPracticeConfirmation,
+      confirmText: localizations.confirm,
+      cancelText: localizations.cancel,
       onConfirm: _exitPractice,
       onCancel: _hideModal,
     );
@@ -403,13 +409,14 @@ class _PracticeModeScreenState extends State<PracticeModeScreen> {
   }
 
   void _finishPractice() {
+    final localizations = AppLocalizations.of(context)!;
     _timer?.cancel();
     _backgroundAudioPlayer.stop();
     _showModalDialog(
-      title: '练习完成',
-      content: '恭喜你，完成了本次练习！',
-      confirmText: '返回首页',
-      cancelText: '退出练习',
+      title: localizations.practiceComplete,
+      content: localizations.practiceCompleteMessage,
+      confirmText: localizations.backToHome,
+      cancelText: localizations.exitPractice,
       onConfirm: _goHome,
       onCancel: _exitPractice,
     );
@@ -491,9 +498,15 @@ class _PracticeModeScreenState extends State<PracticeModeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+
     // Helper for pose properties
     String getDifficultyText(int difficulty) {
-      final difficultyMap = ['初级', '中级', '高级'];
+      final difficultyMap = [
+        localizations.beginner,
+        localizations.intermediate,
+        localizations.advanced
+      ];
       return difficultyMap[difficulty];
     }
 
@@ -503,7 +516,7 @@ class _PracticeModeScreenState extends State<PracticeModeScreen> {
 
     String getPoseImageUrl(String poseId) {
       final imageUrl = 'assets/yoga-img/' + poseId + '.png';
-      print('Loading image from URL: \$imageUrl');
+      print('Loading image from URL: $imageUrl');
       return imageUrl;
     }
 
@@ -670,9 +683,9 @@ class _PracticeModeScreenState extends State<PracticeModeScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Text(
-                              '剩余时间',
-                              style: TextStyle(
+                            Text(
+                              localizations.remainingTimeTitle,
+                              style: const TextStyle(
                                 color: Color(0xFF475569),
                                 fontSize: 18,
                               ),

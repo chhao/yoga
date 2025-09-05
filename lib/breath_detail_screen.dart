@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:yoga/models/breath_method.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'breath_practice_screen.dart';
+import 'package:yoga/generated/app_localizations.dart';
 
 class BreathDetailScreen extends StatelessWidget {
   final BreathMethod method;
@@ -65,7 +66,7 @@ class BreathDetailScreen extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '${method.name.en} / ${method.name.sanskrit}',
+                        '${method.name.sanskrit}',
                         style: const TextStyle(
                           fontSize: 18,
                           color: Colors.white70,
@@ -99,7 +100,7 @@ class BreathDetailScreen extends StatelessWidget {
                   );
                 },
                 icon: const Icon(Icons.play_circle_fill),
-                label: const Text('开始跟练'),
+                label: Text(AppLocalizations.of(context)!.startPractice),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF52946B),
                   foregroundColor: Colors.white,
@@ -115,18 +116,18 @@ class BreathDetailScreen extends StatelessWidget {
               child: Column(
                 children: [
                   _buildCard(
-                    title: '📚 起源与背景',
-                    body: Text(method.origin ?? '无', style: const TextStyle(fontSize: 16, color: Color(0xFF6B7280))),
+                    title: AppLocalizations.of(context)!.originAndBackground,
+                    body: Text(method.origin ?? AppLocalizations.of(context)!.none, style: const TextStyle(fontSize: 16, color: Color(0xFF6B7280))),
                   ),
                   _buildCard(
-                    title: '🌟 主要功效',
+                    title: AppLocalizations.of(context)!.mainBenefits,
                     body: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: method.benefits.map((item) => _buildListItem(Icons.star, item, const Color(0xFF5B8C7A))).toList(),
                     ),
                   ),
                   _buildCard(
-                    title: '🪷 练习步骤',
+                    title: AppLocalizations.of(context)!.practiceSteps,
                     body: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: method.steps.asMap().entries.map((entry) => Padding(
@@ -137,25 +138,25 @@ class BreathDetailScreen extends StatelessWidget {
                   ),
                   if (method.steptip != null && method.steptip!.isNotEmpty)
                     _buildCard(
-                      title: '💡 提示',
+                      title:  AppLocalizations.of(context)!.tips,
                       body: Text(method.steptip!, style: const TextStyle(fontSize: 16, color: Color(0xFF6B7280))),
                     ),
                   _buildCard(
-                    title: '⚠️ 注意事项',
+                    title:  AppLocalizations.of(context)!.cautions,
                     body: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: method.cautions.map((item) => _buildListItem(Icons.info, item, const Color(0xFFD97706))).toList(),
                     ),
                   ),
                   _buildCard(
-                    title: '🎯 适合人群',
+                    title: AppLocalizations.of(context)!.suitableFor,
                     body: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: method.audience.map((item) => _buildListItem(Icons.check_circle, item, const Color(0xFF5B8C7A))).toList(),
                     ),
                   ),
                   _buildCard(
-                    title: '👍 推荐搭配',
+                    title: AppLocalizations.of(context)!.recommendedWith,
                     body: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: method.recommendations.map((item) => _buildListItem(Icons.link, item, const Color(0xFF5B8C7A))).toList(),

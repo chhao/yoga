@@ -16,5 +16,162 @@
     "supine": "仰卧",
     "prone": "俯卧",
     "kneeling": "跪姿",
-    "balancing": "平衡"
+    "balancing": "平衡",
+    "selectLanguage": "选择语言",
+    "english": "English",
+    "chinese": "中文",
+    "settings": "设置",
+    "audioSetting": "音频设置",
+    "language": "语言",
+    "rateMe": "评价我们",
+    "suggestion": "提出建议",
+    "practiceCenter": "练习中心",
+    "practiceCenterSubtitle": "创建你的专属序列，或开始一个快速练习",
+    "mySavedSequences": "我保存的序列",
+    "noSavedSequences": "你还没有保存任何序列。",
+    "createNewSequence": "创建新序列",
+    "featuredSequences": "精选序列",
+    "quickPractice": "快速练习",
+    "quickPracticeSubtitle": "根据你的偏好，智能生成一个练习序列。",
+    "practiceDifficulty": "练习难度",
+    "practiceDuration": "练习时长",
+    "locationPreference": "场地偏好",
+    "startQuickPractice": "开始快速练习",
+    "sequenceDeleted": "序列 \"{sequenceName}\" 已删除",
+    "@sequenceDeleted": {
+        "placeholders": {
+            "sequenceName": {
+                "type": "String"
+            }
+        }
+    },
+    "posesCount": "{count} 个体式",
+    "@posesCount": {
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "totalDuration": "· {duration}",
+    "@totalDuration": {
+        "placeholders": {
+            "duration": {
+                "type": "String"
+            }
+        }
+    },
+    "minutes": "{minutes} 分钟",
+    "@minutes": {
+        "placeholders": {
+            "minutes": {
+                "type": "int"
+            }
+        }
+    },
+    "minutesSeconds": "{minutes}分{seconds}秒",
+    "@minutesSeconds": {
+        "placeholders": {
+            "minutes": {
+                "type": "int"
+            },
+            "seconds": {
+                "type": "int"
+            }
+        }
+    },
+    "cancel": "取消",
+    "confirm": "确定",
+    "duration15": "15分钟",
+    "duration30": "30分钟",
+    "duration45": "45分钟",
+    "duration60": "60分钟",
+    "locationAny": "不限",
+    "locationStanding": "站立体式",
+    "locationSeated": "坐卧体式",
+    "ready": "准备",
+    "remainingTime": "剩余 {time}",
+    "@remainingTime": {
+        "placeholders": {
+            "time": {
+                "type": "String"
+            }
+        }
+    },
+    "completed": "完成",
+    "wellDone": "做得好！",
+    "musicOn": "音乐开启",
+    "musicOff": "音乐关闭",
+    "totalPracticeDuration": "总练习时长: {duration} 分钟",
+    "@totalPracticeDuration": {
+        "placeholders": {
+            "duration": {
+                "type": "int"
+            }
+        }
+    },
+    "stepDuration": "{instruction}: {duration} 秒",
+    "@stepDuration": {
+        "placeholders": {
+            "instruction": {
+                "type": "String"
+            },
+            "duration": {
+                "type": "int"
+            }
+        }
+    },
+    "seconds": "秒",
+    "noPosesAvailable": "无可用体式",
+    "noPosesAvailableMessage": "根据您的选择，没有找到合适的体式。请尝试调整筛选条件。",
+    "goBack": "返回",
+    "exitPractice": "退出练习",
+    "exitPracticeConfirmation": "确定要退出练习吗？",
+    "practiceComplete": "练习完成",
+    "practiceCompleteMessage": "恭喜你，完成了本次练习！",
+    "backToHome": "返回首页",
+    "remainingTimeTitle": "剩余时间",
+    "all": "全部",
+    "unlimited": "不限",
+    "zeroMinutes": "0 分钟",
+    "enterSequenceName": "请输入序列名称",
+    "selectAtLeastOnePose": "请至少选择一个体式",
+    "sequenceNameExists": "序列名称已存在",
+    "sequenceSaved": "序列已保存",
+    "editSequence": "编辑序列",
+    "createNewSequenceTitle": "创建新序列",
+    "createYourOwnSequence": "创建你的专属瑜伽序列",
+    "allPoses": "所有体式",
+    "difficulty": "难度",
+    "poseType": "体式",
+    "currentSequence": "当前序列",
+    "nameYourSequence": "为你的序列取个名字",
+    "durationInSeconds": "{duration} 秒",
+    "@durationInSeconds": {
+        "placeholders": {
+            "duration": {
+                "type": "int"
+            }
+        }
+    },
+    "updateSequence": "更新序列",
+    "saveSequence": "保存序列",
+    "setDurationInSeconds": "设置时长 (秒)",
+    "currentDuration": "当前时长: {duration} 秒",
+    "@currentDuration": {
+        "placeholders": {
+            "duration": {
+                "type": "int"
+            }
+        }
+    },
+    "startPractice": "开始跟练",
+    "originAndBackground": "📚 起源与背景",
+    "none": "无",
+    "mainBenefits": "🌟 主要功效",
+    "practiceSteps": "🪷 练习步骤",
+    "tips": "💡 提示",
+    "cautions": "⚠️ 注意事项",
+    "suitableFor": "🎯 适合人群",
+    "recommendedWith": "👍 推荐搭配"
 }

@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:yoga/generated/app_localizations.dart';
 import 'package:yoga/models/sequence.dart' as yoga_sequence;
 
 import 'package:flutter_svg/flutter_svg.dart';
@@ -19,11 +20,8 @@ class _PracticeScreenState extends State<PracticeScreen> {
   List<yoga_sequence.Sequence> _savedSequences = [];
   List<yoga_sequence.Sequence> _selectedSequences = [];
 
-  final List<String> _difficultyOptions = ['初级', '中级', '高级'];
   int _difficultyIndex = 0;
-  final List<String> _durationOptions = ['15分钟', '30分钟', '45分钟', '60分钟'];
   int _durationIndex = 1;
-  final List<String> _locationOptions = ['不限', '站立体式', '坐卧体式'];
   int _locationIndex = 0;
 
   @override
@@ -52,8 +50,10 @@ class _PracticeScreenState extends State<PracticeScreen> {
   }
 
   Future<void> _loadSelectedSequences() async {
+    final locale = Localizations.localeOf(context);
+    final languageCode = locale.languageCode;
     final String response = await rootBundle.loadString(
-      'assets/data/sequences.json',
+      'assets/data/sequences_$languageCode.json',
     );
     final data = await json.decode(response) as List;
     setState(() {
@@ -134,7 +134,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
       _savedSequences = updatedSavedSequences;
     });
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('序列 "$sequenceName" 已删除')),
+      SnackBar(content: Text(AppLocalizations.of(context)!.sequenceDeleted(sequenceName))),
     );
   }
 
@@ -148,6 +148,25 @@ class _PracticeScreenState extends State<PracticeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+
+    final List<String> difficultyOptions = [
+      localizations.beginner,
+      localizations.intermediate,
+      localizations.advanced
+    ];
+    final List<String> durationOptions = [
+      localizations.duration15,
+      localizations.duration30,
+      localizations.duration45,
+      localizations.duration60
+    ];
+    final List<String> locationOptions = [
+      localizations.locationAny,
+      localizations.locationStanding,
+      localizations.locationSeated
+    ];
+
     return Container(
       color: const Color(0xFFF7FAFA), // Background color from index.less
       child: Column(
@@ -156,19 +175,19 @@ class _PracticeScreenState extends State<PracticeScreen> {
           Padding(
             padding: const EdgeInsets.fromLTRB(32, 64, 32, 24),
             child: Column(
-              children: const [
+              children: [
                 Text(
-                  '练习中心',
-                  style: TextStyle(
+                  localizations.practiceCenter,
+                  style: const TextStyle(
                     fontSize: 24, // 48rpx / 2
                     fontWeight: FontWeight.bold,
                     color: Color(0xFF333333),
                   ),
                 ),
-                SizedBox(height: 6), // 12rpx / 2
+                const SizedBox(height: 6), // 12rpx / 2
                 Text(
-                  '创建你的专属序列，或开始一个快速练习',
-                  style: TextStyle(
+                  localizations.practiceCenterSubtitle,
+                  style: const TextStyle(
                     fontSize: 14, // 28rpx / 2
                     color: Color(0xFF666666),
                   ),
@@ -184,15 +203,15 @@ class _PracticeScreenState extends State<PracticeScreen> {
                 children: [
                   // Saved Sequences Section
                   _buildSectionCard(
-                    title: '我保存的序列',
+                    title: localizations.mySavedSequences,
                     children: [
                       if (_savedSequences.isEmpty)
-                        const Padding(
-                          padding: EdgeInsets.symmetric(vertical: 24), // 48rpx / 2
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 24), // 48rpx / 2
                           child: Text(
-                            '你还没有保存任何序列。',
+                            localizations.noSavedSequences,
                             textAlign: TextAlign.center,
-                            style: TextStyle(color: Color(0xFF888888)),
+                            style: const TextStyle(color: Color(0xFF888888)),
                           ),
                         ),
                       ..._savedSequences.map((sequence) => _buildSequenceItem(
@@ -202,14 +221,14 @@ class _PracticeScreenState extends State<PracticeScreen> {
                             onDelete: () => _deleteSequence(sequence.name),
                           )),
                       _buildPrimaryButton(
-                        text: '创建新序列',
+                        text: localizations.createNewSequence,
                         onPressed: _goToSequenceBuilder,
                       ),
                     ],
                   ),
                   // Selected Sequences Section
                   _buildSectionCard(
-                    title: '精选序列',
+                    title: localizations.featuredSequences,
                     children: [
                       ..._selectedSequences.map((sequence) => _buildSequenceItem(
                             sequence: sequence,
@@ -220,41 +239,41 @@ class _PracticeScreenState extends State<PracticeScreen> {
                   ),
                   // Quick Practice Section
                   _buildSectionCard(
-                    title: '快速练习',
-                    description: '根据你的偏好，智能生成一个练习序列。',
+                    title: localizations.quickPractice,
+                    description: localizations.quickPracticeSubtitle,
                     children: [
                       _buildFormItem(
-                        label: '练习难度',
-                        value: _difficultyOptions[_difficultyIndex],
+                        label: localizations.practiceDifficulty,
+                        value: difficultyOptions[_difficultyIndex],
                         onTap: () => _showPicker(
                           context,
-                          _difficultyOptions,
+                          difficultyOptions,
                           _difficultyIndex,
                           _onDifficultyChange,
                         ),
                       ),
                       _buildFormItem(
-                        label: '练习时长',
-                        value: _durationOptions[_durationIndex],
+                        label: localizations.practiceDuration,
+                        value: durationOptions[_durationIndex],
                         onTap: () => _showPicker(
                           context,
-                          _durationOptions,
+                          durationOptions,
                           _durationIndex,
                           _onDurationChange,
                         ),
                       ),
                       _buildFormItem(
-                        label: '场地偏好',
-                        value: _locationOptions[_locationIndex],
+                        label: localizations.locationPreference,
+                        value: locationOptions[_locationIndex],
                         onTap: () => _showPicker(
                           context,
-                          _locationOptions,
+                          locationOptions,
                           _locationIndex,
                           _onLocationChange,
                         ),
                       ),
                       _buildPrimaryButton(
-                        text: '开始快速练习',
+                        text: localizations.startQuickPractice,
                         onPressed: _onStartPractice,
                       ),
                     ],
@@ -330,6 +349,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
     VoidCallback? onDelete,
     bool showEditDelete = true,
   }) {
+    final localizations = AppLocalizations.of(context)!;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 12), // 24rpx / 2
       child: Row(
@@ -347,7 +367,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
                   ),
                 ),
                 Text(
-                  '${sequence.poses.length} 个体式 · ${sequence.totalDurationFormatted}',
+                  '${localizations.posesCount(sequence.poses.length)} ${localizations.totalDuration(sequence.totalDurationFormatted(localizations))}',
                   style: const TextStyle(
                     fontSize: 12, // 24rpx / 2
                     color: Color(0xFF888888),
@@ -505,6 +525,8 @@ class _PracticeScreenState extends State<PracticeScreen> {
     int currentIndex,
     ValueChanged<int?> onChanged,
   ) {
+    final localizations = AppLocalizations.of(context)!;
+
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
@@ -517,11 +539,11 @@ class _PracticeScreenState extends State<PracticeScreen> {
                 children: [
                   TextButton(
                     onPressed: () => Navigator.pop(context),
-                    child: const Text('取消'),
+                    child: Text(localizations.cancel),
                   ),
                   TextButton(
                     onPressed: () => Navigator.pop(context),
-                    child: const Text('确定'),
+                    child: Text(localizations.confirm),
                   ),
                 ],
               ),
@@ -550,7 +572,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
 
 // Extend the Sequence class to include totalDurationFormatted
 extension SequenceExtension on yoga_sequence.Sequence {
-  String get totalDurationFormatted {
+  String totalDurationFormatted(AppLocalizations localizations) {
     final totalSeconds = poses.fold<int>(
       0,
           (acc, pose) => acc + pose.time,
@@ -558,8 +580,8 @@ extension SequenceExtension on yoga_sequence.Sequence {
     final minutes = totalSeconds ~/ 60;
     final seconds = totalSeconds % 60;
     if (seconds == 0) {
-      return '$minutes 分钟';
+      return localizations.minutes(minutes);
     }
-    return '$minutes分${seconds}秒';
+    return localizations.minutesSeconds(minutes, seconds);
   }
 }
