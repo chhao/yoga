@@ -18,7 +18,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get breath => 'Breath';
 
   @override
-  String get sanskritName => 'Sanskrit Name';
+  String get sanskritName => 'Sanskrit';
 
   @override
   String get benefits => 'Benefits';

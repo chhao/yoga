@@ -127,11 +127,11 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
     });
 
     if (_isSoundOn) {
-      if (step.instruction.contains('吸')) {
+      if (step.instruction.contains('吸') || step.instruction.contains('Inhale')) {
         _inhalePlayer.play(AssetSource('audio/chime.mp3'));
-      } else if (step.instruction.contains('屏息')) {
+      } else if (step.instruction.contains('屏息') || step.instruction.contains('Hold')) {
         _holdPlayer.play(AssetSource('audio/tick.mp3'));
-      } else if (step.instruction.contains('呼')) {
+      } else if (step.instruction.contains('呼') || step.instruction.contains('Exhale')) {
         _exhalePlayer.play(AssetSource('audio/bowl.mp3'));
       }
     }
@@ -346,7 +346,7 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
                     ),
                   ),
                   Text(
-                    _currentMode.name.zh,
+                    _currentMode.name.displayname,
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w300,

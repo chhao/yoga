@@ -13,7 +13,7 @@ class BreathDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(method.name.zh),
+        title: Text(method.name.displayname),
         backgroundColor: const Color(0xFFF7FAFA),
         elevation: 0,
         scrolledUnderElevation: 0,
@@ -58,7 +58,7 @@ class BreathDetailScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        method.name.zh,
+                        method.name.displayname,
                         style: const TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.bold,
@@ -114,6 +114,7 @@ class BreathDetailScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   _buildCard(
                     title: AppLocalizations.of(context)!.originAndBackground,

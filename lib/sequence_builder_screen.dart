@@ -36,11 +36,11 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
   String _formattedTotalDuration = '';
 
   AppLocalizations? _localizations;
+  bool _posesLoaded = false;
 
   @override
   void initState() {
     super.initState();
-    _loadPoses();
     _searchQueryController.addListener(_onSearchChange);
   }
 
@@ -49,6 +49,11 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
     super.didChangeDependencies();
     _localizations = AppLocalizations.of(context)!;
     _initializeLocalization();
+
+    if (!_posesLoaded) {
+      _posesLoaded = true;
+      _loadPoses();
+    }
 
     final args = ModalRoute.of(context)!.settings.arguments;
     if (args is yoga_sequence.Sequence && !_isEditing) { // Only load if not already editing

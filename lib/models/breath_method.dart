@@ -1,11 +1,11 @@
 class BreathName {
-  final String zh;
+  final String displayname;
   final String en;
   final String sanskrit;
   final List<String> aliases;
 
   BreathName({
-    required this.zh,
+    required this.displayname,
     required this.en,
     required this.sanskrit,
     required this.aliases,
@@ -13,7 +13,7 @@ class BreathName {
 
   factory BreathName.fromJson(Map<String, dynamic> json) {
     return BreathName(
-      zh: json['zh'],
+      displayname: json['displayname'],
       en: json['en'],
       sanskrit: json['sanskrit'],
       aliases: List<String>.from(json['aliases'] ?? []),

@@ -3,7 +3,7 @@
         "id": "fullyogicbreath",
         "name":
         {
-            "zh": "完全呼吸法",
+            "displayname": "完全呼吸法",
             "en": "Full Yogic Breath",
             "sanskrit": "Dirgha Pranayama",
             "aliases":
@@ -83,7 +83,7 @@
         "id": "boxbreath",
         "name":
         {
-            "zh": "平衡呼吸法",
+            "displayname": "平衡呼吸法",
             "en": "Box Breath",
             "sanskrit": "Sama Vritti Pranayama",
             "aliases":
@@ -178,7 +178,7 @@
         "id": "moonpiercingbreath",
         "name":
         {
-            "zh": "月亮呼吸法",
+            "displayname": "月亮呼吸法",
             "en": "Moon-Piercing Breath",
             "sanskrit": "Chandra Bhedana Pranayama",
             "aliases":
@@ -267,7 +267,7 @@
         "id": "sunpiercingbreath",
         "name":
         {
-            "zh": "太阳呼吸法",
+            "displayname": "太阳呼吸法",
             "en": "Sun-Piercing Breath",
             "sanskrit": "Surya Bhedana Pranayama",
             "aliases":
@@ -354,7 +354,7 @@
         "id": "staircasebreath",
         "name":
         {
-            "zh": "维洛玛呼吸法",
+            "displayname": "维洛玛呼吸法",
             "en": "Staircase Breathing",
             "sanskrit": "Viloma Pranayama",
             "aliases":
@@ -435,7 +435,7 @@
         "id": "hissbreath",
         "name":
         {
-            "zh": "嘶式屏息法",
+            "displayname": "嘶式屏息法",
             "en": "Hissing Breath",
             "sanskrit": "Shitkari Kumbhaka",
             "aliases":
@@ -520,7 +520,7 @@
         "id": "bellowsbreath",
         "name":
         {
-            "zh": "风箱呼吸法",
+            "displayname": "风箱呼吸法",
             "en": "Bellows Breath",
             "sanskrit": "Bhastrika Pranayama",
             "aliases":
@@ -602,7 +602,7 @@
         "id": "coolingbreath",
         "name":
         {
-            "zh": "清凉呼吸法",
+            "displayname": "清凉呼吸法",
             "en": "Sitali Pranayama",
             "sanskrit": "Cooling Breath",
             "aliases":
@@ -684,7 +684,7 @@
         "id": "hummingbeebreath",
         "name":
         {
-            "zh": "蜂鸣呼吸法",
+            "displayname": "蜂鸣呼吸法",
             "en": "Humming Bee Breath",
             "sanskrit": "Bhramari Pranayama",
             "aliases":
@@ -764,7 +764,7 @@
         "id": "skullshiningbreath",
         "name":
         {
-            "zh": "圣光调息法",
+            "displayname": "圣光调息法",
             "en": "Skull Shining Breath",
             "sanskrit": "Kapalabhati Pranayama",
             "aliases":
@@ -841,7 +841,7 @@
         "id": "oceanbreath",
         "name":
         {
-            "zh": "胜利呼吸法",
+            "displayname": "胜利呼吸法",
             "en": "Ocean Breath",
             "sanskrit": "Ujjayi Pranayama",
             "aliases":
@@ -935,7 +935,7 @@
         "id": "alternatenostrilbreath",
         "name":
         {
-            "zh": "交替鼻孔呼吸法",
+            "displayname": "交替鼻孔呼吸法",
             "en": "Alternate Nostril Breath",
             "sanskrit": "Nadi Shodhana Pranayama",
             "aliases":

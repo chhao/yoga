@@ -296,7 +296,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
       margin: const EdgeInsets.fromLTRB(16, 24, 16, 0), // 48rpx / 2, 32rpx / 2
       padding: const EdgeInsets.all(16), // 32rpx / 2
       decoration: BoxDecoration(
-        color: const Color(0xE6FFFFFF), // rgba(255, 255, 255, 0.9)
+        color: const Color(0xFFF7FAFA),
         borderRadius: BorderRadius.circular(12), // 24rpx / 2
         boxShadow: [
           BoxShadow(
@@ -529,6 +529,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
 
     showModalBottomSheet(
       context: context,
+      backgroundColor: const Color(0xFFF7FAFA),
       builder: (BuildContext context) {
         return SizedBox(
           height: 250,
@@ -539,10 +540,16 @@ class _PracticeScreenState extends State<PracticeScreen> {
                 children: [
                   TextButton(
                     onPressed: () => Navigator.pop(context),
+                    style: TextButton.styleFrom(
+                      foregroundColor: const Color(0xFF52946B),
+                    ),
                     child: Text(localizations.cancel),
                   ),
                   TextButton(
                     onPressed: () => Navigator.pop(context),
+                    style: TextButton.styleFrom(
+                      foregroundColor: const Color(0xFF52946B),
+                    ),
                     child: Text(localizations.confirm),
                   ),
                 ],
@@ -558,6 +565,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
                         Navigator.pop(context);
                       },
                       selected: index == currentIndex,
+                      selectedColor: const Color(0xFF52946B),
                     );
                   },
                 ),

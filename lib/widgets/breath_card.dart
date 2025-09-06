@@ -51,7 +51,7 @@ class BreathCard extends StatelessWidget {
               children: [
                 // Card Name
                 Text(
-                  method.name.zh,
+                  method.name.displayname,
                   style: const TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold,

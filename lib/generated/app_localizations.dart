@@ -119,7 +119,7 @@ abstract class AppLocalizations {
   /// No description provided for @sanskritName.
   ///
   /// In en, this message translates to:
-  /// **'Sanskrit Name'**
+  /// **'Sanskrit'**
   String get sanskritName;
 
   /// No description provided for @benefits.
