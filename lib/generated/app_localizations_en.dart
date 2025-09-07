@@ -45,6 +45,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get allTypes => 'All Types';
 
   @override
+  String get unknown => 'Unknown';
+
+  @override
   String get standing => 'Standing';
 
   @override

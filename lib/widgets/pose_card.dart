@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:yoga/models/pose.dart';
+import 'package:yoga/generated/app_localizations.dart';
 
 class PoseCard extends StatelessWidget {
   final Pose pose;
 
   const PoseCard({super.key, required this.pose});
 
-  String getDifficultyText(int difficulty) {
+  String getDifficultyText(int difficulty, AppLocalizations localizations) {
     switch (difficulty) {
       case 0:
-        return '初级';
+        return localizations.beginner;
       case 1:
-        return '中级';
+        return localizations.intermediate;
       case 2:
-        return '高级';
+        return localizations.advanced;
       default:
         return '';
     }
@@ -21,6 +22,7 @@ class PoseCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
     return Container(
       height: 105.0, // Fixed height to prevent overflow
       margin: const EdgeInsets.only(bottom: 12.0), // Equivalent to 24rpx
@@ -41,7 +43,7 @@ class PoseCard extends StatelessWidget {
                     MainAxisAlignment.spaceBetween, // Distribute space
                 children: [
                   Text(
-                    getDifficultyText(pose.difficulty),
+                    getDifficultyText(pose.difficulty, localizations),
                     style: const TextStyle(
                       color: Color(0xFF52946B),
                       fontSize: 14.0, // Equivalent to 0.875rem

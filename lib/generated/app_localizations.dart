@@ -170,6 +170,12 @@ abstract class AppLocalizations {
   /// **'All Types'**
   String get allTypes;
 
+  /// No description provided for @unknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown'**
+  String get unknown;
+
   /// No description provided for @standing.
   ///
   /// In en, this message translates to:

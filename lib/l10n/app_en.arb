@@ -11,6 +11,7 @@
     "intermediate": "Intermediate",
     "advanced": "Advanced",
     "allTypes": "All Types",
+    "unknown": "Unknown",
     "standing": "Standing",
     "seated": "Seated",
     "supine": "Supine",

@@ -1,3 +1,5 @@
+import 'package:yoga/generated/app_localizations.dart';
+
 class Pose {
   final String id;
   final String name;
@@ -38,21 +40,25 @@ class Pose {
     );
   }
 
-  String get difficulty_text {
-    final difficultyMap = ['初级', '中级', '高级'];
-    return difficultyMap[difficulty] ?? '未知';
+  String difficulty_text(AppLocalizations localizations) {
+    final difficultyMap = [
+      localizations.beginner,
+      localizations.intermediate,
+      localizations.advanced
+    ];
+    return difficultyMap.length > difficulty ? difficultyMap[difficulty] : localizations.unknown;
   }
 
-  String get position_text {
+  String position_text(AppLocalizations localizations) {
     final typeMap = {
-      1: '站立',
-      2: '坐姿',
-      3: '仰卧',
-      4: '俯卧',
-      5: '跪姿',
-      6: '平衡',
+      1: localizations.standing,
+      2: localizations.seated,
+      3: localizations.supine,
+      4: localizations.prone,
+      5: localizations.kneeling,
+      6: localizations.balancing,
     };
-    return typeMap[position] ?? '未知';
+    return typeMap[position] ?? localizations.unknown;
   }
 
   List<String> get benefits_array {

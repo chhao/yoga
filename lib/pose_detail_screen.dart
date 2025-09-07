@@ -10,6 +10,7 @@ class PoseDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
         title: Text(pose.name),
@@ -58,8 +59,8 @@ class PoseDetailScreen extends StatelessWidget {
                     spacing: 8.0,
                     runSpacing: 8.0,
                     children: [
-                      _buildPill(pose.difficulty_text, const Color(0xFFFDE7CB), const Color(0xFFA75522)),
-                      _buildPill(pose.position_text, const Color(0xFFE8F2ED), const Color(0xFF52946B)),
+                      _buildPill(pose.difficulty_text(localizations), const Color(0xFFFDE7CB), const Color(0xFFA75522)),
+                      _buildPill(pose.position_text(localizations), const Color(0xFFE8F2ED), const Color(0xFF52946B)),
                       ...pose.type_array.map((type) => _buildPill(type, const Color(0xFFFAF1D9), const Color(0xFFA75522))),
                     ],
                   ),

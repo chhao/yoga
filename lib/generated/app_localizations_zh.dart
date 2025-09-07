@@ -45,6 +45,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get allTypes => '所有类型';
 
   @override
+  String get unknown => '未知';
+
+  @override
   String get standing => '站立';
 
   @override
