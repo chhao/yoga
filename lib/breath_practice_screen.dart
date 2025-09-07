@@ -137,6 +137,7 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
     }
 
     Future.delayed(Duration(seconds: step.duration - 1), () {
+      if (!mounted) return;
       if (_isPlaying) {
         setState(() {
           _instructionOpacity = 0.0;
@@ -304,13 +305,21 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
   }
 
   void _exitPractice() {
-    _stopSession();
+    _isPlaying = false;
+    _intervalTimer?.cancel();
+    _sessionTimer?.cancel();
+    _intervalTimer = null;
+    _sessionTimer = null;
     Navigator.of(context).pop(); // Go back to the previous screen
   }
 
   @override
   void dispose() {
-    _stopSession();
+    _isPlaying = false;
+    _intervalTimer?.cancel();
+    _sessionTimer?.cancel();
+    _intervalTimer = null;
+    _sessionTimer = null;
     _inhalePlayer.dispose();
     _holdPlayer.dispose();
     _exhalePlayer.dispose();
