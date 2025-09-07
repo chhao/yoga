@@ -78,7 +78,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settings => 'Settings';
 
   @override
-  String get audioSetting => 'Audio Setting';
+  String get audioSetting => 'Audio';
 
   @override
   String get language => 'Language';

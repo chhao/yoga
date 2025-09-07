@@ -9,7 +9,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 2,
-    "type": "冥想, 恢复",
+    "type": "Meditation, Restorative",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Accomplished.png"
   },
   {
@@ -22,7 +22,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 2,
-    "type": "拉伸, 侧弯, 扭转",
+    "type": "Stretch, Side_bend, Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Archer.png"
   },
   {
@@ -35,7 +35,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 6,
-    "type": "开髋, 力量",
+    "type": "Hip_opener, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_BabyGrasshopper.png"
   },
   {
@@ -48,7 +48,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 2,
-    "type": "拉伸, 平衡",
+    "type": "Stretch, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_BalancingBoundAngle.png"
   },
   {
@@ -61,7 +61,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 2,
-    "type": "平衡, 开髋, 力量",
+    "type": "Balance, Hip_opener, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_BalancingButterfly.png"
   },
   {
@@ -74,7 +74,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 3,
-    "type": "扭转, 拉伸, 力量",
+    "type": "Twist, Stretch, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_BellyTwist.png"
   },
   {
@@ -87,7 +87,7 @@
     "difficulty": 1,
     "aka_chinese": "['巴拉瓦伽第一式','巴拉瓦伽扭转式']",
     "position": 2,
-    "type": "扭转",
+    "type": "Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_BharadvajaTwist.png"
   },
   {
@@ -100,7 +100,7 @@
     "difficulty": 1,
     "aka_chinese": "['手抓大脚趾站立前屈式','站立手抓大脚趾式','手触趾前曲伸展式']",
     "position": 1,
-    "type": "前屈, 拉伸",
+    "type": "Forward_bend, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_BigToe.png"
   },
   {
@@ -113,7 +113,7 @@
     "difficulty": 2,
     "aka_chinese": "['鸟王式']",
     "position": 1,
-    "type": "拉伸, 侧弯, 力量, 平衡",
+    "type": "Stretch, Side_bend, Strength, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_BirdOfParadise.png"
   },
   {
@@ -126,7 +126,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 1,
-    "type": "扭转, 拉伸, 力量, 平衡",
+    "type": "Twist, Stretch, Strength, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_BirdOfParadiseRevolved.png"
   },
   {
@@ -139,7 +139,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 3,
-    "type": "恢复, 拉伸",
+    "type": "Restorative, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_BlissfulBaby.png"
   },
   {
@@ -152,7 +152,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 2,
-    "type": "平衡, 力量",
+    "type": "Balance, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_BoatBind.png"
   },
   {
@@ -165,7 +165,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 2,
-    "type": "前屈, 力量, 平衡",
+    "type": "Forward_bend, Strength, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_BoatFull.png"
   },
   {
@@ -178,7 +178,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 2,
-    "type": "平衡, 力量",
+    "type": "Balance, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_BoatHalf.png"
   },
   {
@@ -191,7 +191,7 @@
     "difficulty": 0,
     "aka_chinese": "['蝴蝶式','鞋匠式']",
     "position": 2,
-    "type": "拉伸",
+    "type": "Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_BoundAngle.png"
   },
   {
@@ -204,7 +204,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "前屈, 倒立",
+    "type": "Forward_bend, Inversion",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_BoundInvertedTortoise.png"
   },
   {
@@ -217,7 +217,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 4,
-    "type": "后弯, 拉伸",
+    "type": "Back_bend, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Bow.png"
   },
   {
@@ -230,7 +230,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 4,
-    "type": "后弯, 开胸, 开髋",
+    "type": "Back_bend, Chest_opener, Hip_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_BowBigToeI.png"
   },
   {
@@ -243,7 +243,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 5,
-    "type": "扭转, 恢复",
+    "type": "Twist, Restorative",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_BoxHandToAnkle.png"
   },
   {
@@ -256,7 +256,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 3,
-    "type": "后弯, 拉伸, 力量, 平衡",
+    "type": "Back_bend, Stretch, Strength, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Bridge.png"
   },
   {
@@ -269,7 +269,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 5,
-    "type": "后弯, 拉伸, 平衡",
+    "type": "Back_bend, Stretch, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Camel.png"
   },
   {
@@ -282,7 +282,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 5,
-    "type": "前屈",
+    "type": "Forward_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Cat.png"
   },
   {
@@ -295,7 +295,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 2,
-    "type": "前屈, 拉伸, 恢复",
+    "type": "Forward_bend, Stretch, Restorative",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Caterpillar.png"
   },
   {
@@ -308,7 +308,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 1,
-    "type": "前屈, 拉伸, 力量, 平衡",
+    "type": "Forward_bend, Stretch, Strength, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Chair.png"
   },
   {
@@ -321,7 +321,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 1,
-    "type": "力量, 扭转",
+    "type": "Strength, Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_ChairTwist.png"
   },
   {
@@ -334,7 +334,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 5,
-    "type": "恢复, 前屈, 倒立",
+    "type": "Restorative, Forward_bend, Inversion",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Child.png"
   },
   {
@@ -347,7 +347,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "倒立, 后弯, 拉伸, 力量, 平衡",
+    "type": "Inversion, Back_bend, Stretch, Strength, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_ChinStand.png"
   },
   {
@@ -360,7 +360,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 4,
-    "type": "后弯, 开胸",
+    "type": "Back_bend, Chest_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Cobra.png"
   },
   {
@@ -373,7 +373,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 4,
-    "type": "后弯",
+    "type": "Back_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_CobraFull.png"
   },
   {
@@ -386,7 +386,7 @@
     "difficulty": 0,
     "aka_chinese": "['尸体式','卧尸式']",
     "position": 3,
-    "type": "恢复",
+    "type": "Restorative",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Corpse.png"
   },
   {
@@ -399,7 +399,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 3,
-    "type": "后弯, 拉伸, 倒立, 力量",
+    "type": "Back_bend, Stretch, Inversion, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_CouchPose.png"
   },
   {
@@ -412,7 +412,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 4,
-    "type": "后弯,力量",
+    "type": "Back_bend, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Cow.png"
   },
   {
@@ -425,7 +425,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 2,
-    "type": "拉伸,后弯,开肩",
+    "type": "Stretch, Back_bend, Shoulder_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_CowFace.png"
   },
   {
@@ -438,7 +438,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 2,
-    "type": "拉伸, 恢复",
+    "type": "Stretch, Restorative",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Cradle.png"
   },
   {
@@ -451,7 +451,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "力量, 倒立, 平衡",
+    "type": "Strength, Inversion, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Crane.png"
   },
   {
@@ -464,7 +464,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 4,
-    "type": "拉伸, 扭转",
+    "type": "Stretch, Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_CrookedMonkey.png"
   },
   {
@@ -477,7 +477,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 6,
-    "type": "力量, 平衡",
+    "type": "Strength, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Crow.png"
   },
   {
@@ -490,7 +490,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "平衡, 力量, 扭转",
+    "type": "Balance, Strength, Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_CrowSide.png"
   },
   {
@@ -503,7 +503,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 1,
-    "type": "后弯, 平衡, 开胸, 开髋",
+    "type": "Back_bend, Balance, Chest_opener, Hip_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Dancer.png"
   },
   {
@@ -516,7 +516,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 1,
-    "type": "后弯, 平衡, 开胸, 开髋",
+    "type": "Back_bend, Balance, Chest_opener, Hip_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_DancerKing.png"
   },
   {
@@ -529,7 +529,7 @@
     "difficulty": 2,
     "aka_chinese": "['耳压式', '膝碰耳式']",
     "position": 6,
-    "type": "前屈, 倒立, 拉伸",
+    "type": "Forward_bend, Inversion, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_DeafMan.png"
   },
   {
@@ -542,7 +542,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 4,
-    "type": "前屈, 倒立, 力量,开肩",
+    "type": "Forward_bend, Inversion, Strength, Shoulder_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Dolphin.png"
   },
   {
@@ -555,7 +555,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 4,
-    "type": "倒立, 前屈, 拉伸, 力量",
+    "type": "Inversion, Forward_bend, Stretch, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_DownwardDog.png"
   },
   {
@@ -568,7 +568,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 4,
-    "type": "平衡, 前屈, 倒立, 扭转",
+    "type": "Balance, Forward_bend, Inversion, Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_DownwardDogHandToAnkle.png"
   },
   {
@@ -581,7 +581,7 @@
     "difficulty": 2,
     "aka_chinese": "['蚱蜢式']",
     "position": 6,
-    "type": "开髋, 力量, 扭转",
+    "type": "Hip_opener, Strength, Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Dragonfly.png"
   },
   {
@@ -594,7 +594,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "倒立,力量",
+    "type": "Inversion, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Duck.png"
   },
   {
@@ -607,7 +607,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 1,
-    "type": "平衡,扭转,开肩",
+    "type": "Balance, Twist, Shoulder_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Eagle.png"
   },
   {
@@ -620,7 +620,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 2,
-    "type": "恢复",
+    "type": "Restorative",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Easy.png"
   },
   {
@@ -633,7 +633,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 2,
-    "type": "开髋, 扭转",
+    "type": "Hip_opener, Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_EasyTwist.png"
   },
   {
@@ -646,7 +646,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "扭转, 力量",
+    "type": "Twist, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_EightAngle.png"
   },
   {
@@ -659,7 +659,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 4,
-    "type": "力量,后弯",
+    "type": "Strength, Back_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_EightPoint.png"
   },
   {
@@ -672,7 +672,7 @@
     "difficulty": 1,
     "aka_chinese": "['单腿昆虫式']",
     "position": 6,
-    "type": "力量",
+    "type": "Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_ElephantTrunk.png"
   },
   {
@@ -685,7 +685,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 3,
-    "type": "倒立, 力量, 平衡",
+    "type": "Inversion, Strength, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Embryo.png"
   },
   {
@@ -698,7 +698,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 2,
-    "type": "平衡,力量",
+    "type": "Balance, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_EmbryoWomb.png"
   },
   {
@@ -711,7 +711,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 5,
-    "type": "拉伸, 力量, 平衡",
+    "type": "Stretch, Strength, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Equestrian.png"
   },
   {
@@ -724,7 +724,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 6,
-    "type": "平衡, 开髋, 力量",
+    "type": "Balance, Hip_opener, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Firefly.png"
   },
   {
@@ -737,7 +737,7 @@
     "difficulty": 1,
     "aka_chinese": "['方块式']",
     "position": 2,
-    "type": "开髋",
+    "type": "Hip_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_FireLog.png"
   },
   {
@@ -750,7 +750,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 3,
-    "type": "后弯, 开胸",
+    "type": "Back_bend, Chest_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Fish.png"
   },
   {
@@ -763,7 +763,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "前屈, 拉伸, 倒立, 平衡",
+    "type": "Forward_bend, Stretch, Inversion, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_FlamingoHumble.png"
   },
   {
@@ -776,7 +776,7 @@
     "difficulty": 1,
     "aka_chinese": "['独身式','梵行式']",
     "position": 6,
-    "type": "平衡, 力量",
+    "type": "Balance, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_FloatingStick.png"
   },
   {
@@ -789,7 +789,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "平衡, 开髋",
+    "type": "Balance, Hip_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_FlyingLizard.png"
   },
   {
@@ -802,7 +802,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "平衡, 力量, 扭转",
+    "type": "Balance, Strength, Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_FlyingManRevolved.png"
   },
   {
@@ -815,7 +815,7 @@
     "difficulty": 2,
     "aka_chinese": "['单腿头触式','坐立单腿侧伸展']",
     "position": 2,
-    "type": "平衡,拉伸",
+    "type": "Balance, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_FootBehindHead.png"
   },
   {
@@ -828,7 +828,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 2,
-    "type": "平衡,拉伸",
+    "type": "Balance, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_FootBehindHeadForward.png"
   },
   {
@@ -841,7 +841,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 2,
-    "type": "拉伸",
+    "type": "Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_FootBehindHeadTwoLegged.png"
   },
   {
@@ -854,7 +854,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "力量,拉伸",
+    "type": "Strength, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_FootBehindHeadTwoLeggedElevated.png"
   },
   {
@@ -867,7 +867,7 @@
     "difficulty": 2,
     "aka_chinese": "['前臂倒立']",
     "position": 6,
-    "type": "倒立, 前屈, 拉伸, 力量, 平衡",
+    "type": "Inversion, Forward_bend, Stretch, Strength, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_ForearmBalance.png"
   },
   {
@@ -880,7 +880,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 1,
-    "type": "前屈",
+    "type": "Forward_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_ForwardBend.png"
   },
   {
@@ -893,7 +893,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 6,
-    "type": "力量",
+    "type": "Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_FourLimbedStaff.png"
   },
   {
@@ -906,7 +906,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 4,
-    "type": "开髋,拉伸",
+    "type": "Hip_opener, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Frog.png"
   },
   {
@@ -919,7 +919,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 4,
-    "type": "后弯, 开胸, 开髋,拉伸",
+    "type": "Back_bend, Chest_opener, Hip_opener, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_FrogTraditional.png"
   },
   {
@@ -932,7 +932,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 2,
-    "type": "拉伸,力量,开髋,开肩",
+    "type": "Stretch, Strength, Hip_opener, Shoulder_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Garland.png"
   },
   {
@@ -945,7 +945,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 5,
-    "type": "开胸, 开髋",
+    "type": "Chest_opener, Hip_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Gate.png"
   },
   {
@@ -958,7 +958,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 4,
-    "type": "后弯, 拉伸",
+    "type": "Back_bend, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_GherandaI.png"
   },
   {
@@ -971,7 +971,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 1,
-    "type": "力量,开胸, 开髋",
+    "type": "Strength, Chest_opener, Hip_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Goddess.png"
   },
   {
@@ -984,7 +984,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 1,
-    "type": "前屈, 拉伸",
+    "type": "Forward_bend, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Gorilla.png"
   },
   {
@@ -997,7 +997,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 4,
-    "type": "后弯, 开胸, 开髋,拉伸",
+    "type": "Back_bend, Chest_opener, Hip_opener, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_HalfFrogTraditional.png"
   },
   {
@@ -1010,7 +1010,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 1,
-    "type": "平衡",
+    "type": "Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_HalfMoon.png"
   },
   {
@@ -1023,7 +1023,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 1,
-    "type": "平衡, 扭转",
+    "type": "Balance, Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_HalfMoonRevolved.png"
   },
   {
@@ -1036,7 +1036,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "平衡, 倒立, 力量",
+    "type": "Balance, Inversion, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Handstand.png"
   },
   {
@@ -1049,7 +1049,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "后弯",
+    "type": "Back_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_HandstandScorpion.png"
   },
   {
@@ -1062,7 +1062,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "后弯",
+    "type": "Back_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_HandstandScorpionOneLegged.png"
   },
   {
@@ -1075,7 +1075,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 4,
-    "type": "倒立, 力量, 平衡",
+    "type": "Inversion, Strength, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_HeadstandSupported.png"
   },
   {
@@ -1088,7 +1088,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "倒立, 力量, 平衡, 前屈",
+    "type": "Inversion, Strength, Balance, Forward_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_HeadstandSupportedHalfWay.png"
   },
   {
@@ -1101,7 +1101,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "倒立, 拉伸, 力量, 平衡",
+    "type": "Inversion, Stretch, Strength, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_HeadstandSupportedOneLegged.png"
   },
   {
@@ -1114,7 +1114,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 4,
-    "type": "倒立, 力量, 平衡",
+    "type": "Inversion, Strength, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_HeadstandTripod.png"
   },
   {
@@ -1127,7 +1127,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 2,
-    "type": "前屈, 拉伸",
+    "type": "Forward_bend, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_HeadToKnee.png"
   },
   {
@@ -1140,7 +1140,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 2,
-    "type": "前屈, 拉伸",
+    "type": "Forward_bend, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_HeadToKneeII.png"
   },
   {
@@ -1153,7 +1153,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 2,
-    "type": "前屈, 拉伸",
+    "type": "Forward_bend, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_HeadToKneeIII.png"
   },
   {
@@ -1166,7 +1166,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 2,
-    "type": "开胸, 开髋, 扭转",
+    "type": "Chest_opener, Hip_opener, Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_HeadToKneeRevolved.png"
   },
   {
@@ -1179,7 +1179,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 2,
-    "type": "后弯",
+    "type": "Back_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Hero.png"
   },
   {
@@ -1192,7 +1192,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 2,
-    "type": "拉伸,力量",
+    "type": "Stretch, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Heron.png"
   },
   {
@@ -1205,7 +1205,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 3,
-    "type": "后弯, 开胸",
+    "type": "Back_bend, Chest_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_HeroReclining.png"
   },
   {
@@ -1218,7 +1218,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 5,
-    "type": "平衡",
+    "type": "Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Horse.png"
   },
   {
@@ -1231,7 +1231,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 2,
-    "type": " 开髋",
+    "type": "Hip_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_KneePile.png"
   },
   {
@@ -1244,7 +1244,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 5,
-    "type": "后弯, 拉伸, 倒立, 力量, 平衡",
+    "type": "Back_bend, Stretch, Inversion, Strength, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_LittleThunderbolt.png"
   },
   {
@@ -1257,7 +1257,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 4,
-    "type": "开髋,拉伸, 力量, 平衡",
+    "type": "Hip_opener, Stretch, Strength, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Lizard.png"
   },
   {
@@ -1270,7 +1270,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 4,
-    "type": "后弯, 开胸",
+    "type": "Back_bend, Chest_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Locust.png"
   },
   {
@@ -1283,7 +1283,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 4,
-    "type": "后弯, 开胸",
+    "type": "Back_bend, Chest_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_LocustII.png"
   },
   {
@@ -1296,7 +1296,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 4,
-    "type": "后弯, 开胸",
+    "type": "Back_bend, Chest_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_LocustIII.png"
   },
   {
@@ -1309,7 +1309,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 2,
-    "type": "扭转",
+    "type": "Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_LordOfTheFishes.png"
   },
   {
@@ -1322,7 +1322,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 2,
-    "type": "扭转",
+    "type": "Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_LordOfTheFishesHalf.png"
   },
   {
@@ -1335,7 +1335,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 6,
-    "type": "力量, 平衡",
+    "type": "Strength, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_LotusElevated.png"
   },
   {
@@ -1348,7 +1348,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 2,
-    "type": "开髋",
+    "type": "Hip_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_LotusFull.png"
   },
   {
@@ -1361,7 +1361,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 1,
-    "type": "开髋",
+    "type": "Hip_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Lunge.png"
   },
   {
@@ -1374,7 +1374,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 1,
-    "type": "后弯, 开胸, 力量",
+    "type": "Back_bend, Chest_opener, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_LungeCrescent.png"
   },
   {
@@ -1387,7 +1387,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 1,
-    "type": "平衡, 开髋, 力量",
+    "type": "Balance, Hip_opener, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_LungeCrescentKneelingLookingUp.png"
   },
   {
@@ -1400,7 +1400,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "平衡, 力量",
+    "type": "Balance, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_LungeHandsOnMatFlying.png"
   },
   {
@@ -1413,7 +1413,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 1,
-    "type": "平衡, 开髋, 力量, 扭转",
+    "type": "Balance, Hip_opener, Strength, Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_LungeKneelingTwist.png"
   },
   {
@@ -1426,7 +1426,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 2,
-    "type": "扭转",
+    "type": "Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_MarichiIII.png"
   },
   {
@@ -1439,7 +1439,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 2,
-    "type": "扭转",
+    "type": "Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_MarichiIIITraditional.png"
   },
   {
@@ -1452,7 +1452,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 2,
-    "type": "前屈, 开髋",
+    "type": "Forward_bend, Hip_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_MarichiIITraditional.png"
   },
   {
@@ -1465,7 +1465,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 2,
-    "type": "前屈",
+    "type": "Forward_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_MarichiITraditional.png"
   },
   {
@@ -1478,7 +1478,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 2,
-    "type": "开髋, 扭转",
+    "type": "Hip_opener, Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_MarichiIVTraditional.png"
   },
   {
@@ -1491,7 +1491,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "平衡,拉伸",
+    "type": "Balance, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_MoonBird.png"
   },
   {
@@ -1504,7 +1504,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 1,
-    "type": "平衡",
+    "type": "Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_MountainArmSide.png"
   },
   {
@@ -1517,7 +1517,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 1,
-    "type": "侧弯, 拉伸",
+    "type": "Side_bend, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_PalmTree.png"
   },
   {
@@ -1530,7 +1530,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "平衡, 力量",
+    "type": "Balance, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Peacock.png"
   },
   {
@@ -1543,7 +1543,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "平衡, 开髋, 力量",
+    "type": "Balance, Hip_opener, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_PeacockLotus.png"
   },
   {
@@ -1556,7 +1556,7 @@
     "difficulty": 1,
     "aka_chinese": "['摇摆式','吊坠式']",
     "position": 6,
-    "type": "平衡, 力量, 前屈",
+    "type": "Balance, Strength, Forward_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Pendant.png"
   },
   {
@@ -1569,7 +1569,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 5,
-    "type": "后弯, 开胸, 开髋, 力量",
+    "type": "Back_bend, Chest_opener, Hip_opener, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Pigeon.png"
   },
   {
@@ -1582,7 +1582,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "平衡, 开髋, 力量",
+    "type": "Balance, Hip_opener, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_PigeonFlying.png"
   },
   {
@@ -1595,7 +1595,7 @@
     "difficulty": 1,
     "aka_chinese": "['向下鸽子式']",
     "position": 4,
-    "type": "前屈, 开髋",
+    "type": "Forward_bend, Hip_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_PigeonForwardBend.png"
   },
   {
@@ -1608,7 +1608,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 2,
-    "type": "后弯",
+    "type": "Back_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_PigeonFull.png"
   },
   {
@@ -1621,7 +1621,7 @@
     "difficulty": 0,
     "aka_chinese": "['天鹅式']",
     "position": 2,
-    "type": "后弯",
+    "type": "Back_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_PigeonHalf.png"
   },
   {
@@ -1634,7 +1634,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 2,
-    "type": "后弯",
+    "type": "Back_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_PigeonKing.png"
   },
   {
@@ -1647,7 +1647,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 4,
-    "type": "后弯",
+    "type": "Back_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_PigeonKingFull.png"
   },
   {
@@ -1660,7 +1660,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 4,
-    "type": "力量",
+    "type": "Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Plank.png"
   },
   {
@@ -1673,7 +1673,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 4,
-    "type": "力量",
+    "type": "Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_PlankDolphin.png"
   },
   {
@@ -1686,7 +1686,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 6,
-    "type": "平衡, 力量",
+    "type": "Balance, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_PlankSide.png"
   },
   {
@@ -1699,7 +1699,7 @@
     "difficulty": 0,
     "aka_chinese": "['向上板式']",
     "position": 3,
-    "type": "后弯, 开胸, 力量",
+    "type": "Back_bend, Chest_opener, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_PlankUpward.png"
   },
   {
@@ -1712,7 +1712,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 3,
-    "type": "前屈, 倒立",
+    "type": "Forward_bend, Inversion",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Plow.png"
   },
   {
@@ -1725,7 +1725,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 1,
-    "type": "平衡",
+    "type": "Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_PrayerPose.png"
   },
   {
@@ -1738,7 +1738,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 4,
-    "type": "后弯, 拉伸",
+    "type": "Back_bend, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_ProneBowHalf.png"
   },
   {
@@ -1751,7 +1751,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 4,
-    "type": "后弯, 开胸",
+    "type": "Back_bend, Chest_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_PuppyExtended.png"
   },
   {
@@ -1764,7 +1764,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 5,
-    "type": "平衡, 前屈, 开髋",
+    "type": "Balance, Forward_bend, Hip_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_PyramidKneeling.png"
   },
   {
@@ -1777,7 +1777,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 1,
-    "type": "平衡, 前屈, 倒立",
+    "type": "Balance, Forward_bend, Inversion",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_PyramidPrayer.png"
   },
   {
@@ -1790,7 +1790,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 5,
-    "type": "前屈, 倒立,开肩",
+    "type": "Forward_bend, Inversion, Shoulder_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Rabbit.png"
   },
   {
@@ -1803,7 +1803,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 1,
-    "type": "前屈, 倒立",
+    "type": "Forward_bend, Inversion",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_RagDoll.png"
   },
   {
@@ -1816,7 +1816,7 @@
     "difficulty": 2,
     "aka_chinese": "['完全鱼式']",
     "position": 3,
-    "type": "后弯, 开胸",
+    "type": "Back_bend, Chest_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_RaisedLegsPose.png"
   },
   {
@@ -1829,7 +1829,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 3,
-    "type": "平衡, 恢复",
+    "type": "Balance, Restorative",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_RecliningStaff.png"
   },
   {
@@ -1842,7 +1842,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "后弯, 平衡, 开胸, 倒立, 力量",
+    "type": "Back_bend, Balance, Chest_opener, Inversion, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_RelaxedStance.png"
   },
   {
@@ -1855,7 +1855,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 4,
-    "type": "恢复, 拉伸",
+    "type": "Restorative, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_ReverseCorpse.png"
   },
   {
@@ -1868,7 +1868,7 @@
     "difficulty": 0,
     "aka_chinese": "['螃蟹式']",
     "position": 3,
-    "type": "后弯,力量,开肩",
+    "type": "Back_bend, Strength, Shoulder_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_ReverseTable.png"
   },
   {
@@ -1881,7 +1881,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "平衡, 开髋, 力量",
+    "type": "Balance, Hip_opener, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Rooster.png"
   },
   {
@@ -1894,7 +1894,7 @@
     "difficulty": 2,
     "aka_chinese": "['腿交叉双臂支撑式','夹上臂式','夹肩式']",
     "position": 6,
-    "type": "平衡,力量",
+    "type": "Balance, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_ScaleForward.png"
   },
   {
@@ -1907,7 +1907,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "后弯, 平衡, 开胸, 倒立, 力量",
+    "type": "Back_bend, Balance, Chest_opener, Inversion, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Scorpion.png"
   },
   {
@@ -1920,7 +1920,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 2,
-    "type": "前屈",
+    "type": "Forward_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SeatedForwardBend.png"
   },
   {
@@ -1933,7 +1933,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 2,
-    "type": "前屈",
+    "type": "Forward_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SeatedForwardBendHalfLotus.png"
   },
   {
@@ -1946,7 +1946,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 2,
-    "type": "前屈",
+    "type": "Forward_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SeatedForwardBendII.png"
   },
   {
@@ -1959,7 +1959,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 2,
-    "type": "前屈",
+    "type": "Forward_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SeatedForwardBendIII.png"
   },
   {
@@ -1972,7 +1972,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 2,
-    "type": "前屈",
+    "type": "Forward_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SeatedForwardBendIV.png"
   },
   {
@@ -1985,7 +1985,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 2,
-    "type": "前屈",
+    "type": "Forward_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SeatedForwardBendThreeLimbs.png"
   },
   {
@@ -1998,7 +1998,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 2,
-    "type": "扭转",
+    "type": "Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SeatedOnHeelsTwistBound.png"
   },
   {
@@ -2011,7 +2011,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 1,
-    "type": "平衡",
+    "type": "Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_ShivaSquat.png"
   },
   {
@@ -2024,7 +2024,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 1,
-    "type": "平衡",
+    "type": "Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_ShivaSquatPrayer.png"
   },
   {
@@ -2037,7 +2037,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "平衡,倒立",
+    "type": "Balance, Inversion",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_ShoulderstandLotus.png"
   },
   {
@@ -2050,7 +2050,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 6,
-    "type": "平衡,倒立",
+    "type": "Balance, Inversion",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_ShoulderstandSupported.png"
   },
   {
@@ -2063,7 +2063,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 3,
-    "type": "平衡, 拉伸, 倒立, 力量",
+    "type": "Balance, Stretch, Inversion, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_ShoulderstandUnsupported.png"
   },
   {
@@ -2076,7 +2076,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 2,
-    "type": "平衡, 拉伸",
+    "type": "Balance, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SideLunge.png"
   },
   {
@@ -2089,7 +2089,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 4,
-    "type": "后弯, 开胸, 力量",
+    "type": "Back_bend, Chest_opener, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Snake.png"
   },
   {
@@ -2102,7 +2102,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 4,
-    "type": "后弯",
+    "type": "Back_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Sphinx.png"
   },
   {
@@ -2115,7 +2115,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 2,
-    "type": "平衡, 开胸, 开髋",
+    "type": "Balance, Chest_opener, Hip_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SplitsFront.png"
   },
   {
@@ -2128,7 +2128,7 @@
     "difficulty": 1,
     "aka_chinese": "['单腿脊柱前屈伸展式','站立一字马']]",
     "position": 1,
-    "type": "平衡",
+    "type": "Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SplitsStanding.png"
   },
   {
@@ -2141,7 +2141,7 @@
     "difficulty": 2,
     "aka_chinese": "['中央劈叉']",
     "position": 2,
-    "type": "拉伸, 开髋, 力量",
+    "type": "Stretch, Hip_opener, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SplitsWide.png"
   },
   {
@@ -2154,7 +2154,7 @@
     "difficulty": 0,
     "aka_chinese": "['坐立伸展式']",
     "position": 2,
-    "type": "力量",
+    "type": "Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Staff.png"
   },
   {
@@ -2167,7 +2167,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "后弯, 拉伸, 倒立, 力量, 平衡",
+    "type": "Back_bend, Stretch, Inversion, Strength, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_StaffInverted.png"
   },
   {
@@ -2180,7 +2180,7 @@
     "difficulty": 2,
     "aka_chinese": "['杜尔瓦萨式']",
     "position": 1,
-    "type": "平衡, 拉伸, 力量",
+    "type": "Balance, Stretch, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_StandingFootBehindHead.png"
   },
   {
@@ -2193,7 +2193,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 1,
-    "type": "前屈, 平衡",
+    "type": "Forward_bend, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_StandingForwardBendHalfLotus.png"
   },
   {
@@ -2206,7 +2206,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 1,
-    "type": "平衡",
+    "type": "Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_StandingHandToToe.png"
   },
   {
@@ -2219,7 +2219,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 1,
-    "type": "平衡, 开髋",
+    "type": "Balance, Hip_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_StandingHandToToeExtended.png"
   },
   {
@@ -2232,7 +2232,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 1,
-    "type": "平衡, 扭转",
+    "type": "Balance, Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_StandingHandToToeRevolved.png"
   },
   {
@@ -2245,7 +2245,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 1,
-    "type": "平衡, 前屈, 力量",
+    "type": "Balance, Forward_bend, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_StandingHeadToKnee.png"
   },
   {
@@ -2258,7 +2258,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 1,
-    "type": "开胸",
+    "type": "Chest_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Star.png"
   },
   {
@@ -2271,7 +2271,7 @@
     "difficulty": 1,
     "aka_chinese": "['睡角式']",
     "position": 6,
-    "type": "前屈, 倒立",
+    "type": "Forward_bend, Inversion",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SupineAngle.png"
   },
   {
@@ -2284,7 +2284,7 @@
     "difficulty": 0,
     "aka_chinese": "['卧蝴蝶式']",
     "position": 3,
-    "type": "开髋, 恢复",
+    "type": "Hip_opener, Restorative",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SupineBoundAngle.png"
   },
   {
@@ -2297,7 +2297,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 3,
-    "type": "拉伸, 开髋",
+    "type": "Stretch, Hip_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SupineHandToToeExtended.png"
   },
   {
@@ -2310,7 +2310,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 3,
-    "type": "拉伸, 力量",
+    "type": "Stretch, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SupineHandToToeFull.png"
   },
   {
@@ -2323,7 +2323,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 3,
-    "type": "扭转",
+    "type": "Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SupineHandToToeRevolved.png"
   },
   {
@@ -2336,7 +2336,7 @@
     "difficulty": 1,
     "aka_chinese": "['反鸽子式','针孔式']",
     "position": 3,
-    "type": "开髋, 恢复",
+    "type": "Hip_opener, Restorative",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SupinePigeon.png"
   },
   {
@@ -2349,7 +2349,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 3,
-    "type": "扭转",
+    "type": "Twist",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SupineSpinalTwist.png"
   },
   {
@@ -2362,7 +2362,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 3,
-    "type": "拉伸, 平衡",
+    "type": "Stretch, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SupineStraddle.png"
   },
   {
@@ -2375,7 +2375,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 4,
-    "type": "前屈, 开髋, 拉伸",
+    "type": "Forward_bend, Hip_opener, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SupineTortoise.png"
   },
   {
@@ -2388,7 +2388,7 @@
     "difficulty": 2,
     "aka_chinese": "['卧毗湿奴式','仰卧三跨步式']",
     "position": 3,
-    "type": "开髋, 拉伸",
+    "type": "Hip_opener, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SupineTrivikrama.png"
   },
   {
@@ -2401,7 +2401,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 1,
-    "type": "侧弯, 拉伸",
+    "type": "Side_bend, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_SwayingPalmTree.png"
   },
   {
@@ -2414,7 +2414,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 5,
-    "type": "拉伸, 前屈, 恢复",
+    "type": "Stretch, Forward_bend, Restorative",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_TableTop.png"
   },
   {
@@ -2427,7 +2427,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 2,
-    "type": "冥想, 恢复",
+    "type": "Meditation, Restorative",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Thunderbolt.png"
   },
   {
@@ -2440,7 +2440,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 4,
-    "type": "拉伸, 后弯",
+    "type": "Stretch, Back_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Tiger.png"
   },
   {
@@ -2453,7 +2453,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 2,
-    "type": "力量, 平衡",
+    "type": "Strength, Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_ToeStand.png"
   },
   {
@@ -2466,7 +2466,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 1,
-    "type": "平衡",
+    "type": "Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Tree.png"
   },
   {
@@ -2479,7 +2479,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 1,
-    "type": "平衡",
+    "type": "Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_TreePrayer.png"
   },
   {
@@ -2492,7 +2492,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 1,
-    "type": "开髋",
+    "type": "Hip_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_TriangleForward.png"
   },
   {
@@ -2505,7 +2505,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 1,
-    "type": "平衡, 前屈, 扭转,开肩",
+    "type": "Balance, Forward_bend, Twist, Shoulder_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_TriangleRevolved.png"
   },
   {
@@ -2518,7 +2518,7 @@
     "difficulty": 2,
     "aka_chinese": "['三步式']",
     "position": 1,
-    "type": "平衡",
+    "type": "Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_TrivikramaI.png"
   },
   {
@@ -2531,7 +2531,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 4,
-    "type": "拉伸, 后弯",
+    "type": "Stretch, Back_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_UpwardDog.png"
   },
   {
@@ -2544,7 +2544,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 6,
-    "type": "平衡",
+    "type": "Balance",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_VisvamitraFull.png"
   },
   {
@@ -2557,7 +2557,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 1,
-    "type": "平衡,力量",
+    "type": "Balance, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_WarriorI.png"
   },
   {
@@ -2570,7 +2570,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 1,
-    "type": "开胸, 开髋, 力量",
+    "type": "Chest_opener, Hip_opener, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_WarriorII.png"
   },
   {
@@ -2583,7 +2583,7 @@
     "difficulty": 1,
     "aka_chinese": "['三角侧伸展式']",
     "position": 1,
-    "type": "力量",
+    "type": "Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_WarriorIIForwardArmForward.png"
   },
   {
@@ -2596,7 +2596,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 1,
-    "type": "平衡, 开胸, 开髋,力量",
+    "type": "Balance, Chest_opener, Hip_opener, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_WarriorIII.png"
   },
   {
@@ -2609,7 +2609,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 1,
-    "type": "后弯, 开胸, 开髋, 力量",
+    "type": "Back_bend, Chest_opener, Hip_opener, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_WarriorIIReverse.png"
   },
   {
@@ -2622,7 +2622,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 3,
-    "type": "拉伸, 后弯",
+    "type": "Stretch, Back_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_Wheel.png"
   },
   {
@@ -2635,7 +2635,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 3,
-    "type": "后弯, 平衡, 开胸",
+    "type": "Back_bend, Balance, Chest_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_WheelHeadDown.png"
   },
   {
@@ -2648,7 +2648,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 3,
-    "type": "后弯, 平衡, 开胸",
+    "type": "Back_bend, Balance, Chest_opener",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_WheelLegUp.png"
   },
   {
@@ -2661,7 +2661,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 2,
-    "type": "前屈, 拉伸",
+    "type": "Forward_bend, Stretch",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_WideAngleSeatedForwardBend.png"
   },
   {
@@ -2674,7 +2674,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 1,
-    "type": "前屈,开髋, 倒立",
+    "type": "Forward_bend, Hip_opener, Inversion",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_WideLeggedForwardBendI.png"
   },
   {
@@ -2687,7 +2687,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 1,
-    "type": "前屈,开髋, 倒立",
+    "type": "Forward_bend, Hip_opener, Inversion",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_WideLeggedForwardBendII.png"
   },
   {
@@ -2700,7 +2700,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 1,
-    "type": "前屈,开髋, 倒立",
+    "type": "Forward_bend, Hip_opener, Inversion",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_WideLeggedForwardBendIII.png"
   },
   {
@@ -2713,7 +2713,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 1,
-    "type": "前屈,开髋, 倒立",
+    "type": "Forward_bend, Hip_opener, Inversion",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_WideLeggedForwardBendIV.png"
   },
   {
@@ -2726,7 +2726,7 @@
     "difficulty": 1,
     "aka_chinese": "",
     "position": 1,
-    "type": "后弯, 平衡, 开胸, 力量",
+    "type": "Back_bend, Balance, Chest_opener, Strength",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_WildThing.png"
   },
   {
@@ -2739,7 +2739,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 3,
-    "type": "前屈",
+    "type": "Forward_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_WindRelieving.png"
   },
   {
@@ -2752,7 +2752,7 @@
     "difficulty": 0,
     "aka_chinese": "",
     "position": 3,
-    "type": "前屈",
+    "type": "Forward_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_WindRemovingHalf.png"
   },
   {
@@ -2765,7 +2765,7 @@
     "difficulty": 2,
     "aka_chinese": "",
     "position": 3,
-    "type": "前屈",
+    "type": "Forward_bend",
     "url": "https://fullheartyoga.oss-cn-beijing.aliyuncs.com/yoga-tb/tb_YogicSleep.png"
   }
 ]

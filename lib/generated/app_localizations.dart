@@ -239,7 +239,7 @@ abstract class AppLocalizations {
   /// No description provided for @audioSetting.
   ///
   /// In en, this message translates to:
-  /// **'Audio Setting'**
+  /// **'Audio'**
   String get audioSetting;
 
   /// No description provided for @language.
