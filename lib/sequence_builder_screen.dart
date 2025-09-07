@@ -123,8 +123,6 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
           'aka_chinese': fullPose.akaChinese,
           'position': fullPose.position,
           'type': fullPose.type,
-          'bg': fullPose.bg,
-          'url': fullPose.url,
           'duration': seqPose.time, // Use time from SequencePose as duration
         });
       } catch (e) {
@@ -232,8 +230,6 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
         'aka_chinese': pose.akaChinese,
         'position': pose.position,
         'type': pose.type,
-        'bg': pose.bg,
-        'url': pose.url,
         'duration': 60, // Default duration
       });
     });

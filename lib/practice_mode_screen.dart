@@ -144,8 +144,6 @@ class _PracticeModeScreenState extends State<PracticeModeScreen> {
             akaChinese: fullPose.akaChinese,
             position: fullPose.position,
             type: fullPose.type,
-            bg: fullPose.bg,
-            url: fullPose.url,
           ),
           duration: sequencePose.time,
         );
@@ -514,12 +512,6 @@ class _PracticeModeScreenState extends State<PracticeModeScreen> {
       return types.split(',').map((t) => t.trim()).toList();
     }
 
-    String getPoseImageUrl(String poseId) {
-      final imageUrl = 'assets/yoga-img/' + poseId + '.png';
-      print('Loading image from URL: $imageUrl');
-      return imageUrl;
-    }
-
     return Scaffold(
       body: _isLoading
           ? const Center(
@@ -538,9 +530,8 @@ class _PracticeModeScreenState extends State<PracticeModeScreen> {
                         child: Stack(
                           children: [
                             Positioned.fill(
-                              child: Image.network(
-                                // getPoseImageUrl(_poses[_currentPoseIndex].pose.id),
-                                _poses[_currentPoseIndex].pose.url,
+                              child: Image.asset(
+                                _poses[_currentPoseIndex].pose.detailimgurl,
                                 fit: BoxFit.contain,
                                 errorBuilder: (context, error, stackTrace) {
                                   return Image.asset('assets/placeholder.png', fit: BoxFit.contain); // Placeholder image

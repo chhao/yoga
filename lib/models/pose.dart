@@ -9,8 +9,6 @@ class Pose {
   final String akaChinese;
   final int position;
   final String type;
-  final String? bg; // Made nullable
-  final String url;
 
   Pose({
     required this.id,
@@ -23,8 +21,6 @@ class Pose {
     required this.akaChinese,
     required this.position,
     required this.type,
-    this.bg, // Made optional
-    required this.url,
   });
 
   factory Pose.fromJson(Map<String, dynamic> json) {
@@ -39,8 +35,6 @@ class Pose {
       akaChinese: json['aka_chinese'],
       position: json['position'],
       type: json['type'],
-      bg: json['bg'], // No change here, it will be null if not present
-      url: json['url'],
     );
   }
 

@@ -92,7 +92,7 @@ class PoseCard extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
               ),
             ),
-            child: (pose.url.isEmpty)
+            child: (pose.tbimageurl.isEmpty)
                 ? const Center(
                     child: Icon(Icons.broken_image, color: Colors.grey),
                   ) // Placeholder for broken image
