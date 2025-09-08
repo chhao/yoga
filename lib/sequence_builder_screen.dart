@@ -351,255 +351,327 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
         backgroundColor: const Color(0xFFF7FAFA),
         elevation: 0,
       ),
-      body: Container(
-        color: const Color(0xFFF7FAFA),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    localizations.createYourOwnSequence,
-                    style: const TextStyle(
-                      fontSize: 14,
-                      color: Color(0xFF666666),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Row(
-                children: [
-                  // Left Column: All Poses
-                  Expanded(
-                    child: Card(
-                      margin: const EdgeInsets.all(8.0),
-                      elevation: 0,
-                      color: const Color(0xFFF7FAFA),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Text(localizations.allPoses, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                            child: TextField(
-                              controller: _searchQueryController,
-                              decoration: InputDecoration(
-                                hintText: localizations.searchPoses,
-                                filled: true,
-                                fillColor: const Color(0xFFE8F2ED),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  borderSide: BorderSide.none,
-                                ),
-                                contentPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                            child: Column(
-                              children: [
-                                _buildFilterDropdown(
-                                  label: "",
-                                  options: _difficultyOptions,
-                                  currentIndex: _difficultyFilterIndex,
-                                  onChanged: _onDifficultyFilterChange,
-                                ),
-                                const SizedBox(height: 8.0),
-                                _buildFilterDropdown(
-                                  label: "",
-                                  options: _poseTypeOptions,
-                                  currentIndex: _poseTypeFilterIndex,
-                                  onChanged: _onPoseTypeFilterChange,
-                                ),
-                              ],
-                            ),
-                          ),
-                          Expanded(
-                            child: ListView.builder(
-                              itemCount: _filteredPoses.length,
-                              itemBuilder: (context, index) {
-                                final pose = _filteredPoses[index];
-                                return GestureDetector(
-                                  onTap: () => _addPoseToSequence(pose),
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-                                    child: Row(
-                                      children: [
-                                        Container(
-                                          width: 40,
-                                          height: 40,
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(8.0),
-                                            color: const Color(0xFFF9C28D),
-                                            image: DecorationImage(
-                                              image: AssetImage(pose.tbimageurl),
-                                              fit: BoxFit.cover,
-                                              onError: (exception, stackTrace) {
-                                                // Fallback to placeholder if image fails to load
-                                                print('Error loading asset: assets/yoga-tb/tb_${pose.id}.png - $exception');
-                                              },
-                                            ),
-                                          ),
-                                        ),
-                                        const SizedBox(width: 12.0), // Equivalent to 24rpx gap
-                                        Expanded(
-                                          child: Text(pose.name, style: const TextStyle(fontSize: 14, color: Color(0xFF1F2937))),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                );
-                              },
-                            ),
-                          ),
-                        ],
+      body: Stack(
+        children: [
+          Container(
+            color: const Color(0xFFF7FAFA),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        localizations.createYourOwnSequence,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: Color(0xFF666666),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
-                  // Right Column: Selected Poses
-                  Expanded(
-                    child: Card(
-                      margin: const EdgeInsets.all(8.0),
-                      elevation: 0,
-                      color: const Color(0xFFF7FAFA),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(localizations.currentSequence, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                                Text(_formattedTotalDuration, style: const TextStyle(fontSize: 14, color: Color(0xFF666666))),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                            child: TextField(
-                              controller: _sequenceNameController,
-                              decoration: InputDecoration(
-                                hintText: localizations.nameYourSequence,
-                                filled: true,
-                                fillColor: const Color(0xFFE8F2ED),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  borderSide: BorderSide.none,
-                                ),
-                                contentPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+                ),
+                Expanded(
+                  child: Row(
+                    children: [
+                      // Left Column: All Poses
+                      Expanded(
+                        child: Card(
+                          margin: const EdgeInsets.all(8.0),
+                          elevation: 0,
+                          color: const Color(0xFFF7FAFA),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(localizations.allPoses, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                               ),
-                            ),
-                          ),
-                          Expanded(
-                            child: ListView.builder(
-                              itemCount: _selectedPoses.length,
-                              itemBuilder: (context, index) {
-                                final poseMap = _selectedPoses[index];
-                                return Card(
-                                  margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-                                  elevation: 0,
-                                  color: const Color(0xFFE8F2ED),
-                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(16.0),
-                                    child: Row(
-                                      children: [
-                                        Expanded(
-                                          child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              Text(poseMap['name'] as String, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500), maxLines: 1, overflow: TextOverflow.ellipsis),
-                                              const SizedBox(height: 4.0), // Add some vertical spacing
-                                              GestureDetector(
-                                                onTap: () => _openDurationDialog(index),
-                                                child: Row(
-                                                  children: [
-                                                    Text(localizations.durationInSeconds(poseMap['duration'] as int), style: const TextStyle(fontSize: 13, color: Color(0xFF666666))),
-                                                    const SizedBox(width: 8.0),
-                                                    const Icon(Icons.edit, size: 16, color: Color(0xFF666666)),
-                                                  ],
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                                child: TextField(
+                                  controller: _searchQueryController,
+                                  decoration: InputDecoration(
+                                    hintText: localizations.searchPoses,
+                                    filled: true,
+                                    fillColor: const Color(0xFFE8F2ED),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(12.0),
+                                      borderSide: BorderSide.none,
+                                    ),
+                                    contentPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                                child: Column(
+                                  children: [
+                                    _buildFilterDropdown(
+                                      label: "",
+                                      options: _difficultyOptions,
+                                      currentIndex: _difficultyFilterIndex,
+                                      onChanged: _onDifficultyFilterChange,
+                                    ),
+                                    const SizedBox(height: 8.0),
+                                    _buildFilterDropdown(
+                                      label: "",
+                                      options: _poseTypeOptions,
+                                      currentIndex: _poseTypeFilterIndex,
+                                      onChanged: _onPoseTypeFilterChange,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                child: ListView.builder(
+                                  itemCount: _filteredPoses.length,
+                                  itemBuilder: (context, index) {
+                                    final pose = _filteredPoses[index];
+                                    return GestureDetector(
+                                      onTap: () => _addPoseToSequence(pose),
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                                        child: Row(
+                                          children: [
+                                            Container(
+                                              width: 40,
+                                              height: 40,
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(8.0),
+                                                color: const Color(0xFFF9C28D),
+                                                image: DecorationImage(
+                                                  image: AssetImage(pose.tbimageurl),
+                                                  fit: BoxFit.cover,
+                                                  onError: (exception, stackTrace) {
+                                                    // Fallback to placeholder if image fails to load
+                                                    print('Error loading asset: assets/yoga-tb/tb_${pose.id}.png - $exception');
+                                                  },
                                                 ),
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                            const SizedBox(width: 12.0), // Equivalent to 24rpx gap
+                                            Expanded(
+                                              child: Text(pose.name, style: const TextStyle(fontSize: 14, color: Color(0xFF1F2937))),
+                                            ),
+                                          ],
                                         ),
-                                        SizedBox(
-                                          width: 30,
-                                          height: 30,
-                                          child: IconButton(
-                                            icon: const Icon(Icons.delete, color: Color(0xFF666666)),
-                                            onPressed: () => _removePoseFromSequence(index),
-                                            padding: EdgeInsets.zero, // Remove default padding
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                );
-                              },
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: ElevatedButton(
-                              onPressed: _saveSequence,
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: const Color(0xFF52946B),
-                                foregroundColor: Colors.white,
-                                minimumSize: const Size(double.infinity, 50),
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
+                                      ),
+                                    );
+                                  },
+                                ),
                               ),
-                              child: Text(_isEditing ? localizations.updateSequence : localizations.saveSequence),
-                            ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
-                    ),
+                      // Right Column: Selected Poses
+                      Expanded(
+                        child: Card(
+                          margin: const EdgeInsets.all(8.0),
+                          elevation: 0,
+                          color: const Color(0xFFF7FAFA),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(localizations.currentSequence, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                                    Text(_formattedTotalDuration, style: const TextStyle(fontSize: 14, color: Color(0xFF666666))),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                                child: TextField(
+                                  controller: _sequenceNameController,
+                                  decoration: InputDecoration(
+                                    hintText: localizations.nameYourSequence,
+                                    filled: true,
+                                    fillColor: const Color(0xFFE8F2ED),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(12.0),
+                                      borderSide: BorderSide.none,
+                                    ),
+                                    contentPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: ListView.builder(
+                                  itemCount: _selectedPoses.length,
+                                  itemBuilder: (context, index) {
+                                    final poseMap = _selectedPoses[index];
+                                    return Card(
+                                      margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                                      elevation: 0,
+                                      color: const Color(0xFFE8F2ED),
+                                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(16.0),
+                                        child: Row(
+                                          children: [
+                                            Expanded(
+                                              child: Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(poseMap['name'] as String, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500), maxLines: 1, overflow: TextOverflow.ellipsis),
+                                                  const SizedBox(height: 4.0), // Add some vertical spacing
+                                                  GestureDetector(
+                                                    onTap: () => _openDurationDialog(index),
+                                                    child: Row(
+                                                      children: [
+                                                        Text(localizations.durationInSeconds(poseMap['duration'] as int), style: const TextStyle(fontSize: 13, color: Color(0xFF666666))),
+                                                        const SizedBox(width: 8.0),
+                                                        const Icon(Icons.edit, size: 16, color: Color(0xFF666666)),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: 30,
+                                              height: 30,
+                                              child: IconButton(
+                                                icon: const Icon(Icons.delete, color: Color(0xFF666666)),
+                                                onPressed: () => _removePoseFromSequence(index),
+                                                padding: EdgeInsets.zero, // Remove default padding
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: ElevatedButton(
+                                  onPressed: _saveSequence,
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: const Color(0xFF52946B),
+                                    foregroundColor: Colors.white,
+                                    minimumSize: const Size(double.infinity, 50),
+                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
+                                  ),
+                                  child: Text(_isEditing ? localizations.updateSequence : localizations.saveSequence),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
+              ],
+            ),
+          ),
+          if (_isDialogVisible)
+            Positioned.fill(
+              child: Container(
+                color: Colors.black.withOpacity(0.5),
+                child: Center(
+                  child: _buildDurationDialog(),
+                ),
               ),
+            ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDurationDialog() {
+    final localizations = _localizations!;
+    return Dialog(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      elevation: 0,
+      backgroundColor: Colors.transparent,
+      child: Container(
+        padding: const EdgeInsets.all(24),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+              offset: const Offset(0, 5),
             ),
           ],
         ),
-      ),
-      // Duration Editor Dialog
-      bottomSheet: _isDialogVisible
-          ? AlertDialog(
-              title: Text(localizations.setDurationInSeconds),
-              content: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(localizations.currentDuration(_currentPoseDuration)),
-                  Slider(
-                    value: _currentPoseDuration.toDouble(),
-                    min: 10,
-                    max: 300,
-                    divisions: (300 - 10) ~/ 10, // 10-second steps
-                    onChanged: (value) => _onDialogStepperChange(value.toInt()),
-                  ),
-                ],
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Text(
+              localizations.setDurationInSeconds,
+              style: const TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
               ),
-              actions: [
-                TextButton(
-                  onPressed: _onDialogCancel,
-                  child: Text(localizations.cancel),
+            ),
+            const SizedBox(height: 16.0),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(localizations.currentDuration(_currentPoseDuration)),
+                Slider(
+                  value: _currentPoseDuration.toDouble(),
+                  min: 10,
+                  max: 300,
+                  divisions: (300 - 10) ~/ 10, // 10-second steps
+                  activeColor: const Color(0xFF52946B),
+                  onChanged: (value) => _onDialogStepperChange(value.toInt()),
                 ),
-                TextButton(
-                  onPressed: _onDialogConfirm,
-                  child: Text(localizations.confirm),
+              ],
+            ),
+            const SizedBox(height: 24.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Expanded(
+                  child: TextButton(
+                    onPressed: _onDialogCancel,
+                    style: TextButton.styleFrom(
+                      foregroundColor: Colors.grey[600],
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                        side: BorderSide(color: Colors.grey[300]!),
+                      ),
+                    ),
+                    child: Text(localizations.cancel),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: _onDialogConfirm,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF52946B), // primary color
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      elevation: 0,
+                    ),
+                    child: Text(localizations.confirm),
+                  ),
                 ),
               ],
             )
-          : null,
+          ],
+        ),
+      ),
     );
   }
 

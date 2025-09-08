@@ -159,16 +159,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get confirm => 'Confirm';
 
   @override
-  String get duration15 => '15 minutes';
+  String get duration15 => '15 min';
 
   @override
-  String get duration30 => '30 minutes';
+  String get duration30 => '30 min';
 
   @override
-  String get duration45 => '45 minutes';
+  String get duration45 => '45 min';
 
   @override
-  String get duration60 => '60 minutes';
+  String get duration60 => '60 min';
 
   @override
   String get locationAny => 'Any';
@@ -201,12 +201,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String totalPracticeDuration(int duration) {
-    return 'Total Practice Duration: $duration minutes';
+    return 'Total Practice Duration: $duration min';
   }
 
   @override
   String stepDuration(String instruction, int duration) {
-    return '$instruction: $duration seconds';
+    return '$instruction: $duration sec';
   }
 
   @override
@@ -248,7 +248,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get unlimited => 'Unlimited';
 
   @override
-  String get zeroMinutes => '0 minutes';
+  String get zeroMinutes => '0 min';
 
   @override
   String get enterSequenceName => 'Please enter a sequence name';
@@ -288,7 +288,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String durationInSeconds(int duration) {
-    return '$duration seconds';
+    return '$duration sec';
   }
 
   @override
@@ -298,11 +298,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get saveSequence => 'Save';
 
   @override
-  String get setDurationInSeconds => 'Set Duration (seconds)';
+  String get setDurationInSeconds => 'Set Duration (sec)';
 
   @override
   String currentDuration(int duration) {
-    return 'Current duration: $duration seconds';
+    return 'Current duration: $duration sec';
   }
 
   @override

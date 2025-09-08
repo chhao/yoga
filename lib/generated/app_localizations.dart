@@ -377,25 +377,25 @@ abstract class AppLocalizations {
   /// No description provided for @duration15.
   ///
   /// In en, this message translates to:
-  /// **'15 minutes'**
+  /// **'15 min'**
   String get duration15;
 
   /// No description provided for @duration30.
   ///
   /// In en, this message translates to:
-  /// **'30 minutes'**
+  /// **'30 min'**
   String get duration30;
 
   /// No description provided for @duration45.
   ///
   /// In en, this message translates to:
-  /// **'45 minutes'**
+  /// **'45 min'**
   String get duration45;
 
   /// No description provided for @duration60.
   ///
   /// In en, this message translates to:
-  /// **'60 minutes'**
+  /// **'60 min'**
   String get duration60;
 
   /// No description provided for @locationAny.
@@ -455,13 +455,13 @@ abstract class AppLocalizations {
   /// No description provided for @totalPracticeDuration.
   ///
   /// In en, this message translates to:
-  /// **'Total Practice Duration: {duration} minutes'**
+  /// **'Total Practice Duration: {duration} min'**
   String totalPracticeDuration(int duration);
 
   /// No description provided for @stepDuration.
   ///
   /// In en, this message translates to:
-  /// **'{instruction}: {duration} seconds'**
+  /// **'{instruction}: {duration} sec'**
   String stepDuration(String instruction, int duration);
 
   /// No description provided for @seconds.
@@ -539,7 +539,7 @@ abstract class AppLocalizations {
   /// No description provided for @zeroMinutes.
   ///
   /// In en, this message translates to:
-  /// **'0 minutes'**
+  /// **'0 min'**
   String get zeroMinutes;
 
   /// No description provided for @enterSequenceName.
@@ -617,7 +617,7 @@ abstract class AppLocalizations {
   /// No description provided for @durationInSeconds.
   ///
   /// In en, this message translates to:
-  /// **'{duration} seconds'**
+  /// **'{duration} sec'**
   String durationInSeconds(int duration);
 
   /// No description provided for @updateSequence.
@@ -635,13 +635,13 @@ abstract class AppLocalizations {
   /// No description provided for @setDurationInSeconds.
   ///
   /// In en, this message translates to:
-  /// **'Set Duration (seconds)'**
+  /// **'Set Duration (sec)'**
   String get setDurationInSeconds;
 
   /// No description provided for @currentDuration.
   ///
   /// In en, this message translates to:
-  /// **'Current duration: {duration} seconds'**
+  /// **'Current duration: {duration} sec'**
   String currentDuration(int duration);
 
   /// No description provided for @startPractice.

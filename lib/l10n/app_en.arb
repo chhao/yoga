@@ -83,10 +83,10 @@
     },
     "cancel": "Cancel",
     "confirm": "Confirm",
-    "duration15": "15 minutes",
-    "duration30": "30 minutes",
-    "duration45": "45 minutes",
-    "duration60": "60 minutes",
+    "duration15": "15 min",
+    "duration30": "30 min",
+    "duration45": "45 min",
+    "duration60": "60 min",
     "locationAny": "Any",
     "locationStanding": "Standing",
     "locationSeated": "Seated/Supine",
@@ -103,7 +103,7 @@
     "wellDone": "Well done!",
     "musicOn": "Music On",
     "musicOff": "Music Off",
-    "totalPracticeDuration": "Total Practice Duration: {duration} minutes",
+    "totalPracticeDuration": "Total Practice Duration: {duration} min",
     "@totalPracticeDuration": {
         "placeholders": {
             "duration": {
@@ -111,7 +111,7 @@
             }
         }
     },
-    "stepDuration": "{instruction}: {duration} seconds",
+    "stepDuration": "{instruction}: {duration} sec",
     "@stepDuration": {
         "placeholders": {
             "instruction": {
@@ -134,7 +134,7 @@
     "remainingTimeTitle": "Remaining Time",
     "all": "All",
     "unlimited": "Unlimited",
-    "zeroMinutes": "0 minutes",
+    "zeroMinutes": "0 min",
     "enterSequenceName": "Please enter a sequence name",
     "selectAtLeastOnePose": "Please select at least one pose",
     "sequenceNameExists": "Sequence name already exists",
@@ -147,7 +147,7 @@
     "poseType": "Type",
     "currentSequence": "Sequence",
     "nameYourSequence": "Name your sequence",
-    "durationInSeconds": "{duration} seconds",
+    "durationInSeconds": "{duration} sec",
     "@durationInSeconds": {
         "placeholders": {
             "duration": {
@@ -157,8 +157,8 @@
     },
     "updateSequence": "Update",
     "saveSequence": "Save",
-    "setDurationInSeconds": "Set Duration (seconds)",
-    "currentDuration": "Current duration: {duration} seconds",
+    "setDurationInSeconds": "Set Duration (sec)",
+    "currentDuration": "Current duration: {duration} sec",
     "@currentDuration": {
         "placeholders": {
             "duration": {
