@@ -78,10 +78,29 @@ class PoseDetailScreen extends StatelessWidget {
                     title: AppLocalizations.of(context)!.benefits,
                     content: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: pose.benefits_array.map((item) => Padding(
-                        padding: const EdgeInsets.only(bottom: 4.0),
-                        child: Text(item, style: const TextStyle(fontSize: 16, color: Color(0xFF6B7280))),
-                      )).toList(),
+                      children: pose.benefits_array.map((item) {
+                        int colonIndex = item.indexOf(':');
+                        if (colonIndex == -1) {
+                          colonIndex = item.indexOf('：');
+                        }
+                        return Padding(
+                          padding: const EdgeInsets.only(bottom: 4.0),
+                          child: colonIndex != -1
+                              ? RichText(
+                                  text: TextSpan(
+                                    style: const TextStyle(fontSize: 16, color: Color(0xFF6B7280)),
+                                    children: [
+                                      TextSpan(
+                                        text: item.substring(0, colonIndex + 1),
+                                        style: const TextStyle(fontWeight: FontWeight.bold),
+                                      ),
+                                      TextSpan(text: item.substring(colonIndex + 1)),
+                                    ],
+                                  ),
+                                )
+                              : Text(item, style: const TextStyle(fontSize: 16, color: Color(0xFF6B7280))),
+                        );
+                      }).toList(),
                     ),
                   ),
                   const SizedBox(height: 24),
@@ -91,10 +110,31 @@ class PoseDetailScreen extends StatelessWidget {
                     title: AppLocalizations.of(context)!.steps,
                     content: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: pose.steps_array.asMap().entries.map((entry) => Padding(
-                        padding: const EdgeInsets.only(bottom: 4.0),
-                        child: Text('${entry.key + 1}. ${entry.value}', style: const TextStyle(fontSize: 16, color: Color(0xFF6B7280))),
-                      )).toList(),
+                      children: pose.steps_array.asMap().entries.map((entry) {
+                        final item = entry.value;
+                        int colonIndex = item.indexOf(':');
+                        if (colonIndex == -1) {
+                          colonIndex = item.indexOf('：');
+                        }
+                        return Padding(
+                          padding: const EdgeInsets.only(bottom: 4.0),
+                          child: colonIndex != -1
+                              ? RichText(
+                                  text: TextSpan(
+                                    style: const TextStyle(fontSize: 16, color: Color(0xFF6B7280)),
+                                    children: [
+                                      TextSpan(text: '${entry.key + 1}. '),
+                                      TextSpan(
+                                        text: item.substring(0, colonIndex + 1),
+                                        style: const TextStyle(fontWeight: FontWeight.bold),
+                                      ),
+                                      TextSpan(text: item.substring(colonIndex + 1)),
+                                    ],
+                                  ),
+                                )
+                              : Text('${entry.key + 1}. $item', style: const TextStyle(fontSize: 16, color: Color(0xFF6B7280))),
+                        );
+                      }).toList(),
                     ),
                   ),
                 ],
