@@ -327,4 +327,28 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get recommendedWith => '👍 推荐搭配';
+
+  @override
+  String get posePracticeTitle => '体式练习';
+
+  @override
+  String get breathPracticeTitle => '呼吸练习';
+
+  @override
+  String get practiceMusicTitle => '背景音乐';
+
+  @override
+  String get practiceMusicSubtitle => '体式练习过程中播放的背景音乐。';
+
+  @override
+  String get practiceSoundEffectsTitle => '提示音效';
+
+  @override
+  String get practiceSoundEffectsSubtitle => '体式切换时的音效提示。';
+
+  @override
+  String get breathSoundEffectsTitle => '提示音效';
+
+  @override
+  String get breathSoundEffectsSubtitle => '吸气，屏息和呼气的音效体式。';
 }

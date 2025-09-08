@@ -697,6 +697,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'👍 Recommended'**
   String get recommendedWith;
+
+  /// No description provided for @posePracticeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Pose Practice'**
+  String get posePracticeTitle;
+
+  /// No description provided for @breathPracticeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Breath Practice'**
+  String get breathPracticeTitle;
+
+  /// No description provided for @practiceMusicTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice Background Music'**
+  String get practiceMusicTitle;
+
+  /// No description provided for @practiceMusicSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Music plays during sequence practice. '**
+  String get practiceMusicSubtitle;
+
+  /// No description provided for @practiceSoundEffectsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice Sound Effects'**
+  String get practiceSoundEffectsTitle;
+
+  /// No description provided for @practiceSoundEffectsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sound cues for pose transitions.'**
+  String get practiceSoundEffectsSubtitle;
+
+  /// No description provided for @breathSoundEffectsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Breathing Sound Effects'**
+  String get breathSoundEffectsTitle;
+
+  /// No description provided for @breathSoundEffectsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sound cues for inhale, hold and exhale'**
+  String get breathSoundEffectsSubtitle;
 }
 
 class _AppLocalizationsDelegate

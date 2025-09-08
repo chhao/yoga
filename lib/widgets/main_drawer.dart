@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:yoga/audio_settings_screen.dart';
 import 'package:yoga/generated/app_localizations.dart';
 import 'package:yoga/main.dart';
 
@@ -79,7 +79,9 @@ class MainDrawer extends StatelessWidget {
             title: Text(AppLocalizations.of(context)!.audioSetting),
             trailing: const Icon(Icons.arrow_forward_ios),
             onTap: () {
-              // Handle audio setting tap
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const AudioSettingsScreen()),
+              );
             },
           ),
           ListTile(

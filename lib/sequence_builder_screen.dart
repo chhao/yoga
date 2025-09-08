@@ -65,13 +65,13 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
     final localizations = _localizations!;
     setState(() {
       _difficultyOptions = [
-        localizations.all,
+        localizations.allDifficulties,
         localizations.beginner,
         localizations.intermediate,
         localizations.advanced
       ];
       _poseTypeOptions = [
-        localizations.unlimited,
+        localizations.allTypes,
         localizations.standing,
         localizations.seated,
         localizations.supine,
@@ -407,14 +407,14 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
                             child: Column(
                               children: [
                                 _buildFilterDropdown(
-                                  label: localizations.difficulty,
+                                  label: "",
                                   options: _difficultyOptions,
                                   currentIndex: _difficultyFilterIndex,
                                   onChanged: _onDifficultyFilterChange,
                                 ),
                                 const SizedBox(height: 8.0),
                                 _buildFilterDropdown(
-                                  label: localizations.poseType,
+                                  label: "",
                                   options: _poseTypeOptions,
                                   currentIndex: _poseTypeFilterIndex,
                                   onChanged: _onPoseTypeFilterChange,
@@ -615,23 +615,19 @@ class _SequenceBuilderScreenState extends State<SequenceBuilderScreen> {
         color: const Color(0xFFE8F2ED),
         borderRadius: BorderRadius.circular(12.0),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(label, style: const TextStyle(fontSize: 14, color: Color(0xFF666666))),
-          DropdownButton<int>(
-            value: currentIndex,
-            items: options.asMap().entries.map((entry) {
-              return DropdownMenuItem<int>(
-                value: entry.key,
-                child: Text(entry.value),
-              );
-            }).toList(),
-            onChanged: onChanged,
-            underline: Container(), // Remove underline
-            icon: const Icon(Icons.arrow_drop_down, color: Color(0xFF666666)),
-          ),
-        ],
+      child: Center(
+        child: DropdownButton<int>(
+          value: currentIndex,
+          items: options.asMap().entries.map((entry) {
+            return DropdownMenuItem<int>(
+              value: entry.key,
+              child: Text(entry.value),
+            );
+          }).toList(),
+          onChanged: onChanged,
+          underline: Container(), // Remove underline
+          icon: const Icon(Icons.arrow_drop_down, color: Color(0xFF666666)),
+        ),
       ),
     );
   }

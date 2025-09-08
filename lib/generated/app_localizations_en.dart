@@ -331,4 +331,29 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get recommendedWith => '👍 Recommended';
+
+  @override
+  String get posePracticeTitle => 'Pose Practice';
+
+  @override
+  String get breathPracticeTitle => 'Breath Practice';
+
+  @override
+  String get practiceMusicTitle => 'Practice Background Music';
+
+  @override
+  String get practiceMusicSubtitle => 'Music plays during sequence practice. ';
+
+  @override
+  String get practiceSoundEffectsTitle => 'Practice Sound Effects';
+
+  @override
+  String get practiceSoundEffectsSubtitle => 'Sound cues for pose transitions.';
+
+  @override
+  String get breathSoundEffectsTitle => 'Breathing Sound Effects';
+
+  @override
+  String get breathSoundEffectsSubtitle =>
+      'Sound cues for inhale, hold and exhale';
 }

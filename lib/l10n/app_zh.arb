@@ -174,5 +174,14 @@
     "tips": "💡 提示",
     "cautions": "⚠️ 注意事项",
     "suitableFor": "🎯 适合人群",
-    "recommendedWith": "👍 推荐搭配"
+    "recommendedWith": "👍 推荐搭配",
+
+    "posePracticeTitle": "体式练习",
+    "breathPracticeTitle": "呼吸练习",
+    "practiceMusicTitle": "背景音乐",
+    "practiceMusicSubtitle": "体式练习过程中播放的背景音乐。",
+    "practiceSoundEffectsTitle": "提示音效",
+    "practiceSoundEffectsSubtitle":"体式切换时的音效提示。",
+    "breathSoundEffectsTitle": "提示音效",
+    "breathSoundEffectsSubtitle": "吸气，屏息和呼气的音效体式。"
 }

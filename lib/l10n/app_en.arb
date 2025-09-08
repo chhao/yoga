@@ -174,5 +174,14 @@
     "tips": "💡 Tips",
     "cautions": "⚠️ Cautions",
     "suitableFor": "🎯 Suitable For",
-    "recommendedWith": "👍 Recommended"
+    "recommendedWith": "👍 Recommended",
+
+    "posePracticeTitle": "Pose Practice",
+    "breathPracticeTitle": "Breath Practice",
+    "practiceMusicTitle": "Practice Background Music",
+    "practiceMusicSubtitle": "Music plays during sequence practice. ",
+    "practiceSoundEffectsTitle": "Practice Sound Effects",
+    "practiceSoundEffectsSubtitle":"Sound cues for pose transitions.",
+    "breathSoundEffectsTitle": "Breathing Sound Effects",
+    "breathSoundEffectsSubtitle": "Sound cues for inhale, hold and exhale"
 }

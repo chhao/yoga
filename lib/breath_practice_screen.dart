@@ -51,6 +51,17 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
     _currentMode = widget.breathMethod;
     _initializePlayers();
     _loadUserSettings();
+    _loadAudioSettings(); // MODIFIED
+  }
+
+  // ADDED METHOD
+  Future<void> _loadAudioSettings() async {
+    final prefs = await SharedPreferences.getInstance();
+    if (mounted) {
+      setState(() {
+        _isSoundOn = prefs.getBool('audio_settings_breath_sound_on') ?? true;
+      });
+    }
   }
 
   @override
@@ -87,7 +98,7 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
         }
       }
     }
-    setState(() {}); // Update UI after loading settings
+    if (mounted) setState(() {}); // Update UI after loading settings
   }
 
   Future<void> _saveUserSettings() async {
@@ -176,6 +187,7 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
     final duration = _currentMode.rhythm[_currentStep].duration;
 
     _intervalTimer = Timer(Duration(seconds: duration), () {
+      if (!mounted) return;
       setState(() {
         _currentStep = (_currentStep + 1) % _currentMode.rhythm.length;
       });
@@ -184,6 +196,7 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
   }
 
   void _updateTimer() {
+    if (!mounted) return;
     setState(() {
       _elapsedTime++;
     });
@@ -292,13 +305,18 @@ class _BreathPracticeScreenState extends State<BreathPracticeScreen> {
     });
   }
 
-  void _toggleSound() {
+  // MODIFIED
+  void _toggleSound() async {
+    final newSoundOn = !_isSoundOn;
     setState(() {
-      _isSoundOn = !_isSoundOn;
+      _isSoundOn = newSoundOn;
     });
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('audio_settings_breath_sound_on', newSoundOn);
+
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text(_isSoundOn ? _localizations!.musicOn : _localizations!.musicOff),
+        content: Text(newSoundOn ? _localizations!.musicOn : _localizations!.musicOff),
         duration: const Duration(seconds: 1),
       ),
     );

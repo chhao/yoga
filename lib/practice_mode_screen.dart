@@ -482,7 +482,7 @@ class _PracticeModeScreenState extends State<PracticeModeScreen> {
     setState(() {
       _isSoundEffectsOn = !_isSoundEffectsOn;
     });
-    await prefs.setBool('isSoundEffectsOn', _isSoundEffectsOn);
+    await prefs.setBool('audio_settings_practice_sound_on', _isSoundEffectsOn);
   }
 
   @override
